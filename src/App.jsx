@@ -12,45 +12,51 @@ import POSTPosts from "./components/posts/POSTPosts";
 import Footer from "./components/layouts/Footer";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/PlaySation",
-      element: <PlayStation />,
-    },
-    {
-      path: "/Xbox",
-      element: <Xbox />,
-    },
-    {
-      path: "/Switch",
-      element: <Switch />,
-    },
-    {
-      path: "/Computer",
-      element: <Computer />,
-    },
-    {
-      path: "/ProfilPage",
-      element: <ProfilPage />,
-    },
-    {
-      path: "/Register",
-      element: <Register />,
-    },
-    {
-      path: "/Login",
-      element: <Login />,
-    },
-    {
-      path: "/POSTPosts",
-      element: <POSTPosts />,
-    },
-  ]);
-  return <RouterProvider router={router} />;
+   const router = createBrowserRouter([
+      {
+         path: "/",
+         element: <Home />,
+      },
+      {
+         path: "/PlaySation",
+         element: <PlayStation />,
+      },
+      {
+         path: "/Xbox",
+         element: <Xbox />,
+      },
+      {
+         path: "/Switch",
+         element: <Switch />,
+      },
+      {
+         path: "/Computer",
+         element: <Computer />,
+      },
+      {
+         path: "/ProfilPage",
+         element: <ProfilPage />,
+      },
+
+      {
+         path: "/Register",
+         element: <Register />,
+      },
+      {
+         path: "/Login",
+         element: <Login />,
+      },
+      {
+         path: "/POSTPosts",
+         element: <POSTPosts />,
+      },
+   ]);
+   return (
+      <>
+         <RouterProvider router={router} />
+         <Footer />
+      </>
+   );
 }
 
 export default App;
