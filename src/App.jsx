@@ -46,40 +46,12 @@ function App() {
          path: "/Login",
          element: <Login />,
       },
-   ]);
-   return <RouterProvider router={router} />;
-   const router = createBrowserRouter([
-      {
-         path: "/",
-         element: <Home />,
-      },
-      {
-         path: "/PlaySation",
-         element: <PlayStation />,
-      },
-      {
-         path: "/Xbox",
-         element: <Xbox />,
-      },
-      {
-         path: "/Switch",
-         element: <Switch />,
-      },
-      {
-         path: "/Computer",
-         element: <Computer />,
-      },
       {
          path: "/POSTPosts",
          element: <POSTPosts />,
       },
    ]);
-   return (
-      <>
-         <RouterProvider router={router} />
-         <Footer />
-      </>
-   );
+   return <RouterProvider router={router} />;
 }
 
 export default App;
