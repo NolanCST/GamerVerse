@@ -20,6 +20,12 @@ function NavBar() {
           <Link to="/Computer">Computer</Link>
         </nav>
         <nav>
+          <Link to="/Login">Connexion</Link>
+        </nav>
+        <nav>
+          <Link to="/Register">Sign Up</Link>
+        </nav>
+        <nav>
           <Link to="/ProfilPage">Profil</Link>
         </nav>
       </div>
