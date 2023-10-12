@@ -40,20 +40,20 @@ function Register() {
     );
     console.log(response);
     let data = await response.json();
-    alert("Vous avez bien créer votre compte");
+    alert("Vous avez bien créé votre compte");
     console.log(data);
   };
 
   return (
-    <div className="main">
+    <div className="mainRegister">
       <img
-        src="https://media.discordapp.net/attachments/1154418633741709372/1161959191959842937/306cf9b308a4e88f022b2cc0180197ad.png?ex=653a31d3&is=6527bcd3&hm=78c8c85dd4e94bfc8c04d2835e3031478248a3b7c0a199a89c53f2f7e6fd5435&=&width=918&height=516"
+        src="https://media.discordapp.net/attachments/1154418633741709372/1162003370727460864/soldat.png?ex=653a5af8&is=6527e5f8&hm=8613018b16e6c80345fb2d5eb26c832bd4d048249468887cbc63932bff9dfc84&=&width=918&height=516"
         alt=""
-        className="soldier"
+        id="soldier"
       />
-      <div className="container">
+      <div className="subRegister">
         <div className="cont"></div>
-        <div className="form">
+        <div className="registerForm">
           <form method="POST" id="form">
             <h2>S'INSCRIRE</h2>
             <br />

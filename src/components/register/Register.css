@@ -68,13 +68,13 @@ input[type="checkbox"] {
   background-color: #dedbdb;
 }
 
-.main {
+.mainRegister {
   position: relative;
   height: 100vh;
   width: 100vw;
 }
 
-.container {
+.subRegister {
   width: 862px;
   height: 500px;
   position: relative;
@@ -97,7 +97,7 @@ input[type="checkbox"] {
   border-radius: 5px;
 }
 
-.form {
+.registerForm {
   position: relative;
   bottom: 540px;
   left: 600px;
@@ -141,8 +141,10 @@ input[type="checkbox"] {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.soldier {
+#soldier {
   position: relative;
+  z-index: +1;
+  top: 225px;
 }
 
 #form {
