@@ -22,6 +22,9 @@ function NavBar() {
         <nav>
           <Link to="/Login">Connexion</Link>
         </nav>
+        <nav>
+          <Link to="/Register">Sign Up</Link>
+        </nav>
       </div>
     </>
   );
