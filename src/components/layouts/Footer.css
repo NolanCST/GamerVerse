@@ -1,0 +1,12 @@
+.modifFooter {
+   width: 100vw;
+   height: 8%;
+   color: white;
+   background-color: black;
+   bottom: 0;
+   position: fixed;
+}
+
+* {
+   margin: 0;
+}

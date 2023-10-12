@@ -1,5 +1,7 @@
+import NavBar from "../layouts/NavBar";
+
 function Xbox() {
-  return <NavBar />;
+   return <NavBar />;
 }
 
 export default Xbox;
