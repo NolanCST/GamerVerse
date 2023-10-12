@@ -29,7 +29,7 @@ function Register() {
       console.log("option", options);
 
       //Appel Api
-      await fetch(`https://social-network-api.osc-fr1.scalingo.io/serial-viewer/register`, options)
+      await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/register`, options)
          .then((response) => response.json()) // Récupère la réponse au format JSON
          .then((data) => {
             if (data.success) {

@@ -23,7 +23,7 @@ function NavBar() {
                <Link to="/Login">Connexion</Link>
             </nav>
             <nav>
-               <Link to="/Register">Sign Up</Link>
+               <Link to="/Register">S'inscrire</Link>
             </nav>
             <nav>
                <Link to="/ProfilPage">Profil</Link>
