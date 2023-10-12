@@ -1,7 +1,11 @@
-import NavBar from "../layouts/NavBar";
+import React from "react";
 
 function PlayStation() {
-   return <NavBar />;
+   return(
+      <div className="main-post-title">
+      PLAYSTATION
+   </div>
+   )
 }
 
 export default PlayStation;

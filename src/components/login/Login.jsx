@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
+import NavBar from "../layouts/NavBar";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 
@@ -69,6 +70,7 @@ export default function Login(props) {
 
   return (
     <>
+    
       <div className="mainContainer">
         <div className="titleContainer">
           <div>Connexion à votre compte</div>

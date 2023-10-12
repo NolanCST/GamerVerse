@@ -1,7 +1,7 @@
-import NavBar from "../layouts/NavBar";
+import React from "react";
 
 function Switch() {
-   return <NavBar />;
+  return <div className="main-post-title">Switch</div>;
 }
 
 export default Switch;

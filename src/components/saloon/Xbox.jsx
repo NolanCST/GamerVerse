@@ -1,7 +1,11 @@
-import NavBar from "../layouts/NavBar";
+import React from "react";
 
 function Xbox() {
-   return <NavBar />;
+   return(
+      <div className="main-post-title">
+      XBOX
+   </div>
+   )
 }
 
 export default Xbox;
