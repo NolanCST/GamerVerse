@@ -51,7 +51,12 @@ function App() {
          element: <POSTPosts />,
       },
    ]);
-   return <RouterProvider router={router} />;
+   return (
+      <>
+         <RouterProvider router={router} />
+         <Footer />
+      </>
+   );
 }
 
 export default App;
