@@ -19,6 +19,9 @@ function NavBar() {
         <nav>
           <Link to="/Computer">Computer</Link>
         </nav>
+        <nav>
+          <Link to="/Register">Sign Up</Link>
+        </nav>
       </div>
     </>
   );
