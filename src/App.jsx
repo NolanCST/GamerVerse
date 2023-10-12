@@ -19,8 +19,8 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/PlaySation",
-      element: <PlayStation />,
+      path: "/Playstation",
+      element: <Playstation />,
     },
     {
       path: "/Xbox",
