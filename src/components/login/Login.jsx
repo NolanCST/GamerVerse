@@ -6,7 +6,6 @@ import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
-import NavBar from "../layouts/NavBar";
 
 export default function Login() {
    const [email, setEmail] = useState("");
