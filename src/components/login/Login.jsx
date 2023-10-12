@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
+import NavBar from "../layouts/NavBar";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 import NavBar from "../layouts/NavBar";
