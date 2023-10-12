@@ -1,0 +1,151 @@
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #fff;
+  font-weight: 600;
+  font-family: poppins;
+  background-color: #dcd1c5;
+}
+
+h2 {
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: #fff;
+  font-family: poppins;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+input {
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ebebeb;
+  background: 0 0;
+  width: 100%;
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  font-family: poppins;
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+input[type="checkbox"]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+input[type="checkbox"] {
+  appearance: checkbox !important;
+  position: relative;
+  top: 18px;
+  right: 8px;
+}
+
+.checkbox:hover input ~ .checkmark {
+  background-color: #7a6e7a;
+}
+.checkbox input:checked ~ .checkmark {
+  background-color: #1b1b2d;
+}
+
+.checkmark {
+  position: absolute;
+  top: 67%;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #c9c9c9;
+  background-color: #dedbdb;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  width: 862px;
+  height: 500px;
+  position: relative;
+  bottom: 300px;
+  left: 100px;
+}
+
+.cont {
+  width: 862px;
+  height: 500px;
+  background-image: url(https://images2.alphacoders.com/199/199312.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  left: 300px;
+  border-radius: 5px;
+}
+
+.form {
+  position: relative;
+  bottom: 540px;
+  left: 600px;
+  width: 562px;
+  height: 500px;
+  background: rgba(194, 193, 191, 0.75);
+}
+
+.section {
+  margin-bottom: 23px;
+}
+
+.labelTerms {
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  margin-left: 30px;
+}
+
+.termLink {
+  color: #fff;
+}
+
+.submit {
+  width: 130px;
+  border-radius: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+  border: none;
+  background: #fff;
+  color: #b18757;
+  padding: 10px;
+  height: 50px;
+  box-shadow: 0 15px 9.9px 0.1px rgba(0, 0, 0, 0.15);
+  margin-right: 25px;
+}
+
+.submit:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.soldier {
+  position: relative;
+}
+
+#form {
+  padding: 54px 80px 36px 55px;
+  margin-top: 40px;
+}
