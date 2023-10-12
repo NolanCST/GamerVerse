@@ -1,7 +1,11 @@
 import "./Footer.css";
 
 function Footer() {
-   return <div className="modifFooter">Je suis le footer</div>;
+  return (
+    <footer>
+      <p>&copy; 2023 GamerVerse FR, Inc. All rights reserved.</p>
+    </footer>
+  );
 }
 
 export default Footer;

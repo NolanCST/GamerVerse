@@ -1,12 +1,11 @@
-.modifFooter {
-   width: 100vw;
-   height: 8%;
-   color: white;
-   background-color: black;
-   bottom: 0;
-   position: fixed;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 40%;
+  padding: 1rem 2rem;
+  color: rgb(255, 255, 255);
 }
 
 * {
-   margin: 0;
+  margin: 0;
 }

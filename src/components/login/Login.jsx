@@ -65,7 +65,6 @@ export default function Login(props) {
 
   // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
 
-
   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
   return (
@@ -85,7 +84,7 @@ export default function Login(props) {
             value={email}
             type="text"
             onChange={handleInputEmail}
-            className="inputBox"
+            className="inputBox inputClass"
             placeholder="Pas d'email..pas de connexion!"
           />
           <label className="errorLabel">{emailError}</label>
@@ -97,10 +96,11 @@ export default function Login(props) {
             className="iconInput"
           />
           <input
+            id="loginPassword"
             value={password}
             type="password"
             onChange={handleInputPassword}
-            className="inputBox"
+            className="inputBox inputClass"
             placeholder="Par ici ton mdp...!"
           />
           <label className="errorLabel">{passwordError}</label>
@@ -114,6 +114,7 @@ export default function Login(props) {
             type="button"
             onClick={onButtonClick}
             value={"Connexion"}
+            id="loginButton"
           />
         </div>
         <div className="noAccountContainer">

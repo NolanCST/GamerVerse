@@ -1,115 +1,121 @@
 .mainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 30vw;
-    border-top: 3px solid teal;
-    margin-left: 35%;
-    /* margin-top: 10%; */
-    margin-bottom: 10%;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, #27222a, #2b252f, #302834, #342c3a, #392f3f);
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 30vw;
+  border-top: 3px solid teal;
+  margin-left: 35%;
+  /* margin-top: 10%; */
+  margin-bottom: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(
+    to right,
+    #27222a,
+    #2b252f,
+    #302834,
+    #342c3a,
+    #392f3f
+  );
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  opacity: 1;
 }
 
 .titleContainer {
-    display: flex;
-    flex-direction: column;
-    color: rgb(175, 179, 199);
-    font-size: 34px;
-    height: 60px;
-    font-weight: bolder;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  color: rgb(175, 179, 199);
+  font-size: 34px;
+  height: 60px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
 }
 
 .inputContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    border: none;   
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: none;
 }
 
 .inputContainer > .errorLabel {
-    color: red;
-    font-size: 12px;
-    margin-top: 4px;
-    font-style: italic;
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
 }
 
 .inputBox {
-    height: 48px;
-    width: 400px;
-    font-size: large;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    background: transparent;
-
+  height: 48px;
+  width: 400px;
+  font-size: large;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
 .iconInput {
-    position: absolute;
-    z-index: 1;
-    opacity: .5;
-    height: 36px;
+  position: absolute;
+  z-index: 1;
+  opacity: 0.5;
+  height: 36px;
 }
 
-input[type="password"] {
-    color: teal !important;
+.loginPassword[type="password"] {
+  color: teal !important;
 }
 
-input[type="text"], input[type="password"] {
-    color : #afb1be;
-    background: rgb(50, 54, 74);
-    width: 190px;
-    padding: 10px 65px;
-    margin-top: -2px;
-    outline: none;
-    border-left: none;
-    border-left: none;
-    border-top: 2px solid rgb(57, 61, 82);
-    border-bottom: 2px solid rgb(57, 61, 82);
-}
-
-.forgetContainer {
-    margin-top: 12px;
-}
-
-input[type="button"] {
-    border: none;
-    background-color: teal;
-    color: white;
-    padding: 12px 100px;
-    margin-top: 30px;
-    font-size: 24px;
-    border-radius: 27px;
-    cursor: pointer;
-    text-transform: uppercase;  
+.inputClass {
+  color: #afb1be;
+  background: rgb(50, 54, 74);
+  width: 190px;
+  padding: 10px 65px;
+  margin-top: -2px;
+  outline: none;
+  border-left: none;
+  border-left: none;
+  border-top: 2px solid rgb(57, 61, 82);
+  border-bottom: 2px solid rgb(57, 61, 82);
 }
 
 .forgetContainer {
-    color: rgb(175, 179, 199);
+  margin-top: 12px;
+}
+
+.loginButton {
+  border: none;
+  background-color: teal;
+  color: white;
+  padding: 12px 100px;
+  margin-top: 30px;
+  font-size: 24px;
+  border-radius: 27px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.forgetContainer {
+  color: rgb(175, 179, 199);
 }
 
 .noAccountContainer {
-    margin-top: 12px;
-    font-style: italic;
-    color: rgb(175, 179, 199);
+  margin-top: 12px;
+  font-style: italic;
+  color: rgb(175, 179, 199);
 }
 
 .noAccountContainer span {
-    font-style: normal;
-    font-weight: bolder;
-    color: rgb(175, 179, 199);
+  font-style: normal;
+  font-weight: bolder;
+  color: rgb(175, 179, 199);
 }
 
-input[type="button"]:hover {
-    background-color: #342c3a;
-    border: 2px solid teal;
-    color: teal;
+.loginButton:hover {
+  background-color: #342c3a;
+  border: 2px solid teal;
+  color: teal;
 }
