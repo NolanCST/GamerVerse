@@ -6,9 +6,9 @@
 .Background{
     height: 160vh;
     width: 100vw;
-    background-image: url('/images/gamer-doodle-seamless-pattern-vector-9367334.png');
+    /* background-image: url('/images/gamer-doodle-seamless-pattern-vector-9367334.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .title{
@@ -61,7 +61,7 @@ input, textarea:focus{
 }
 
 .profilInput{
-    background-color: rgba(137, 134, 152, 0.95);
+    background-color: rgba(137, 134, 152, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
