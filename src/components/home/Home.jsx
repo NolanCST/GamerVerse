@@ -3,12 +3,12 @@ import RenderHome from "./RenderHome";
 import "./Home.css";
 
 function Home() {
-  return (
-    <>
-      <NavBar />
-      <RenderHome />
-    </>
-  );
+   return (
+      <>
+         <NavBar />
+         <RenderHome />
+      </>
+   );
 }
 
 export default Home;

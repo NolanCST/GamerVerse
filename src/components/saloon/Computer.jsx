@@ -1,5 +1,7 @@
+import NavBar from "../layouts/NavBar";
+
 function Computer() {
-  return <NavBar />;
+   return <NavBar />;
 }
 
 export default Computer;
