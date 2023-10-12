@@ -1,11 +1,13 @@
 import React from "react";
+import NavBar from "../layouts/NavBar";
 
 function Computer() {
-   return(
-      <div className="main-post-title">
-      PC
-   </div>
-   )
-}
+   return (
+      <>
+        <NavBar />
+        <div className="main-post-title">PC</div>
+      </>
+    );
+  }
 
 export default Computer;

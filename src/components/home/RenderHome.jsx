@@ -26,7 +26,7 @@ function RenderHome() {
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                <Grid display="flex" justifyContent="center" item xs={6}>
                   <Card sx={{ maxWidth: 345 }}>
-                     <Link to="/PlaySation">
+                     <Link to="/PlayStation">
                         <CardActionArea>
                            <CardMedia component="img" image="/images/playstation.jpg" alt="PlayStation" />
                            <CardContent>

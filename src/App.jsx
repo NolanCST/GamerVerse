@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
-import Playstation from "./components/saloon/Playstation";
+import PlayStation from "./components/saloon/Playstation";
 import Home from "./components/home/Home";
 import Xbox from "./components/saloon/Xbox";
 import Switch from "./components/saloon/Switch";
@@ -19,8 +19,8 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/Playstation",
-      element: <Playstation />,
+      path: "/PlayStation",
+      element: <PlayStation />,
     },
     {
       path: "/Xbox",

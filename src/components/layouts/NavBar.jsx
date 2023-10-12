@@ -19,7 +19,8 @@ import { useNavigate } from "react-router-dom";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-const pages = ["Playstation", "Xbox", "Switch", "Computer"];
+const gamerverse = ["GAMERVERSE"];
+const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const settings = ["Profil", "Compte", "Déconnexion"];
 const darkTheme = createTheme({
    palette: {
@@ -54,13 +55,12 @@ function ResponsiveAppBar() {
          <ThemeProvider theme={darkTheme}>
             <AppBar position="static">
                <Container maxWidth="xl">
-                  <Toolbar disableGutters>
-                     <SportsEsportsIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-                     <Typography
+                  <Toolbar disableGutters>            
+                  <SportsEsportsIcon  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />  
+                  {gamerverse.map((Home) => (
+                     <Typography key={Home} onClick={handleCloseNavMenu}
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
                         sx={{
                            mr: 2,
                            display: { xs: "none", md: "flex" },
@@ -70,10 +70,13 @@ function ResponsiveAppBar() {
                            color: "inherit",
                            textDecoration: "none",
                         }}
-                     >
-                        GAMERVERSE
+                     > 
+                        <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
+                           {Home}
+                        </Link>
                      </Typography>
-
+                     ))}
+                     
                      <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
                            <MenuIcon />
