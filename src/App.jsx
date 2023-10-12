@@ -5,6 +5,7 @@ import Home from "./components/home/Home";
 import Xbox from "./components/saloon/Xbox";
 import Switch from "./components/saloon/Switch";
 import Computer from "./components/saloon/Computer";
+import ProfilPage from "./components/Profile/Profil";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,11 @@ function App() {
       path: "/Computer",
       element: <Computer />,
     },
+    {
+      path: "/ProfilPage",
+      element: <ProfilPage />,
+    },
+
   ]);
   return <RouterProvider router={router} />;
 }

@@ -19,6 +19,9 @@ function NavBar() {
         <nav>
           <Link to="/Computer">Computer</Link>
         </nav>
+        <nav>
+          <Link to="/ProfilPage">Profil</Link>
+        </nav>
       </div>
     </>
   );
