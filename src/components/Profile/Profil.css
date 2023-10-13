@@ -73,7 +73,7 @@ input, textarea:focus{
     margin-right: 23%;
 }
 
-.choise{
+.choix{
     display: flex;
     flex-direction: row;
 }

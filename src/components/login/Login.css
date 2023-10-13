@@ -84,6 +84,11 @@
 
 .forgetContainer {
   margin-top: 12px;
+
+  a{
+    color: rgb(96, 100, 121);
+    text-decoration: rgb(96, 100, 121)
+  }
 }
 
 .loginButton {

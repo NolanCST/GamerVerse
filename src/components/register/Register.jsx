@@ -52,7 +52,7 @@ function Register() {
                <div className="cont"></div>
                <div className="registerForm">
                   <form method="POST" id="registerForm">
-                     <h2 id="registerH2">S'INSCRIRE</h2>
+                     <h2 id="registerH2">INSCRIPTION</h2>
                      <br />
                      <div className="registerSection">
                         <input onChange={(e) => setLastname(e.target.value)} type="text" className="registerInput" name="lastname" id="lastname" placeholder="Nom" />
