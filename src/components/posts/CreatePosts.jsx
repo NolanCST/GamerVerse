@@ -1,8 +1,8 @@
 import { useState } from "react";
 import NavBar from "../layouts/NavBar";
-import "./POSTPosts.css";
+import "./createPosts.css";
 
-function POSTPosts() {
+function CreatePosts() {
    const [postTitle, setPostTitle] = useState("");
    const [postContent, setPostContent] = useState("");
 
@@ -19,7 +19,7 @@ function POSTPosts() {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
-            Authorization: "bearer token",
+            Authorization: "bearer " + localStorage.getItem("@TokenUser"),
          },
          body: JSON.stringify({
             title: postTitle,
@@ -29,9 +29,11 @@ function POSTPosts() {
 
       try {
          const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/post", options);
-         if (response.ok) {
-            const data = await response.json();
-            console.log(data);
+         console.log("reponse:", response);
+         const data = await response.json();
+         console.log(data);
+         if (data.success) {
+            alert("Votre post a la con qui vous a juste permis de vous sentir un peu mieux vient d'etre mis en ligne");
          } else {
             console.error("Échec de la requête HTTP");
          }
@@ -56,4 +58,4 @@ function POSTPosts() {
    );
 }
 
-export default POSTPosts;
+export default CreatePosts;

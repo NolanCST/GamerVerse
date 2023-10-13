@@ -82,6 +82,7 @@ export default function Login() {
          const data = await response.json();
          console.log(data);
          if (data.success) {
+            localStorage.setItem("@TokenUser", data.token);
             navigate("/"); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
          } else {
             setError(data.message || "Une erreur s'est produite.");
