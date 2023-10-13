@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <NavBar />
-      <div className="main-post-title">ACTUS CROSSPLATEFORM</div>
+      <div className="main-post-title"></div>
 
       <RenderHome />
     </>
