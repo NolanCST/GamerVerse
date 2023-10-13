@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { useState } from "react";
 import NavBar from "../layouts/NavBar";
 import "./createPosts.css";
@@ -5,6 +6,7 @@ import "./createPosts.css";
 function CreatePosts() {
    const [postTitle, setPostTitle] = useState("");
    const [postContent, setPostContent] = useState("");
+   const navigate = useNavigate();
 
    const handleInputChangeTitle = (e) => {
       setPostTitle(e.target.value);
@@ -29,11 +31,12 @@ function CreatePosts() {
 
       try {
          const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/post", options);
-         console.log("reponse:", response);
+
          const data = await response.json();
-         console.log(data);
+
          if (data.success) {
             alert("Votre post a la con qui vous a juste permis de vous sentir un peu mieux vient d'etre mis en ligne");
+            navigate("/PlayStation");
          } else {
             console.error("Échec de la requête HTTP");
          }

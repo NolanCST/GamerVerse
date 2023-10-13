@@ -1,29 +1,22 @@
 import { useEffect, useState } from "react";
 import RenderPosts from "./RenderPosts";
 
-function POSTPosts() {
+function Posts() {
    const [posts, setPosts] = useState([]);
 
    const getPosts = async () => {
-      let options = {
-         method: "POST",
-         Headers: {
+      const options = {
+         method: "GET",
+         headers: {
             "Content-Type": "application/json",
          },
       };
-      try {
-         const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/posts?limit=20", options);
-         if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            setPosts(data);
-         } else {
-            console.error("Échec de la requête HTTP");
-         }
-      } catch (error) {
-         console.error("Erreur lors de la requête : ", error);
-      }
+      const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/posts`, options);
+      const data = await response.json();
+      setPosts(data.posts);
    };
+
+   console.log(posts);
 
    useEffect(() => {
       getPosts();
@@ -46,4 +39,4 @@ function POSTPosts() {
    );
 }
 
-export default POSTPosts;
+export default Posts;

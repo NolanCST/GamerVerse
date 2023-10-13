@@ -26,7 +26,6 @@ function Register() {
             lastname: lastname,
          }),
       };
-      console.log("option", options);
 
       //Appel Api
       await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/register`, options)
