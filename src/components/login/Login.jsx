@@ -23,22 +23,6 @@ export default function Login() {
       setPassword(e.target.value);
    };
 
-   // // Vérifier si l'email à un compte associé à celui-ci
-
-   // // Dans l'affirmative, connectez-le
-   // if (condition) {
-   //   Login();
-   // } else {
-   //   //sinon, demandez à l'utilisateur s'il souhaite créer un nouveau compte et si oui, connectez-le
-   //   if (
-   //     window.confirm(
-   //       `Un compte n'existe pas avec cette adresse e-mail : ${email}. \n Voulez-vous créer un nouveau compte ?`
-   //     )
-   //   ) {
-   //     Login();
-   //   }
-   // }
-
    // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
    const getLogin = async (e) => {
       e.preventDefault();

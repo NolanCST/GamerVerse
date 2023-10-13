@@ -10,9 +10,39 @@ function Register() {
    const [firstname, setFirstname] = useState("");
    const [email, setEmail] = useState("");
    const navigate = useNavigate();
+   // Constante erreur
+   const [emailError, setEmailError] = useState("");
+   const [passwordError, setPasswordError] = useState("");
+   const [firstnameError, setFirstnameError] = useState("");
+   const [lastnameError, setLastnameError] = useState("");
 
    const handleRegister = async (e) => {
       e.preventDefault();
+
+      if ("" === email) {
+         setEmailError("Veuillez entrer votre email");
+         return;
+      }
+
+      if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+         setEmailError("Veuillez entrer un email valide");
+         return;
+      }
+
+      if ("" === password) {
+         setPasswordError("Veuillez entrer un mot de passe");
+         return;
+      }
+
+      if ("" === firstname) {
+         setFirstnameError("Veuillez entrer un prénom");
+         return;
+      }
+
+      if ("" === lastname) {
+         setLastnameError("Veuillez entrer un nom");
+         return;
+      }
 
       let options = {
          method: "POST",
@@ -32,7 +62,7 @@ function Register() {
          .then((response) => response.json()) // Récupère la réponse au format JSON
          .then((data) => {
             if (data.success) {
-               navigate("/");
+               navigate("/login");
             } else {
                alert(data.message);
             }
@@ -56,15 +86,19 @@ function Register() {
                      <br />
                      <div className="registerSection">
                         <input onChange={(e) => setLastname(e.target.value)} type="text" className="registerInput" name="lastname" id="lastname" placeholder="Nom" />
+                        <label className="errorLabel">{lastnameError}</label>
                      </div>
                      <div className="registerSection">
                         <input onChange={(e) => setFirstname(e.target.value)} type="text" className="registerInput" name="firstname" id="firstname" placeholder="Prénom" />
+                        <label className="errorLabel">{firstnameError}</label>
                      </div>
                      <div className="registerSection">
                         <input onChange={(e) => setEmail(e.target.value)} type="email" className="registerInput" name="email" id="email" placeholder="Email" />
+                        <label className="errorLabel">{emailError}</label>
                      </div>
                      <div className="registerSection">
                         <input onChange={(e) => setPassword(e.target.value)} type="password" className="registerInput" name="password" id="password" placeholder="Mot de passe" />
+                        <label className="errorLabel">{passwordError}</label>
                      </div>
                      <div className="registerSection">
                         <label className="checkbox">

@@ -54,7 +54,7 @@ function Posts() {
          return (
             <div key={index}>
                <RenderPosts title={element.title} content={element.content} likes={element.likes.length} />
-               <Likes Like={() => postsLike(element._id, index)} hasLiked={element.hasLiked} />
+               <Likes Like={() => postsLike(element._id, index)} />
             </div>
          );
       });
