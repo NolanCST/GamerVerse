@@ -1,57 +1,60 @@
-import { useState } from "react";
-import PutUser from "./PutUser";
+import { useState, useEffect } from "react";
+import View from "./View";
 
 function GetUser() {
-    
-    const [user,setUser] = useState([]);
+  const [user, setUser] = useState([]);
 
-    const getUser = async () => {
-        let options = {
-            method : "GET",
-           Headers: {
-            "Content-Type": "application/json", 
-            "Authorization": "bearer " + localStorage.getItem("@TokenUser"),
-           },
-        };
-           const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/profil?limit=20", options);
-              const data = await response.json();
+  useEffect(() => {
+    getUser();
+  }, []);
 
-              console.log(data);
+  const getUser = async () => {
+    let options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "bearer " + localStorage.getItem("@TokenUser"),
+      },
+    };
 
-              setUser(data);
-     };
+    console.log(options);
 
-     return(
-        <>
-        <div className="profilInput">
+    let response = await fetch(
+      "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
+      options
+    );
 
-            <h1 className="title">Profil</h1>
+    console.log("response:", response);
 
-            <div className="choix">
-                <select name="Plateforme" className="platform">
-                    <option value="Plateforme">Plateforme</option>
-                    <option value="playstation">Playstation</option>
-                    <option value="Xbox">Xbox</option>
-                    <option value="switch">Switch</option>
-                    <option value="Pc">PC</option>
-                </select>
-            </div>
+    let data = await response.json();
 
-            <div className="identity">
-                <input type="text" name="firstName" className="firstName" placeholder="Nom"/>
-                <input type="text" name="lastName" className="lastName" placeholder="Prénom"/>
-                <input type="number" name="age" className="age" placeholder="Âge" />
-            </div>
+    console.log(data);
 
-            <div className="mailInput">
-                <input type="text" name="email" className="email" placeholder="E-mail"/>
-                <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
-            </div>
+    setUser(data);
+  };
 
-            <button className="switchMdp">Modifier Profil</button>
+  console.log("user:", user);
+  console.log(user.firstname);
+
+  const renderProfil = () => {
+    return user.map((element, index) => {
+      return (
+        <div key={index}>
+          <View
+            lastname={element.lastname}
+            firstname={element.firstname}
+            email={element.email}
+          />
         </div>
-        </>
-     )
+      );
+    });
+  };
+
+  return (
+    <>
+      <div id="test">{renderProfil()}</div>
+    </>
+  );
 }
 
 export default GetUser;
