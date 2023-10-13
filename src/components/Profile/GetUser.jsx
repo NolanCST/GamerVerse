@@ -1,12 +1,8 @@
 import { useState, useEffect } from "react";
-import View from "./View";
+import View from "./View"
 
 function GetUser() {
   const [user, setUser] = useState([]);
-
-  useEffect(() => {
-    getUser();
-  }, []);
 
   const getUser = async () => {
     let options = {
@@ -17,7 +13,7 @@ function GetUser() {
       },
     };
 
-    console.log(options);
+    console.log("option:", options);
 
     let response = await fetch(
       "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
@@ -28,22 +24,31 @@ function GetUser() {
 
     let data = await response.json();
 
-    console.log(data);
+    console.log("data: ", data);
 
     setUser(data);
   };
 
   console.log("user:", user);
-  console.log(user.firstname);
+
+
+  useEffect(() => {
+    console.log("TEST1");
+    getUser();
+  }, []);
+
+ 
 
   const renderProfil = () => {
-    return user.map((element, index) => {
+    
+    return user?.map((element, index) => {
+        console.log("TEST2");
       return (
         <div key={index}>
           <View
-            lastname={element.lastname}
-            firstname={element.firstname}
             email={element.email}
+            firstname={element.firstname}
+            lastname={element.lastname}
           />
         </div>
       );
@@ -52,9 +57,13 @@ function GetUser() {
 
   return (
     <>
-      <div id="test">{renderProfil()}</div>
+        {user.map && user.length > 0 ? (
+        <div>{() => renderProfil()}</div>
+        ) : (
+        <p>Chargement en cours...</p>
+        )}
     </>
-  );
+);
 }
 
 export default GetUser;
