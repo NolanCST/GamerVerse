@@ -78,11 +78,12 @@ export default function Login() {
       //Appel Api
       try {
          const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/login`, options);
-
-         if (response.ok) {
+         console.log("response:", response);
+         const data = await response.json();
+         console.log(data);
+         if (data.success) {
             navigate("/"); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
          } else {
-            const data = await response.json();
             setError(data.message || "Une erreur s'est produite.");
          }
       } catch (error) {
