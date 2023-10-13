@@ -1,38 +1,11 @@
 import NavBar from "../layouts/NavBar";
 import Footer from "../layouts/Footer";
+import PutUser from "./PutUser";
+import GetUser from "./GetUser";
 import './Profil.css'
 import { useState } from "react";
 
-
 function ProfilPage (){
-
-    const [user,setUser] = useState([]);
-
-    const ModifProfil = () => {
-        
-    }
-
-    const getUser = async () => {
-        let options = {
-           Headers: {
-            "Content-Type": "application/json", 
-            "Authorization": "bearer token",
-           },
-        };
-        try {
-           const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/posts?limit=20", options);
-           if (response.ok) {
-              const data = await response.json();
-              console.log(data);
-              setUser(data);
-           } else {
-              console.error("Échec de la requête HTTP");
-           }
-        } catch (error) {
-           console.error("Erreur lors de la requête : ", error);
-        }
-     };
-
 
 return(
     <div className="Background">
@@ -64,7 +37,7 @@ return(
             <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
         </div>
         
-        <button className="switchMdp" onClick={ModifProfil}>Modifier Profil</button>
+        <button className="switchMdp">Modifier Profil</button>
     </div>
 
     <Footer/>
