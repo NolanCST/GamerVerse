@@ -1,69 +1,78 @@
-import { useState, useEffect } from "react";
-import View from "./View"
+import React, { useState, useEffect } from "react";
+import View from "./View";
 
 function GetUser() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
 
   const getUser = async () => {
     let options = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "bearer " + localStorage.getItem("@TokenUser"),
+        Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
       },
     };
 
-    console.log("option:", options);
+    console.log("options:", options);
 
-    let response = await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
-      options
-    );
+    try {
+      let response = await fetch(
+        "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
+        options
+      );
 
-    console.log("response:", response);
+      console.log("response:", response);
 
-    let data = await response.json();
-
-    console.log("data: ", data);
-
-    setUser(data);
+      if (response.ok) {
+        let data = await response.json();
+        console.log("data: ", data);
+        setUser(data);
+      } else {
+        console.error("Failed to fetch user data.");
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
   };
-
-  console.log("user:", user);
-
 
   useEffect(() => {
     console.log("TEST1");
     getUser();
   }, []);
 
- 
-
-  const renderProfil = () => {
-    
-    return user?.map((element, index) => {
-        console.log("TEST2");
-      return (
-        <div key={index}>
-          <View
-            email={element.email}
-            firstname={element.firstname}
-            lastname={element.lastname}
-          />
-        </div>
-      );
-    });
-  };
-
   return (
-    <>
-        {user.map && user.length > 0 ? (
-        <div>{() => renderProfil()}</div>
-        ) : (
-        <p>Chargement en cours...</p>
-        )}
-    </>
-);
+  <div className="profilInput">
+
+  <h1 className="title">Profil</h1>
+
+  <div className="choix">
+      <select name="Plateforme" className="platform">
+          <option value="Plateforme">Plateforme</option>
+          <option value="playstation">Playstation</option>
+          <option value="Xbox">Xbox</option>
+          <option value="switch">Switch</option>
+          <option value="Pc">PC</option>
+      </select>
+  </div>
+
+  <div className="identity">
+    <div>
+    Nom: {user.firstname}
+    </div>
+    <div>
+    Prénom :{user.firstname}
+    </div>
+  </div>
+
+  <div className="mailInput">
+  <div>
+    Mail :{user.email}
+    </div>
+      <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
+  </div>
+  </div>
+  )
+
 }
 
 export default GetUser;
