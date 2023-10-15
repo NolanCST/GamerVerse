@@ -12,7 +12,7 @@
   justify-content: center;
   letter-spacing: 1px;
   border-top: 3px solid teal;
-  background-image: linear-gradient(to right top, #333333, #39393a, #3f4042, #45464a, #4b4d52);  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  background-image: linear-gradient(to right top, #333333, #39393a);  box-shadow: 0 px 30px rgba(35, 35, 35, 0.1);
   opacity: 1;
 }
 

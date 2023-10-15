@@ -53,7 +53,7 @@ function Posts() {
       return posts?.map((element, index) => {
          return (
             <div key={index}>
-               <RenderPosts title={element.title} content={element.content} likes={element.likes.length} />
+               <RenderPosts title={element.title} date={element.date} content={element.content} likes={element.likes.length} />
                <Likes Like={() => postsLike(element._id, index)} />
             </div>
          );

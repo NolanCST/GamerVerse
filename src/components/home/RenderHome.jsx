@@ -3,11 +3,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea, Box, Stack, Divider } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import "./RenderHome.css";
 
@@ -21,7 +20,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function RenderHome() {
    return (
+      
       <div className="cardContainer">
+         <Stack direction="column" spacing={2} divider={<Divider orientation="vertical" flexItem />}>
          <Box sx={{ width: "100%" }}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                <Grid className="testOne" display="flex" justifyContent="center" item xs={6}>
@@ -31,7 +32,7 @@ function RenderHome() {
                            <CardMedia component="img" image="/images/playstation.jpg" alt="PlayStation" />
                            <CardContent>
                               <Typography gutterBottom variant="h5" component="div">
-                                 Référent(e)s : Zaïnab, Dennys, Aslinn
+                                 Modérateur : Dennys
                               </Typography>
                               <Typography variant="body2" >
                               </Typography>
@@ -47,7 +48,7 @@ function RenderHome() {
                            <CardMedia component="img" image="/images/Xbox.jpg" alt="Xbox" />
                            <CardContent>
                               <Typography gutterBottom variant="h5" component="div">
-                              Référent : Arnaud
+                              Modératrice : Zaïnab
                               </Typography>
                               <Typography variant="body2" color="text.secondary">
                               </Typography>
@@ -63,7 +64,7 @@ function RenderHome() {
                            <CardMedia component="img" image="/images/Switch.jpg" alt="Switch" />
                            <CardContent>
                               <Typography gutterBottom variant="h5" component="div">
-                                 Référente : Aslinn
+                                 Modératrice : Aslinn
                               </Typography>
                               <Typography variant="body2" color="text.secondary">
                               </Typography>
@@ -79,7 +80,7 @@ function RenderHome() {
                            <CardMedia component="img" image="/images/PC.jpg" alt="Computer" />
                            <CardContent>
                               <Typography gutterBottom variant="h5" component="div">
-                              Référent(e)s : Nono, Dennys, Aslinn
+                              Modérateur : Nono
                               </Typography>
                               <Typography variant="body2" color="text.secondary">
                               </Typography>
@@ -90,6 +91,7 @@ function RenderHome() {
                </Grid>
             </Grid>
          </Box>
+         </Stack>
       </div>
    );
 }
