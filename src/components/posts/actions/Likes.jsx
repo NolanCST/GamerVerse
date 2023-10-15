@@ -1,7 +1,7 @@
 function Likes(props) {
    return (
       <>
-         <button onClick={props.Like}>Coeur</button>
+         <button onClick={props.btnLike}>Coeur</button>
       </>
    );
 }
