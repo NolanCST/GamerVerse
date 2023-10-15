@@ -23,7 +23,7 @@ const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const logins = ["Connexion"];
 const registers = ["Inscription"];
-const settings = ["Profil", "Paramètres", "Déconnexion"];
+const settings = ["Profil", "Amis", "Déconnexion"];
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -129,7 +129,9 @@ function ResponsiveAppBar() {
                   ))}
                 </Menu>
               </Box>
-                <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+                <SportsEsportsIcon
+                sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+              />
                 <Typography
                   variant="h5"
                   noWrap
@@ -146,7 +148,7 @@ function ResponsiveAppBar() {
                     textDecoration: "none",
                   }}
                 >
-                  LOGO
+                  GAMERVERSE
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                   {pages.map((page) => (

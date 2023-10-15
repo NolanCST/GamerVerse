@@ -84,7 +84,7 @@ function Posts() {
       return posts?.map((element, index) => {
          return (
             <div key={index}>
-               <RenderPosts title={element.title} content={element.content} likes={element.likes.length} />
+               <RenderPosts title={element.title} date={element.date} content={element.content} likes={element.likes.length} />
                <Likes btnLike={() => postsLike(element._id, index)} />
                <Comments inputComments={(content) => postsComment(element._id, index, content)} />
             </div>

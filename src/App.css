@@ -4,4 +4,6 @@ body {
     /* width: 100vh; */
     font-size: 14px;
   font-weight: 600;
+  background-attachment: fixed;
+  width: auto;
 }
