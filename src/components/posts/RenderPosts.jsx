@@ -23,17 +23,18 @@ function RenderPosts(props) {
             title={props.title}
             subheader={props.date}
           />
-          <CardMedia
-            component="img"
-            height="10%"
-            image="https://www.tryagame.fr/wp-content/uploads/2023/05/1676385974-1953-capture-d-ecran.jpg"
-            alt="Zelda tokt"
-          />
           <CardContent>
             <Typography variant="body2" color="text.secondary">
             {props.content}
             </Typography>
           </CardContent>
+          <CardMedia
+            component="img"
+            height="240"
+            image="https://www.tryagame.fr/wp-content/uploads/2023/05/1676385974-1953-capture-d-ecran.jpg"
+            alt="Zelda tokt"
+          />
+          
           <CardActions disableSpacing>
             <IconButton  n aria-label="add to favorites">
             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{color:"#ff1744"}} />} />
