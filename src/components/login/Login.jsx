@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
-import Footer from "../layouts/Footer";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
+import SuccessAlert from "./SuccesAlert";
+import ErrorAlert from "./ErrorAlert";
 
 export default function Login() {
    const [email, setEmail] = useState("");
@@ -16,76 +17,69 @@ export default function Login() {
    const [emailError, setEmailError] = useState("");
    const [passwordError, setPasswordError] = useState("");
    const [showPassword, setShowPassword] = useState(false);
+   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+   const [showErrorAlert, setShowErrorAlert] = useState(false);
 
-  const handleInputEmail = (e) => {
-    setEmail(e.target.value);
-  };
+   const handleInputEmail = (e) => {
+      setEmail(e.target.value);
+   };
 
-  const handleInputPassword = (e) => {
-    setPassword(e.target.value);
-  };
+   const handleInputPassword = (e) => {
+      setPassword(e.target.value);
+   };
 
-  // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
-  const getLogin = async (e) => {
-    e.preventDefault();
+   // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
+   const getLogin = async (e) => {
+      e.preventDefault();
 
-    // définir les valeurs d'erreur
-    setEmailError("");
-    setPasswordError("");
+      // définir les valeurs d'erreur
+      setEmailError("");
+      setPasswordError("");
 
-    //vérifier si l'utilisateur a correctement saisi les 2 champs
-    if ("" === email) {
-      setEmailError("Veuillez entrer votre email");
-      return;
-    }
+      let options = {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+            email: email,
+            password: password,
+         }),
+      };
+      console.log("option", options);
 
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError("Veuillez entrer un email valide");
-      return;
-    }
+      //Appel Api
+      try {
+         const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/login`, options);
+         console.log("response:", response);
+         const data = await response.json();
+         console.log(data);
+         if (data.success) {
+            localStorage.setItem("@TokenUser", data.token);
+            setShowSuccessAlert(true);
+            setTimeout(() => {
+               setShowSuccessAlert(false);
+               navigate("/");
+            }, 2000);
+         } else {
+            setShowErrorAlert(true);
+            setTimeout(() => {
+               setShowErrorAlert(false);
+            }, 5000);
+            setError(data.message || "Une erreur s'est produite.");
+         }
+      } catch (error) {
+         setError("Une erreur s'est produite lors de la connexion.");
+      } // Utilise les données renvoyées par l'API
+   };
 
-    if ("" === password) {
-      setPasswordError("Veuillez entrer un mot de passe");
-      return;
-    }
-
-    let options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    };
-    console.log("option", options);
-
-    //Appel Api
-    try {
-      const response = await fetch(
-        `https://social-network-api.osc-fr1.scalingo.io/gamer-verse/login`,
-        options
-      );
-      console.log("response:", response);
-      const data = await response.json();
-      console.log(data);
-      if (data.success) {
-        localStorage.setItem("@TokenUser", data.token);
-        navigate("/"); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
-      } else {
-        setError(data.message || "Une erreur s'est produite.");
-      }
-    } catch (error) {
-      setError("Une erreur s'est produite lors de la connexion.");
-    } // Utilise les données renvoyées par l'API
-  };
-
-  // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
+   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
    return (
       <>
          <NavBar />
+         <SuccessAlert showSuccessAlert={showSuccessAlert} />
+         <ErrorAlert showErrorAlert={showErrorAlert} />
          <div className="mainContainer">
             <div className="titleContainer">
                <div>Connexion à votre compte</div>
@@ -97,12 +91,12 @@ export default function Login() {
             </div>
             <div className="inputContainer">
                <LockIcon fontSize="large" sx={{ color: "#ffffff" }} className="iconInput" />
-               <input id="loginPassword" value={password} type={showPassword ? "text": "password"} onChange={handleInputPassword} className="inputBox inputClass" placeholder="Par ici ton mdp...!" />
+               <input id="loginPassword" value={password} type={showPassword ? "text" : "password"} onChange={handleInputPassword} className="inputBox inputClass" placeholder="Par ici ton mdp...!" />
                <label>
-               <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
-               Afficher le mot de passe
+                  <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
+                  Afficher le mot de passe
                </label>
-               
+
                <label className="errorLabel">{passwordError}</label>
             </div>
             <div className="forgetContainer">
