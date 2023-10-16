@@ -5,7 +5,7 @@ function LogoutAlert({ showLogoutAlert }) {
    return (
       showLogoutAlert && (
          <Alert variant="filled" severity="error">
-            Vous vous êtes bien déconnecter.
+            Vous vous êtes bien déconnecter. Vous allez être redirigé vers la page de connexion.
          </Alert>
       )
    );

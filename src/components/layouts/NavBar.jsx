@@ -22,6 +22,7 @@ import LogoutAlert from "./LogoutAlert";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Alert } from "@mui/material";
 
+// const token = localStorage.getItem("@TokenUser");
 const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const logins = ["Connexion"];
@@ -43,6 +44,7 @@ function ResponsiveAppBar() {
    const [anchorElUser, setAnchorElUser] = useState(null);
    const navigate = useNavigate();
    const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+   const [token, setToken] = useState(localStorage.getItem("@TokenUser"));
 
    const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -64,6 +66,7 @@ function ResponsiveAppBar() {
       if (getout == true) {
          localStorage.clear();
          setShowLogoutAlert(true);
+         setToken(null); // Effacer le token dans l'état local
          setTimeout(() => {
             setShowLogoutAlert(false);
             navigate("/login");
@@ -193,57 +196,64 @@ function ResponsiveAppBar() {
                            {/* </Menu> */}
                         </Box>
 
-                        {logins.map((login) => (
-                           <Button
-                              key={login}
-                              onClick={handleCloseNavMenu}
-                              variant="contained"
-                              sx={{
-                                 my: 2,
-                                 color: "white",
-                                 backgroundColor: "teal",
-                                 display: "block",
-                              }}
-                           >
-                              <Link style={{ textDecoration: "none", color: "white" }} to={`/Login`}>
-                                 {login}
-                              </Link>
-                           </Button>
-                        ))}
-                        {registers.map((Register) => (
-                           <Button
-                              key={Register}
-                              onClick={handleCloseNavMenu}
-                              variant="outlined"
-                              sx={{
-                                 my: 2,
-                                 color: "teal",
-                                 border: " 2px solid teal",
-                                 display: "block",
-                              }}
-                           >
-                              <Link style={{ textDecoration: "none", color: "white" }} to={`/Register`}>
-                                 {Register}
-                              </Link>
-                           </Button>
-                        ))}
-                        {logouts.map((logout) => (
-                           <Button
-                              key={logout}
-                              onClick={handleClickLogout}
-                              variant="contained"
-                              sx={{
-                                 my: 2,
-                                 color: "white",
-                                 backgroundColor: "red",
-                                 display: "block",
-                              }}
-                           >
-                              <Link style={{ textDecoration: "none", color: "white" }} to={``}>
-                                 {logout}
-                              </Link>
-                           </Button>
-                        ))}
+                        {!token ? (
+                           <>
+                              {logins.map((login) => (
+                                 <Button
+                                    key={login}
+                                    onClick={handleCloseNavMenu}
+                                    variant="contained"
+                                    sx={{
+                                       my: 2,
+                                       color: "white",
+                                       backgroundColor: "teal",
+                                       display: "block",
+                                    }}
+                                 >
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={`/Login`}>
+                                       {login}
+                                    </Link>
+                                 </Button>
+                              ))}
+                              {registers.map((Register) => (
+                                 <Button
+                                    key={Register}
+                                    onClick={handleCloseNavMenu}
+                                    variant="outlined"
+                                    sx={{
+                                       my: 2,
+                                       color: "teal",
+                                       border: " 2px solid teal",
+                                       display: "block",
+                                    }}
+                                 >
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={`/Register`}>
+                                       {Register}
+                                    </Link>
+                                 </Button>
+                              ))}
+                           </>
+                        ) : (
+                           <>
+                              {logouts.map((logout) => (
+                                 <Button
+                                    key={logout}
+                                    onClick={handleClickLogout}
+                                    variant="contained"
+                                    sx={{
+                                       my: 2,
+                                       color: "white",
+                                       backgroundColor: "red",
+                                       display: "block",
+                                    }}
+                                 >
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={``}>
+                                       {logout}
+                                    </Link>
+                                 </Button>
+                              ))}
+                           </>
+                        )}
                      </Toolbar>
                   </Container>
                </AppBar>
