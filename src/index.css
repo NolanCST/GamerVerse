@@ -1,16 +1,12 @@
 #root {
-  position: relative;
-  background: no-repeat;
-  font-family: "Montserrat", sans-serif;
-<<<<<<< HEAD
-  
-=======
-  height: 100vh;
->>>>>>> cc63e1d08eaa5062006830860e5a436965c66b2a
+   position: relative;
+   background: no-repeat;
+   font-family: "Montserrat", sans-serif;
+   height: 100vh;
 }
 
 .main-post-title {
-  color: black;
-  font-size: 64px;
-  font-weight: bolder;
+   color: black;
+   font-size: 64px;
+   font-weight: bolder;
 }
