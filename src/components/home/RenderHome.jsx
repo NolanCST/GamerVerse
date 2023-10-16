@@ -30,7 +30,7 @@ function RenderHome() {
         flexWrap="wrap"
       >
         {/* <Box sx={{ width: "100%" }}> */}
-
+        <Chip label="PLAYS HAS NO LIMITS" color="primary"/>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid
             className="testOne"
@@ -41,7 +41,7 @@ function RenderHome() {
             md={3}
           >
             <Card sx={{ maxWidth: 300 }}>
-              <CardActionArea>
+              {/* <CardActionArea> */}
                 <Link
                   to="/PlayStation"
                   style={{ textDecoration: "none", color: "Black" }}
@@ -51,18 +51,18 @@ function RenderHome() {
                     image="/images/playstation.jpg"
                     alt="PlayStation"
                   />
-                  <CardContent>
+                  {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "PLAYS HAS NO LIMITS"
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       Modérateur : Dennys date dernier post nbre de post
                     </Typography>
-                  </CardContent>
-                  <Chip label="Final Fantasy 16" color="primary"/>
+                  </CardContent> */}
+                  
                   
                 </Link>
-              </CardActionArea>
+              {/* </CardActionArea> */}
             </Card>
           </Grid>
 
@@ -78,13 +78,13 @@ function RenderHome() {
                 to="/Xbox"
                 style={{ textDecoration: "none", color: "Black" }}
               >
-                <CardActionArea>
+   
                   <CardMedia
                     component="img"
                     image="/images/Xbox.jpg"
                     alt="Xbox"
                   />
-                  <CardContent>
+                  {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "POWER YOUR DREAMS"
                     </Typography>
@@ -92,7 +92,7 @@ function RenderHome() {
                       Modératrice : Zaïnab
                     </Typography>
                   </CardContent>
-                </CardActionArea>
+                </CardActionArea> */}
               </Link>
             </Card>
           </Grid>
@@ -109,13 +109,13 @@ function RenderHome() {
                 to="/Switch"
                 style={{ textDecoration: "none", color: "Black" }}
               >
-                <CardActionArea>
+                {/* <CardActionArea> */}
                   <CardMedia
                     component="img"
                     image="/images/Switch.jpg"
                     alt="Switch"
                   />
-                  <CardContent>
+                  {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "PLAY TOGETHER ANYTIME, ANYWHERE"
                     </Typography>
@@ -125,7 +125,7 @@ function RenderHome() {
                   </CardContent>
                   <Chip label="Hey ! Listen" style={{color:"red"}}/>
                   <Chip label="Zelda Botw / Zeldat tokt" sx={{bgcolor:"red", color:"white"}}/>
-                </CardActionArea>
+                </CardActionArea> */}
               </Link>
             </Card>
           </Grid>
@@ -142,21 +142,21 @@ function RenderHome() {
                 to="/Computer"
                 style={{ textDecoration: "none", color: "Black" }}
               >
-                <CardActionArea>
+                {/* <CardActionArea> */}
                   <CardMedia
                     component="img"
                     image="/images/PC.jpg"
                     alt="Computer"
                   />
-                  <CardContent>
+                  {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "THE WAY IT'S MEANT TO BE PLAYED"
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       Modérateur : Nono (Wario the winner !)
                     </Typography>
-                  </CardContent>
-                </CardActionArea>
+                //   </CardContent> */}
+                {/* // </CardActionArea> */}
               </Link>
             </Card>
           </Grid>
