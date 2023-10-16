@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import View from "./View";
 
 function GetUser() {
   const [user, setUser] = useState({});
@@ -57,6 +56,7 @@ function GetUser() {
       <div className="identity">
         <div>Nom: {user.firstname}</div>
         <div>Prénom :{user.firstname}</div>
+        <div>Age :{user.age}</div>
       </div>
 
       <div className="mailInput">

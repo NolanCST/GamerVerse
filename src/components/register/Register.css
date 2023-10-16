@@ -40,7 +40,7 @@ textarea {
 
 .checkmark {
   position: absolute;
-  top: 64.5%;
+  top: 24%;
   height: 12px;
   width: 12px;
   border: 2px solid #c9c9c9;
@@ -91,6 +91,8 @@ textarea {
 
 .registerSection {
   margin-bottom: 23px;
+  position: relative;
+  bottom: 20px;
 }
 
 .labelTerms {
@@ -116,11 +118,12 @@ textarea {
   color: white;
   padding: 10px;
   height: 50px;
-  /* font-weight: bold; */
   letter-spacing: 2px;
   box-shadow: 0 15px 9.9px 0.1px rgba(0, 0, 0, 0.15);
   margin-right: 25px;
   font-family: "Montserrat", sans-serif;
+  position: relative;
+  bottom: 25px;
 }
 
 .submit:hover {
@@ -135,7 +138,7 @@ textarea {
 
 #terms {
   position: absolute;
-  top: 64.5%;
+  top: 35%;
 }
 
 #registerH2 {
@@ -145,10 +148,16 @@ textarea {
   font-weight: 700;
   color: #465b6c;
   font-size: 36px;
+  position: relative;
+  bottom: 10px;
   margin-bottom: 10px;
 }
 
 #registerForm {
   padding: 54px 80px 36px 55px;
   margin-top: 40px;
+}
+
+#age {
+  width: 20%;
 }
