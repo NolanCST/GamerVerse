@@ -10,7 +10,6 @@ export default function Switch() {
   return (
     <>
       <NavBar />
-
       <Stack direction="row" spacing={0}
    useFlexGap flexWrap="wrap">
           {/* <Leftbar /> */}
