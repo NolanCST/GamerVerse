@@ -3,13 +3,7 @@
     padding: 0;
 }
 
-.Background{
-    height: 160vh;
-    width: 100vw;
-    /* background-image: url('/images/gamer-doodle-seamless-pattern-vector-9367334.png');
-    background-repeat: no-repeat;
-    background-size: cover; */
-}
+
 
 .title{
     color: #ffffff;
@@ -68,7 +62,7 @@ input, textarea:focus{
     align-items: center;
     gap: 30px;
     margin-top: 120px;
-    height: 85vh;
+    height: 75vh;
     margin-left: 23%;
     margin-right: 23%;
     border-radius: 4px;
@@ -145,6 +139,11 @@ input, textarea:focus{
     flex-direction: column;
 }
 
-
-
-    
+.editButton{
+    width: 7vw;
+    height: 5vh;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}

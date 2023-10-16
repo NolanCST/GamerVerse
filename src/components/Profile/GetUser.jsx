@@ -115,13 +115,17 @@ function GetUser() {
         <div className="identity">
           <div className="getFirstName">Nom: {user.firstname}</div>
           <div className="getLastName">Prénom: {user.lastname}</div>
-          <button onClick={() => setEditing(true)}>Modifier</button>
         </div>
       )}
 
       <div className="mailInput">
         <div className="getEmail">Mail: {user.email}</div>
       </div>
+
+      <div>
+        <button onClick={() => setEditing(true)} className="editButton">Modifier</button>
+      </div>
+
     </div>
   );
 }
