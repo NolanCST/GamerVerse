@@ -81,6 +81,8 @@ function Posts() {
       getPosts();
    }, []);
 
+   console.log(posts);
+
    const renderPosts = () => {
       return posts?.map((element, index) => {
          return (
