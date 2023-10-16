@@ -2,9 +2,8 @@
   width: 35%;
   height: 650px;
   position: absolute;
-  left: 0;
+  left: 30%;
   top: 150px;
-  right: 90px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -12,7 +11,8 @@
   justify-content: center;
   letter-spacing: 1px;
   border-top: 3px solid teal;
-  background-image: linear-gradient(to right top, #333333, #39393a);  box-shadow: 0 px 30px rgba(35, 35, 35, 0.1);
+  background-image: linear-gradient(to right top, #333333, #39393a);
+  box-shadow: 0 px 30px rgba(35, 35, 35, 0.1);
   opacity: 1;
 }
 
@@ -79,9 +79,8 @@
 .forgetContainer {
   margin-top: 12px;
 
-  a{
+  a {
     color: rgb(96, 100, 121);
-    
   }
 }
 
@@ -118,3 +117,29 @@
   border: 2px solid teal;
   color: teal;
 }
+
+.mario {
+  animation-name: my-animation;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: absolute;
+  left: 120%;
+  right: 0;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: +1;
+}
+
+/* @keyframes my-animation {
+  from {
+    width: 300px;
+    top: 10px;
+  }
+  to {
+    width: 300px;
+    top: 80px;
+  }
+} */
