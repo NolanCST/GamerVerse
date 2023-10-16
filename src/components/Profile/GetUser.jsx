@@ -71,8 +71,8 @@ function GetUser() {
 
   <div className="getEmail">
     Mail :{user.email}
-    </div>
-      <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
+    
+  </div>
   </div>
   </div>
   )

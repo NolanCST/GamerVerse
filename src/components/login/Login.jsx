@@ -15,6 +15,7 @@ export default function Login() {
    const [error, setError] = useState("");
    const [emailError, setEmailError] = useState("");
    const [passwordError, setPasswordError] = useState("");
+   const [showPassword, setShowPassword] = useState(false);
 
   const handleInputEmail = (e) => {
     setEmail(e.target.value);
@@ -96,7 +97,12 @@ export default function Login() {
             </div>
             <div className="inputContainer">
                <LockIcon fontSize="large" sx={{ color: "#ffffff" }} className="iconInput" />
-               <input id="loginPassword" value={password} type="password" onChange={handleInputPassword} className="inputBox inputClass" placeholder="Par ici ton mdp...!" />
+               <input id="loginPassword" value={password} type={showPassword ? "text": "password"} onChange={handleInputPassword} className="inputBox inputClass" placeholder="Par ici ton mdp...!" />
+               <label>
+               <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
+               Afficher le mot de passe
+               </label>
+               
                <label className="errorLabel">{passwordError}</label>
             </div>
             <div className="forgetContainer">
