@@ -39,7 +39,7 @@ function Posts() {
             if (hasLiked === false) {
                setHasLiked(true);
             } else {
-               // Il faut rajouter le code pour permettre de retirer le like
+               // Il faut rajouter le code pour permettre de retirer le like (Pas encore possible tant que Guillaume n'a pas rajoute la fonction dans l'api)
                setHasLiked(false);
             }
             getPosts();
@@ -85,15 +85,16 @@ function Posts() {
       return posts?.map((element, index) => {
          return (
             <div key={index}>
-               <RenderPosts title={element.title} date={element.date} content={element.content} likes={element.likes.length} btnLike={() => postsLike(element._id, index)} inputComments={(content) => postsComment(element._id, index, content)} />
-               {element.comments.map((items, index) => {
-                  console.log(items.content);
-                  return (
-                     <div key={index}>
-                        <Comments contentComment={items.content} />
-                     </div>
-                  );
-               })}
+               <RenderPosts
+                  title={element.title}
+                  date={element.date}
+                  content={element.content}
+                  likes={element.likes.length}
+                  btnLike={() => postsLike(element._id, index)}
+                  inputComments={(content) => postsComment(element._id, content)}
+                  comments={element.comments}
+                  numberComments={element.comments.length}
+               />
             </div>
          );
       });
