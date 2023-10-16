@@ -33,15 +33,29 @@ function RenderHome() {
           <img src="https://images2.alphacoders.com/131/1312941.jpg" alt="imageHome" className="imgMainHome"/>
         </div> */}
         {/* <Box sx={{ width: "100%" }}> */}
-        <Card >
+        {/* <Card >
       <CardMedia
         component="img"
         alt="ImageHome"
         height="300"
         width="400"
-        image="https://images2.alphacoders.com/131/1312941.jpg"
+        image="./images/smashbrosultimate.jpeg"
       />
-      </Card>
+      </Card> */}
+      <section class="container">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img id="slide-1" src="./images/smashbrosultimate.jpeg" alt="3D rendering of an imaginary orange planet in space" />
+          <img id="slide-2" src="./images/skyrim.png" alt="3D rendering of an imaginary green planet in space" />
+          <img id="slide-3" src="./images/Warriors.png" alt="3D rendering of an imaginary blue planet in space" />
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
+      </section>
       {/* <Tooltip title="Add" placement="right-start">
         <Chip label="PLAYS HAS NO LIMITS" color="primary"/>
         </Tooltip> */}
