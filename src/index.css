@@ -1,12 +1,12 @@
 #root {
-  position: relative;
-  background: no-repeat;
-  font-family: "Montserrat", sans-serif;
-  overflow: hidden;
+   position: relative;
+   background: no-repeat;
+   font-family: "Montserrat", sans-serif;
+   /* overflow: hidden; */
 }
 
 .main-post-title {
-  color: black;
-  font-size: 64px;
-  font-weight: bolder;
+   color: black;
+   font-size: 64px;
+   font-weight: bolder;
 }

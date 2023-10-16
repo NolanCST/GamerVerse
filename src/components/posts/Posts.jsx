@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import RenderPosts from "./RenderPosts";
-import Likes from "./actions/Likes";
 import Comments from "./actions/Comment";
 
 function Posts() {
    const [posts, setPosts] = useState([]);
-   const [content, setContent] = useState("");
+   const [hasLiked, setHasLiked] = useState(true);
 
    const getPosts = async () => {
       const options = {
@@ -21,7 +20,7 @@ function Posts() {
 
    console.log(posts);
 
-   const postsLike = async (postId, index) => {
+   const postsLike = async (postId) => {
       let options = {
          method: "POST",
          headers: {
@@ -37,9 +36,13 @@ function Posts() {
          const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/post/like`, options);
          const data = await response.json();
          if (data.success) {
-            const updatedLikes = [...posts];
-            updatedLikes[index].likes.push(data.newLike);
-            setPosts(updatedLikes);
+            if (hasLiked === false) {
+               setHasLiked(true);
+            } else {
+               // Il faut rajouter le code pour permettre de retirer le like
+               setHasLiked(false);
+            }
+            getPosts();
          } else {
             console.error("Échec de la requête HTTP");
          }
@@ -48,7 +51,7 @@ function Posts() {
       }
    };
 
-   const postsComment = async (postId, index, content) => {
+   const postsComment = async (postId, content) => {
       let options = {
          method: "POST",
          headers: {
@@ -65,9 +68,7 @@ function Posts() {
          const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/post/comment`, options);
          const data = await response.json();
          if (data.success) {
-            const updatedComments = [...posts];
-            updatedComments[index].comments.push(data.newComment);
-            setPosts(updatedComments);
+            getPosts();
          } else {
             console.error("Échec de la requête HTTP");
          }
@@ -84,17 +85,19 @@ function Posts() {
       return posts?.map((element, index) => {
          return (
             <div key={index}>
-               <RenderPosts title={element.title} date={element.date} content={element.content} likes={element.likes.length} />
-               <Likes btnLike={() => postsLike(element._id, index)} />
-               <Comments inputComments={(content) => postsComment(element._id, index, content)} />
+               <RenderPosts title={element.title} date={element.date} content={element.content} likes={element.likes.length} btnLike={() => postsLike(element._id, index)} inputComments={(content) => postsComment(element._id, index, content)} />
+               {element.comments.map((items, index) => {
+                  console.log(items.content);
+                  return (
+                     <div key={index}>
+                        <Comments contentComment={items.content} />
+                     </div>
+                  );
+               })}
             </div>
          );
       });
    };
-
-   useEffect(() => {
-      renderPosts();
-   }, [posts]);
 
    return (
       <>
