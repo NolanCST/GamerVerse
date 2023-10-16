@@ -1,7 +1,11 @@
 function Comments(props) {
    return (
       <ul>
-         <li>{props.contentComment}</li>
+         <li>
+            {props.firstnameComment} {props.lastnameComment}
+            <br></br>
+            {props.contentComment}
+         </li>
       </ul>
    );
 }

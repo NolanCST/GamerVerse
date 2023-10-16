@@ -16,46 +16,56 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { Alert } from "@mui/material";
+import LogoutAlert from "./LogoutAlert/LogoutAlert";
 
 const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const logins = ["Connexion"];
+const logouts = ["Déconnexion"];
 const registers = ["Inscription"];
-const settings = ["Profil", "Amis", "Déconnexion"];
+
+const avatar = ["Miaouss"];
 const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1976d2",
-    },
-  },
+   palette: {
+      mode: "dark",
+      primary: {
+         main: "#1976d2",
+      },
+   },
 });
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+   const [anchorElNav, setAnchorElNav] = useState(null);
+   const [anchorElUser, setAnchorElUser] = useState(null);
+   const [showLogoutAlert, setShowLogoutAlert] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+   const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+   };
+   const handleOpenUserMenu = (event) => {
+      setAnchorElUser(event.currentTarget);
+   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+   const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+   const handleCloseUserMenu = () => {
+      setAnchorElUser(null);
+   };
+
+   const handleClickLogout = () => {
+      setShowLogoutAlert(true);
+   };
 
   return (
     <Stack spacing={2} sx={{flexGrow: 1}}>
       <ThemeProvider theme={darkTheme}>
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <SportsEsportsIcon
@@ -173,7 +183,7 @@ function ResponsiveAppBar() {
                       <AccountCircleIcon fontSize="large" sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}/>
                     </IconButton>
                   </Tooltip>
-                  <Menu
+                  {/* <Menu
                     sx={{ mt: "45px" }}
                     id="menu-appbar"
                     anchorEl={anchorElUser}
@@ -189,12 +199,12 @@ function ResponsiveAppBar() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    {settings.map((setting) => (
+                    {/* {settings.map((setting) => (
                       <MenuItem key={setting} onClick={handleCloseUserMenu}>
                         <Typography textAlign="center">{setting}</Typography>
                       </MenuItem>
-                    ))}
-                  </Menu>
+                    ))} */}
+                  {/* </Menu> */} 
                 </Box>
 
                 {logins.map((login) => (
@@ -237,7 +247,26 @@ function ResponsiveAppBar() {
                     </Link>
                   </Button>
                 ))}
-           
+                         {logouts.map((logout) => (
+                  <Button
+                    key={logout}
+                    onClick={handleCloseNavMenu}
+                    variant="contained"
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      backgroundColor: "red",
+                      display: "block",                      
+                    }}
+                  >
+                    <Link
+                      style={{ textDecoration: "none", color: "white" }}
+                      to={``}
+                    >
+                      {logout}
+                    </Link>
+                  </Button>
+                ))}
             
             </Toolbar>
           </Container>

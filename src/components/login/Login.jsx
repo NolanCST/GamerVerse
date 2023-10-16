@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
-import Footer from "../layouts/Footer";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
+import SuccessAlert from "./SuccesAlert";
+import ErrorAlert from "./ErrorAlert";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,22 +34,6 @@ export default function Login() {
     setEmailError("");
     setPasswordError("");
 
-    //vérifier si l'utilisateur a correctement saisi les 2 champs
-    if ("" === email) {
-      setEmailError("Veuillez entrer votre email");
-      return;
-    }
-
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError("Veuillez entrer un email valide");
-      return;
-    }
-
-    if ("" === password) {
-      setPasswordError("Veuillez entrer un mot de passe");
-      return;
-    }
-
     let options = {
       method: "POST",
       headers: {
@@ -72,8 +57,16 @@ export default function Login() {
       console.log(data);
       if (data.success) {
         localStorage.setItem("@TokenUser", data.token);
-        navigate("/"); // Rediriger l'utilisateur vers la page d'accueil après la connexion réussie
+        setShowSuccessAlert(true);
+        setTimeout(() => {
+          setShowSuccessAlert(false);
+          navigate("/");
+        }, 2000);
       } else {
+        setShowErrorAlert(true);
+        setTimeout(() => {
+          setShowErrorAlert(false);
+        }, 5000);
         setError(data.message || "Une erreur s'est produite.");
       }
     } catch (error) {

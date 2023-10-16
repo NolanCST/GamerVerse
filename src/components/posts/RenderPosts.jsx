@@ -3,13 +3,15 @@ import { Avatar, Box, IconButton, Typography, Card, CardHeader, CardMedia, CardC
 import { red } from "@mui/material/colors";
 import { Favorite, Share, FavoriteBorder, MoreVert } from "@mui/icons-material";
 import { useState } from "react";
+import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
+import Comments from "./actions/Comment";
 
 function RenderPosts(props) {
    const [content, setContent] = useState("");
+   const [showCommentBox, setShowCommentBox] = useState(false); // État pour afficher ou masquer la zone de commentaire
 
    const handleCommentChange = (e) => {
       setContent(e.target.value);
-      console.log(e.target.value);
    };
 
    const submitComment = () => {
@@ -17,10 +19,15 @@ function RenderPosts(props) {
       setContent(""); // Réinitialise le champ de commentaire après l'envoi
    };
 
+   const toggleCommentBox = () => {
+      setShowCommentBox(!showCommentBox); // Inverser l'état pour afficher ou masquer la zone de commentaire
+   };
+
    return (
       <>
          <div className="infosPosts"></div>
-         <Card sx={{ margin: 5 }}>
+         <Box flex={4} p={2}>
+         <Card>
             <CardHeader
                avatar={
                   <Avatar sx={{ bgcolor: "purple" }} aria-label="recipe">
@@ -46,13 +53,29 @@ function RenderPosts(props) {
                   <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{ color: "#ff1744" }} />} />
                   {props.likes}
                </IconButton>
+               <IconButton aria-label="Comments" onClick={toggleCommentBox}>
+                  <ChatBubbleOutlineRoundedIcon />
+                  {props.numberComments}
+               </IconButton>
                <IconButton aria-label="share">
                   <Share />
                </IconButton>
             </CardActions>
-            <input type="text" value={content} onChange={handleCommentChange} placeholder="Commenter" />
-            <button onClick={submitComment}>Poster</button>
+            {showCommentBox && ( // Afficher le champ de commentaire et le bouton si showCommentBox est true
+               <div>
+                  <input type="text" value={content} onChange={handleCommentChange} placeholder="Commenter" />
+                  <button onClick={submitComment}>Poster</button>
+                  {props.comments.map((items, index) => {
+                     return (
+                        <div key={index}>
+                           <Comments contentComment={items.content} firstnameComment={items.firstname} lastnameComment={items.lastname} />
+                        </div>
+                     );
+                  })}
+               </div>
+            )}
          </Card>
+         </Box>
       </>
    );
 }
