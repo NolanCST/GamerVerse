@@ -9,3 +9,12 @@ body {
   position: relative;
   right: 50px;
 }
+
+.imageMainHome {
+  height: 2%;
+}
+
+.imageMainHome img {
+  width: 100%;
+  height: 5%;
+}

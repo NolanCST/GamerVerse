@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Box, Stack, Divider, Chip } from "@mui/material";
+import { CardActionArea, Box, Stack, Divider, Chip, Tooltip } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -29,9 +29,25 @@ function RenderHome() {
         useFlexGap
         flexWrap="wrap"
       >
+        {/* <div className="imageMainHome">
+          <img src="https://images2.alphacoders.com/131/1312941.jpg" alt="imageHome" className="imgMainHome"/>
+        </div> */}
         {/* <Box sx={{ width: "100%" }}> */}
+        <Card >
+      <CardMedia
+        component="img"
+        alt="ImageHome"
+        height="300"
+        width="400"
+        image="https://images2.alphacoders.com/131/1312941.jpg"
+      />
+      </Card>
+      {/* <Tooltip title="Add" placement="right-start">
         <Chip label="PLAYS HAS NO LIMITS" color="primary"/>
+        </Tooltip> */}
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+
+
           <Grid
             className="testOne"
             display="flex"
@@ -40,18 +56,18 @@ function RenderHome() {
             xs={12}
             md={3}
           >
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 250 }}>
               {/* <CardActionArea> */}
-                <Link
-                  to="/PlayStation"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/playstation.jpg"
-                    alt="PlayStation"
-                  />
-                  {/* <CardContent>
+              <Link
+                to="/PlayStation"
+                style={{ textDecoration: "none", color: "Black" }}
+              >
+                <CardMedia
+                  component="img"
+                  image="/images/playstation.jpg"
+                  alt="PlayStation"
+                />
+                {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "PLAYS HAS NO LIMITS"
                     </Typography>
@@ -59,9 +75,7 @@ function RenderHome() {
                       Modérateur : Dennys date dernier post nbre de post
                     </Typography>
                   </CardContent> */}
-                  
-                  
-                </Link>
+              </Link>
               {/* </CardActionArea> */}
             </Card>
           </Grid>
@@ -73,18 +87,17 @@ function RenderHome() {
             xs={12}
             md={3}
           >
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 250 }}>
               <Link
                 to="/Xbox"
                 style={{ textDecoration: "none", color: "Black" }}
               >
-   
-                  <CardMedia
-                    component="img"
-                    image="/images/Xbox.jpg"
-                    alt="Xbox"
-                  />
-                  {/* <CardContent>
+                <CardMedia
+                  component="img"
+                  image="/images/Xbox.jpg"
+                  alt="Xbox"
+                />
+                {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "POWER YOUR DREAMS"
                     </Typography>
@@ -104,18 +117,18 @@ function RenderHome() {
             xs={12}
             md={3}
           >
-            <Card sx={{ maxWidth: 300 }}>
+            <Card sx={{ maxWidth: 250 }}>
               <Link
                 to="/Switch"
                 style={{ textDecoration: "none", color: "Black" }}
               >
                 {/* <CardActionArea> */}
-                  <CardMedia
-                    component="img"
-                    image="/images/Switch.jpg"
-                    alt="Switch"
-                  />
-                  {/* <CardContent>
+                <CardMedia
+                  component="img"
+                  image="/images/Switch.jpg"
+                  alt="Switch"
+                />
+                {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "PLAY TOGETHER ANYTIME, ANYWHERE"
                     </Typography>
@@ -137,18 +150,18 @@ function RenderHome() {
             xs={12}
             md={3}
           >
-            <Card sx={{ maxWidth: 300, boxShadow: 3 }}>
+            <Card sx={{ maxWidth: 250, boxShadow: 3 }}>
               <Link
                 to="/Computer"
                 style={{ textDecoration: "none", color: "Black" }}
               >
                 {/* <CardActionArea> */}
-                  <CardMedia
-                    component="img"
-                    image="/images/PC.jpg"
-                    alt="Computer"
-                  />
-                  {/* <CardContent>
+                <CardMedia
+                  component="img"
+                  image="/images/PC.jpg"
+                  alt="Computer"
+                />
+                {/* <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                       "THE WAY IT'S MEANT TO BE PLAYED"
                     </Typography>
