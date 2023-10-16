@@ -22,6 +22,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const logins = ["Connexion"];
+const logouts = ["Déconnexion"];
 const registers = ["Inscription"];
 const settings = ["Profil", "Amis", "Déconnexion"];
 const darkTheme = createTheme({
@@ -173,7 +174,7 @@ function ResponsiveAppBar() {
                       <AccountCircleIcon fontSize="large" sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}/>
                     </IconButton>
                   </Tooltip>
-                  <Menu
+                  {/* <Menu
                     sx={{ mt: "45px" }}
                     id="menu-appbar"
                     anchorEl={anchorElUser}
@@ -189,12 +190,12 @@ function ResponsiveAppBar() {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    {settings.map((setting) => (
+                    {/* {settings.map((setting) => (
                       <MenuItem key={setting} onClick={handleCloseUserMenu}>
                         <Typography textAlign="center">{setting}</Typography>
                       </MenuItem>
-                    ))}
-                  </Menu>
+                    ))} */}
+                  {/* </Menu> */} 
                 </Box>
 
                 {logins.map((login) => (
@@ -237,7 +238,26 @@ function ResponsiveAppBar() {
                     </Link>
                   </Button>
                 ))}
-           
+                         {logouts.map((logout) => (
+                  <Button
+                    key={logout}
+                    onClick={handleCloseNavMenu}
+                    variant="contained"
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      backgroundColor: "red",
+                      display: "block",                      
+                    }}
+                  >
+                    <Link
+                      style={{ textDecoration: "none", color: "white" }}
+                      to={``}
+                    >
+                      {logout}
+                    </Link>
+                  </Button>
+                ))}
             
             </Toolbar>
           </Container>

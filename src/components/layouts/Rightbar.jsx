@@ -16,7 +16,7 @@ import React from "react";
 export default function Rightbar() {
   return (
     <Box
-    bgcolor="white"
+    bgcolor="inherit"
     width={300}
     flex={2}
       p={2}
