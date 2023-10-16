@@ -21,7 +21,8 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import LogoutAlert from "./LogoutAlert";
+import LogoutAlert from "../Alerts/LogoutAlert";
+import NeedConnexionAlert from "../Alerts/NeedConnexionAlert";
 import { Alert } from "@mui/material";
 
 // const token = localStorage.getItem("@TokenUser");
@@ -35,291 +36,267 @@ const registers = ["Inscription"];
 
 // Palette de la navbar
 const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1976d2",
-    },
-  },
+   palette: {
+      mode: "dark",
+      primary: {
+         main: "#1976d2",
+      },
+   },
 });
 
 //NavBar
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
-  const navigate = useNavigate();
-  const [showLogoutAlert, setShowLogoutAlert] = useState(false);
-  const [token, setToken] = useState(localStorage.getItem("@TokenUser"));
+   const [anchorElNav, setAnchorElNav] = useState(null);
+   const [anchorElUser, setAnchorElUser] = useState(null);
+   const navigate = useNavigate();
+   const [showLogoutAlert, setShowLogoutAlert] = useState(false);
+   const [token, setToken] = useState(localStorage.getItem("@TokenUser"));
+   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+   const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+   };
+   const handleOpenUserMenu = (event) => {
+      setAnchorElUser(event.currentTarget);
+   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+   const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+   const handleButtonClick = () => {
+      setIsButtonClicked(true);
+   };
 
-  const handleClickLogout = () => {
-    const getout = confirm(
-      "Voulez-vous reellement quittez cet endroit incroyable ?"
-    );
-    if (getout == true) {
-      localStorage.clear();
-      setShowLogoutAlert(true);
-      setToken(null); // Effacer le token dans l'état local
-      setTimeout(() => {
-        setShowLogoutAlert(false);
-        navigate("/login");
-      }, 2000);
-    }
-  };
+   const handleCloseUserMenu = () => {
+      setAnchorElUser(null);
+   };
 
-  return (
-    <> 
-    {/* Box de gauche */}
-      <Stack spacing={2} sx={{ flexGrow: 1 }}>
-        <Box flex={4} justifyContent="space-between">
-          <ThemeProvider theme={darkTheme}>
-            <AppBar position="fixed">
-              <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                  <SportsEsportsIcon
-                    sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-                  />
-                  {gamerverse.map((Home) => (
-                    <Typography
-                      key={Home}
-                      onClick={handleCloseNavMenu}
-                      variant="h6"
-                      noWrap
-                      sx={{
-                        mr: 2,
-                        display: { xs: "none", md: "flex" },
-                        fontFamily: "monospace",
-                        fontWeight: 700,
-                        letterSpacing: ".3rem",
-                        color: "inherit",
-                        textDecoration: "none",
-                      }}
-                    >
-                      <Link
-                        style={{ textDecoration: "none", color: "white" }}
-                        to={`/`}
-                      >
-                        {Home}
-                      </Link>
-                    </Typography>
-                  ))}
+   const handleClickLogout = () => {
+      const getout = confirm("Voulez-vous reellement quittez cet endroit incroyable ?");
+      if (getout == true) {
+         localStorage.clear();
+         setShowLogoutAlert(true);
+         setToken(null); // Effacer le token dans l'état local
+         setTimeout(() => {
+            setShowLogoutAlert(false);
+            navigate("/login");
+         }, 2000);
+      }
+   };
 
-                  <Box
-                    sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-                  >
-                    <IconButton
-                      size="large"
-                      aria-label="account of current user"
-                      aria-controls="menu-appbar"
-                      aria-haspopup="true"
-                      onClick={handleOpenNavMenu}
-                      color="inherit"
-                    >
-                      <MenuIcon />
-                    </IconButton>
-                    <Menu
-                      id="menu-appbar"
-                      anchorEl={anchorElNav}
-                      anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "left",
-                      }}
-                      keepMounted
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "left",
-                      }}
-                      open={Boolean(anchorElNav)}
-                      onClose={handleCloseNavMenu}
-                      sx={{
-                        display: { xs: "block", md: "none" },
-                      }}
-                    >
-                      {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
-                          <Typography textAlign="center">
-                            <Link
-                              style={{ textDecoration: "none", color: "white" }}
-                              to={`/${page}`}
-                            >
-                              {page}
-                            </Link>
-                          </Typography>
-                        </MenuItem>
-                      ))}
-                    </Menu>
-                  </Box>
-                  <Link to={`/`}>
-                  <SportsEsportsIcon
-                    sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-                  />
-                  </Link>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    component="a"
-                    href="#app-bar-with-responsive-menu"
-                    sx={{
-                      mr: 2,
-                      display: { xs: "flex", md: "none" },
-                      flexGrow: 1,
-                      fontFamily: "monospace",
-                      fontWeight: 700,
-                      letterSpacing: ".3rem",
-                      color: "inherit",
-                      textDecoration: "none",
-                    }}
-                  >
-                    
-                  </Typography>
-                  <Box
-                    sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
-                  >
-                    {pages.map((page) => (
-                      <Button
-                        key={page}
-                        onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: "white", display: "block" }}
-                      >
-                        <Link
-                          style={{ textDecoration: "none", color: "white" }}
-                          to={`/${page}`}
-                        >
-                          {page}
-                        </Link>
-                      </Button>
-                    ))}
-                  </Box>
-
-                  {/* Box de droite */}
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "flex-end",
-                    }}
-                  >
-                    <Box style={{ alignSelf: "center" }}>
-                      <Tooltip title="Vers ton profil">
-                      {!token ? (
-                          <IconButton>
-                            <AccountCircleIcon fontSize="large" />                            
-                          </IconButton>
-                      ) : (
-                        <Link to={`/ProfilPage`}>
-                          <IconButton>
-                            <AccountCircleIcon fontSize="large" />                            
-                          </IconButton>
-                          </Link>
-                        )}
-                      </Tooltip>
-                    </Box>
-
-                    {!token ? (
-                      <>
-                        <Box style={{ marginRight: 10 }}>
-                          {logins.map((login) => (
-                            <Button
-                              key={login}
-                              onClick={handleCloseNavMenu}
-                              variant="contained"
-                              sx={{
-                                my: 2,
-                                color: "white",
-                                backgroundColor: "teal",
-                                display: "block",
-                              }}
-                            >
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                                to={`/Login`}
+   return (
+      <>
+         {/* Box de gauche */}
+         <Stack spacing={2} sx={{ flexGrow: 1 }}>
+            <Box flex={4} justifyContent="space-between">
+               <ThemeProvider theme={darkTheme}>
+                  <AppBar position="fixed">
+                     <Container maxWidth="xl">
+                        <Toolbar disableGutters>
+                           <SportsEsportsIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+                           {gamerverse.map((Home) => (
+                              <Typography
+                                 key={Home}
+                                 onClick={handleCloseNavMenu}
+                                 variant="h6"
+                                 noWrap
+                                 sx={{
+                                    mr: 2,
+                                    display: { xs: "none", md: "flex" },
+                                    fontFamily: "monospace",
+                                    fontWeight: 700,
+                                    letterSpacing: ".3rem",
+                                    color: "inherit",
+                                    textDecoration: "none",
+                                 }}
                               >
-                                {login}
-                              </Link>
-                            </Button>
-                          ))}
-                        </Box>
-                        <Box>
-                          {registers.map((Register) => (
-                            <Button
-                              key={Register}
-                              onClick={handleCloseNavMenu}
-                              variant="outlined"
-                              sx={{
-                                my: 2,
-                                color: "teal",
-                                border: " 1px solid teal",
-                                display: "block",
-                              }}
-                            >
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                                to={`/Register`}
+                                 <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
+                                    {Home}
+                                 </Link>
+                              </Typography>
+                           ))}
+
+                           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                              <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
+                                 <MenuIcon />
+                              </IconButton>
+                              <Menu
+                                 id="menu-appbar"
+                                 anchorEl={anchorElNav}
+                                 anchorOrigin={{
+                                    vertical: "bottom",
+                                    horizontal: "left",
+                                 }}
+                                 keepMounted
+                                 transformOrigin={{
+                                    vertical: "top",
+                                    horizontal: "left",
+                                 }}
+                                 open={Boolean(anchorElNav)}
+                                 onClose={handleCloseNavMenu}
+                                 sx={{
+                                    display: { xs: "block", md: "none" },
+                                 }}
                               >
-                                {Register}
-                              </Link>
-                            </Button>
-                          ))}
-                        </Box>
-                      </>
-                    ) : (
-                      <>
-                        <Box>
-                          {logouts.map((logout) => (
-                            <Button
-                              key={logout}
-                              onClick={handleClickLogout}
-                              variant="contained"
+                                 {pages.map((page) => (
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                       <Typography textAlign="center">
+                                          <Link style={{ textDecoration: "none", color: "white" }} to={`/${page}`}>
+                                             {page}
+                                          </Link>
+                                       </Typography>
+                                    </MenuItem>
+                                 ))}
+                              </Menu>
+                           </Box>
+                           <Link to={`/`}>
+                              <SportsEsportsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+                           </Link>
+                           <Typography
+                              variant="h5"
+                              noWrap
+                              component="a"
+                              href="#app-bar-with-responsive-menu"
                               sx={{
-                                my: 2,
-                                color: "white",
-                                backgroundColor: "red",
-                                display: "block",
+                                 mr: 2,
+                                 display: { xs: "flex", md: "none" },
+                                 flexGrow: 1,
+                                 fontFamily: "monospace",
+                                 fontWeight: 700,
+                                 letterSpacing: ".3rem",
+                                 color: "inherit",
+                                 textDecoration: "none",
                               }}
-                            >
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                                to={``}
-                              >
-                                {logout}
-                              </Link>
-                            </Button>
-                          ))}
-                        </Box>
-                      </>
-                    )}
-                  </Box>
-                </Toolbar>
-              </Container>
-            </AppBar>
-          </ThemeProvider>
-        </Box>
-      </Stack>
-      <LogoutAlert showLogoutAlert={showLogoutAlert} />
-    </>
-  );
+                           ></Typography>
+                           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                              {pages.map((page) => (
+                                 <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
+                                    <Link style={{ textDecoration: "none", color: "white" }} to={`/${page}`}>
+                                       {page}
+                                    </Link>
+                                 </Button>
+                              ))}
+                           </Box>
+
+                           {/* Box de droite */}
+                           <Box
+                              sx={{
+                                 display: "flex",
+                                 flexDirection: "row",
+                                 justifyContent: "flex-end",
+                              }}
+                           >
+                              <Box style={{ alignSelf: "center" }}>
+                                 <Tooltip title="Vers ton profil">
+                                    {!token ? (
+                                       <div>
+                                          <IconButton onClick={handleButtonClick}>
+                                             <AccountCircleIcon fontSize="large" />
+                                          </IconButton>
+                                          {isButtonClicked && <NeedConnexionAlert />}
+                                       </div>
+                                    ) : (
+                                       <Link to={`/ProfilPage`}>
+                                          <IconButton>
+                                             <AccountCircleIcon fontSize="large" />
+                                          </IconButton>
+                                       </Link>
+                                    )}
+                                 </Tooltip>
+                              </Box>
+
+                              {!token ? (
+                                 <>
+                                    <Box style={{ marginRight: 10 }}>
+                                       {logins.map((login) => (
+                                          <Button
+                                             key={login}
+                                             onClick={handleCloseNavMenu}
+                                             variant="contained"
+                                             sx={{
+                                                my: 2,
+                                                color: "white",
+                                                backgroundColor: "teal",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={`/Login`}
+                                             >
+                                                {login}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                    <Box>
+                                       {registers.map((Register) => (
+                                          <Button
+                                             key={Register}
+                                             onClick={handleCloseNavMenu}
+                                             variant="outlined"
+                                             sx={{
+                                                my: 2,
+                                                color: "teal",
+                                                border: " 1px solid teal",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={`/Register`}
+                                             >
+                                                {Register}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                 </>
+                              ) : (
+                                 <>
+                                    <Box>
+                                       {logouts.map((logout) => (
+                                          <Button
+                                             key={logout}
+                                             onClick={handleClickLogout}
+                                             variant="contained"
+                                             sx={{
+                                                my: 2,
+                                                color: "white",
+                                                backgroundColor: "red",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={``}
+                                             >
+                                                {logout}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                 </>
+                              )}
+                           </Box>
+                        </Toolbar>
+                     </Container>
+                  </AppBar>
+               </ThemeProvider>
+            </Box>
+         </Stack>
+         <LogoutAlert showLogoutAlert={showLogoutAlert} />
+      </>
+   );
 }
 export default ResponsiveAppBar;

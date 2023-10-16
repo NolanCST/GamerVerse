@@ -7,8 +7,8 @@ import NavBar from "../layouts/NavBar";
 import Footer from "../layouts/Footer";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
-import SuccessAlert from "./SuccesAlert";
-import ErrorAlert from "./ErrorAlert";
+import SuccessAlert from "../Alerts/SuccesAlert";
+import ErrorAlert from "../Alerts/ErrorAlert";
 
 export default function Login() {
    const [email, setEmail] = useState("");
