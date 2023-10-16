@@ -5,7 +5,7 @@ function SuccessAlert({ showSuccessAlert }) {
    return (
       showSuccessAlert && (
          <Alert variant="filled" severity="success">
-            Vous êtes connecté
+            Vous êtes connecté.
          </Alert>
       )
    );
