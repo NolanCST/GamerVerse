@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
+import Footer from "../layouts/Footer";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 import SuccessAlert from "./SuccesAlert";
@@ -149,6 +150,7 @@ export default function Login() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
