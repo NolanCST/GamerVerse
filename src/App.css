@@ -1,8 +1,15 @@
 body {
-    background-image: linear-gradient(to bottom, #898698, #a4a1b1, #c0bdca, #dddae4, #faf8ff);
-    line-height: 1.8;
-    /* width: 100vh; */
-    font-size: 14px;
+  background-image: linear-gradient(
+    to bottom,
+    #898698,
+    #a4a1b1,
+    #c0bdca,
+    #dddae4,
+    #faf8ff
+  );
+  line-height: 1.8;
+  /* width: 100vh; */
+  font-size: 14px;
   font-weight: 600;
   background-attachment: fixed;
   width: auto;
