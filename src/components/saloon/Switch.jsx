@@ -10,7 +10,7 @@ export default function Switch() {
   return (
     <>
       <NavBar />
-      <div className="main-post-title">SWITCH</div>
+      <div className="main-post-title">SWITCH
       <Stack
         direction="row"
         spacing={2}
@@ -26,6 +26,7 @@ export default function Switch() {
       </Stack>
       {/* <div className="main-post-title">SWITCH</div> */}
       <Footer />
+      </div>
     </>
   );
 }
