@@ -41,20 +41,19 @@ function GetUser() {
   }, []);
 
   return (
-    
   <div className="profilInput">
 
   <h1 className="title">Profil</h1>
 
-  <div className="choix">
-      <select name="Plateforme" className="platform">
+      <div className="choix">
+        <select name="Plateforme" className="platform">
           <option value="Plateforme">Plateforme</option>
           <option value="playstation">Playstation</option>
           <option value="Xbox">Xbox</option>
           <option value="switch">Switch</option>
           <option value="Pc">PC</option>
-      </select>
-  </div>
+        </select>
+      </div>
 
   <div className="identity">
 
@@ -73,17 +72,8 @@ function GetUser() {
   <div className="getEmail">
     Mail :{user.email}
     </div>
-
-    <div className="password">
-      <input type={showPassword ? "text": "password"} className="Mdp" placeholder="Mot de passe"/>
-      <label htmlFor="checkbox">
-        <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
-        Afficher le mot de passe
-      </label>
-    </div>
-
+      <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
   </div>
-      
   </div>
   )
 

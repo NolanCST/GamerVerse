@@ -2,7 +2,11 @@
   position: relative;
   background: no-repeat;
   font-family: "Montserrat", sans-serif;
+<<<<<<< HEAD
   
+=======
+  height: 100vh;
+>>>>>>> cc63e1d08eaa5062006830860e5a436965c66b2a
 }
 
 .main-post-title {

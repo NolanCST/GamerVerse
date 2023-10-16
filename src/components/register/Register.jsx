@@ -5,70 +5,80 @@ import NavBar from "../layouts/NavBar";
 import Footer from "../layouts/Footer";
 
 function Register() {
-   const [password, setPassword] = useState("");
-   const [lastname, setLastname] = useState("");
-   const [firstname, setFirstname] = useState("");
-   const [email, setEmail] = useState("");
-   const navigate = useNavigate();
-   // Constante erreur
-   const [emailError, setEmailError] = useState("");
-   const [passwordError, setPasswordError] = useState("");
-   const [firstnameError, setFirstnameError] = useState("");
-   const [lastnameError, setLastnameError] = useState("");
-   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
+  const navigate = useNavigate();
+  // Constante erreur
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [firstnameError, setFirstnameError] = useState("");
+  const [lastnameError, setLastnameError] = useState("");
+  const [ageError, setAgeError] = useState("");
 
-   const handleRegister = async (e) => {
-      e.preventDefault();
+  const handleRegister = async (e) => {
+    e.preventDefault();
 
-      if ("" === email) {
-         setEmailError("Veuillez entrer votre email");
-         return;
-      }
+    if ("" === email) {
+      setEmailError("Veuillez entrer votre email");
+      return;
+    }
 
-      if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-         setEmailError("Veuillez entrer un email valide");
-         return;
-      }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError("Veuillez entrer un email valide");
+      return;
+    }
 
-      if ("" === password) {
-         setPasswordError("Veuillez entrer un mot de passe");
-         return;
-      }
+    if ("" === password) {
+      setPasswordError("Veuillez entrer un mot de passe");
+      return;
+    }
 
-      if ("" === firstname) {
-         setFirstnameError("Veuillez entrer un prénom");
-         return;
-      }
+    if ("" === firstname) {
+      setFirstnameError("Veuillez entrer un prénom");
+      return;
+    }
 
-      if ("" === lastname) {
-         setLastnameError("Veuillez entrer un nom");
-         return;
-      }
+    if ("" === lastname) {
+      setLastnameError("Veuillez entrer un nom");
+      return;
+    }
 
-      let options = {
-         method: "POST",
-         headers: {
-            "Content-Type": "application/json",
-         },
-         body: JSON.stringify({
-            email: email,
-            password: password,
-            firstname: firstname,
-            lastname: lastname,
-         }),
-      };
+    if ("" === age) {
+      setAgeError("Veuillez entrer un âge");
+      return;
+    }
 
-      //Appel Api
-      await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/register`, options)
-         .then((response) => response.json()) // Récupère la réponse au format JSON
-         .then((data) => {
-            if (data.success) {
-               navigate("/login");
-            } else {
-               alert(data.message);
-            }
-         }); // Utilise les données renvoyées par l'API
-   };
+    let options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        firstname: firstname,
+        lastname: lastname,
+        age: age,
+      }),
+    };
+
+    //Appel Api
+    await fetch(
+      `https://social-network-api.osc-fr1.scalingo.io/gamer-verse/register`,
+      options
+    )
+      .then((response) => response.json()) // Récupère la réponse au format JSON
+      .then((data) => {
+        if (data.success) {
+          navigate("/login");
+        } else {
+          alert(data.message);
+        }
+      }); // Utilise les données renvoyées par l'API
+  };
 
    return (
       <>
@@ -98,11 +108,7 @@ function Register() {
                         <label className="errorLabel">{emailError}</label>
                      </div>
                      <div className="registerSection">
-                        <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text": "password"} className="registerInput" name="password" id="password" placeholder="Mot de passe" />
-                        <label htmlFor="checkbox">
-                        <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
-                        Afficher le mot de passe
-                        </label>
+                        <input onChange={(e) => setPassword(e.target.value)} type="password" className="registerInput" name="password" id="password" placeholder="Mot de passe" />
                         <label className="errorLabel">{passwordError}</label>
                      </div>
                      <div className="registerSection">

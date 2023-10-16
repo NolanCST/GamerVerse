@@ -1,5 +1,3 @@
-
-
 .registerInput {
   border: none;
   box-sizing: border-box;
@@ -7,7 +5,7 @@
   background: 0 0;
   width: 100%;
   display: block;
-  color: #465B6C;
+  color: #465b6c;
   font-weight: 700;
   font-size: 14px;
   padding: 3px 0;
@@ -37,12 +35,12 @@ textarea {
   background-color: #7a6e7a;
 }
 .checkbox input:checked ~ .checkmark {
-  background-color: #465B6C;
+  background-color: #465b6c;
 }
 
 .checkmark {
   position: absolute;
-  top: 64.5%;
+  top: 24%;
   height: 12px;
   width: 12px;
   border: 2px solid #c9c9c9;
@@ -51,9 +49,10 @@ textarea {
 
 .mainRegister {
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 5vh;
+  width: 5vw;
   right: 80px;
+  bottom: 70px;
 }
 
 .subRegister {
@@ -76,6 +75,7 @@ textarea {
   background-position: center;
   position: relative;
   left: 300px;
+
   border-radius: 5px;
 }
 
@@ -91,6 +91,8 @@ textarea {
 
 .registerSection {
   margin-bottom: 23px;
+  position: relative;
+  bottom: 20px;
 }
 
 .labelTerms {
@@ -112,15 +114,16 @@ textarea {
   width: auto;
   display: inline-block;
   border: none;
-  background: #465B6C;
+  background: #465b6c;
   color: white;
   padding: 10px;
   height: 50px;
-  /* font-weight: bold; */
   letter-spacing: 2px;
   box-shadow: 0 15px 9.9px 0.1px rgba(0, 0, 0, 0.15);
   margin-right: 25px;
   font-family: "Montserrat", sans-serif;
+  position: relative;
+  bottom: 25px;
 }
 
 .submit:hover {
@@ -135,7 +138,7 @@ textarea {
 
 #terms {
   position: absolute;
-  top: 64.5%;
+  top: 35%;
 }
 
 #registerH2 {
@@ -143,12 +146,18 @@ textarea {
   margin: 0;
   padding: 0;
   font-weight: 700;
-  color: #465B6C;
+  color: #465b6c;
   font-size: 36px;
+  position: relative;
+  bottom: 10px;
   margin-bottom: 10px;
 }
 
 #registerForm {
   padding: 54px 80px 36px 55px;
   margin-top: 40px;
+}
+
+#age {
+  width: 20%;
 }
