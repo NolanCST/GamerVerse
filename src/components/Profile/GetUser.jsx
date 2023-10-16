@@ -44,46 +44,44 @@ function GetUser() {
   }, []);
 
   const ModifProfil = async () => {
-
     let options = {
+      method: "PUT",
 
-        method : "PUT",
+      Headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "bearer token " /* + localStorage.getItem("@TokenUser"), */,
+      },
 
-        Headers: {
-            "Content-Type": "application/json", 
-            "Authorization": "bearer token " /* + localStorage.getItem("@TokenUser"), */
-        },
-        
-            Body: JSON.parse ({
-                firstname: String, 
-                lastname: String, 
-                email: String,
-                age: Number, 
-                occupation: String, 
-            })
-        
-     };
-    
-        const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user", options);
-        
-           const data = await response.json();
+      Body: JSON.parse({
+        firstname: String,
+        lastname: String,
+        email: String,
+        age: Number,
+        occupation: String,
+      }),
+    };
 
-           console.log(data);
+    const response = await fetch(
+      "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
+      options
+    );
 
-           setUser(data);
+    const data = await response.json();
 
-           
+    console.log(data);
 
-  }
-
-  const handleSave = () => {
-    setEditing(false); 
+    setUser(data);
   };
 
-  useEffect(() =>{
+  const handleSave = () => {
+    setEditing(false);
+  };
+
+  useEffect(() => {
     console.log("TEST 2");
     ModifProfil();
-  }, [])
+  }, []);
 
   console.log("user :", user);
 
@@ -98,9 +96,7 @@ function GetUser() {
             <input
               type="text"
               value={user.firstname}
-              onChange={(e) =>
-                setUser({ ...user, firstname: e.target.value })
-              }
+              onChange={(e) => setUser({ ...user, firstname: e.target.value })}
             />
           </div>
 
@@ -129,6 +125,5 @@ function GetUser() {
     </div>
   );
 }
-
 
 export default GetUser;

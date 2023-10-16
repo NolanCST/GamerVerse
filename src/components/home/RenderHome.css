@@ -4,12 +4,6 @@ body {
   background-repeat: no-repeat;
 }
 
-#bubble {
-  width: 200px;
-  position: relative;
-  right: 50px;
-}
-
 .imageMainHome {
   height: 2%;
 }

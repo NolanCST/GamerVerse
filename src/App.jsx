@@ -8,7 +8,7 @@ import Computer from "./components/saloon/Computer";
 import Login from "./components/Login/Login";
 import ProfilPage from "./components/Profile/Profil";
 import CreatePosts from "./components/Posts/CreatePosts";
-import Register from "./components/register/Register";
+import Register from "./components/Register/Register";
 
 function App() {
   const router = createBrowserRouter([
