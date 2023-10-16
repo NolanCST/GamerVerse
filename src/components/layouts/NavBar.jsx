@@ -1,4 +1,7 @@
 import * as React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -6,30 +9,31 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+
+import MenuIcon from "@mui/icons-material/Menu";
+
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import LogoutAlert from "./LogoutAlert";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+import LogoutAlert from "./LogoutAlert";
 import { Alert } from "@mui/material";
 
 // const token = localStorage.getItem("@TokenUser");
+
+// variable pour les liens des pages de la navbar
 const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
 const logins = ["Connexion"];
 const logouts = ["Déconnexion"];
 const registers = ["Inscription"];
 
-const avatar = ["Miaouss"];
+// Palette de la navbar
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
@@ -39,6 +43,7 @@ const darkTheme = createTheme({
   },
 });
 
+//NavBar
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -77,7 +82,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <>
+    <> 
+    {/* Box de gauche */}
       <Stack spacing={2} sx={{ flexGrow: 1 }}>
         <Box flex={4} justifyContent="space-between">
           <ThemeProvider theme={darkTheme}>
@@ -157,9 +163,11 @@ function ResponsiveAppBar() {
                       ))}
                     </Menu>
                   </Box>
+                  <Link to={`/`}>
                   <SportsEsportsIcon
                     sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
                   />
+                  </Link>
                   <Typography
                     variant="h5"
                     noWrap
@@ -176,7 +184,7 @@ function ResponsiveAppBar() {
                       textDecoration: "none",
                     }}
                   >
-                    GAMERVERSE
+                    
                   </Typography>
                   <Box
                     sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
@@ -196,43 +204,35 @@ function ResponsiveAppBar() {
                       </Button>
                     ))}
                   </Box>
-                  <Box 
-                    sx={{ display: "flex", flexDirection: "row", justifyContent:"flex-end" }}
-                     >
-                    <Box style={{alignSelf:"center"}} >
+
+                  {/* Box de droite */}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "flex-end",
+                    }}
+                  >
+                    <Box style={{ alignSelf: "center" }}>
                       <Tooltip title="Vers ton profil">
-                        <IconButton onClick={handleOpenUserMenu}>
-                          <AccountCircleIcon fontSize="large" />
-                        </IconButton>
-                      </Tooltip>
-                      {/* <Menu
-                    sx={{ mt: "45px" }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                     >
-                    {/* {settings.map((setting) => (
-                      <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                      </MenuItem>
-                    ))} */}
-                      {/* </Menu> */}
-                    </Box>
-                    
                       {!token ? (
-                        <>
-                        <Box style={{marginRight: 10}}>
-                        {logins.map((login) => (
+                          <IconButton>
+                            <AccountCircleIcon fontSize="large" />                            
+                          </IconButton>
+                      ) : (
+                        <Link to={`/ProfilPage`}>
+                          <IconButton>
+                            <AccountCircleIcon fontSize="large" />                            
+                          </IconButton>
+                          </Link>
+                        )}
+                      </Tooltip>
+                    </Box>
+
+                    {!token ? (
+                      <>
+                        <Box style={{ marginRight: 10 }}>
+                          {logins.map((login) => (
                             <Button
                               key={login}
                               onClick={handleCloseNavMenu}
@@ -280,11 +280,10 @@ function ResponsiveAppBar() {
                               </Link>
                             </Button>
                           ))}
-                          </Box>
-                        </>
-
-                      ) : (
-                        <>
+                        </Box>
+                      </>
+                    ) : (
+                      <>
                         <Box>
                           {logouts.map((logout) => (
                             <Button
@@ -309,10 +308,9 @@ function ResponsiveAppBar() {
                               </Link>
                             </Button>
                           ))}
-                          </Box>
-                        </>
-                      )}
-                    
+                        </Box>
+                      </>
+                    )}
                   </Box>
                 </Toolbar>
               </Container>
