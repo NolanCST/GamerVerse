@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
   return (
     <Stack spacing={2} sx={{flexGrow: 1}}>
       <ThemeProvider theme={darkTheme}>
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <SportsEsportsIcon

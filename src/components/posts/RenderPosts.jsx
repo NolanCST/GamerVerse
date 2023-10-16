@@ -20,7 +20,8 @@ function RenderPosts(props) {
    return (
       <>
          <div className="infosPosts"></div>
-         <Card sx={{ margin: 5 }}>
+         <Box flex={4} p={2}>
+         <Card>
             <CardHeader
                avatar={
                   <Avatar sx={{ bgcolor: "purple" }} aria-label="recipe">
@@ -53,6 +54,7 @@ function RenderPosts(props) {
             <input type="text" value={content} onChange={handleCommentChange} placeholder="Commenter" />
             <button onClick={submitComment}>Poster</button>
          </Card>
+         </Box>
       </>
    );
 }
