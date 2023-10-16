@@ -1,5 +1,11 @@
 body {
-   background-image: url(/images/fond-page-home.jpeg);
-   background-size: 120%;
-   background-repeat: no-repeat;
+  background-image: url(/images/fond-page-home.jpeg);
+  background-size: 120%;
+  background-repeat: no-repeat;
+}
+
+#bubble {
+  width: 200px;
+  position: relative;
+  right: 50px;
 }
