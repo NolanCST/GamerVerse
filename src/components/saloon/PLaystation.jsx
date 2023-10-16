@@ -6,27 +6,20 @@ import Footer from "../layouts/Footer";
 import Rightbar from "../layouts/Rightbar";
 
 function PlayStation() {
-  return (
-    <>
-      <NavBar />
-      <div className="main-post-title">PLAYSTATION</div>
-      <Stack
-        spacing={{ xs: 6, sm: 2 }}
-        direction="row"
-        flexWrap="wrap"
-        justify-content="space-between"
-        rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      >
-        <Grid item xs={2} sm={4} md={4}>
-          <Posts />
-        </Grid>
-        <Rightbar />
-      </Stack>
+   return (
+      <>
+         <NavBar />
+         <div className="main-post-title">PLAYSTATION</div>
+         <Stack spacing={{ xs: 6, sm: 2 }} direction="row" flexWrap="wrap" justify-content="space-between" rowspacing={1} columnpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid item xs={2} sm={4} md={4}>
+               <Posts />
+            </Grid>
+            <Rightbar />
+         </Stack>
 
-      <Footer />
-    </>
-  );
+         <Footer />
+      </>
+   );
 }
 
 export default PlayStation;

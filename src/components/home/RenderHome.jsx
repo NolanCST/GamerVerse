@@ -37,7 +37,7 @@ function RenderHome() {
                </div>
             </section>
 
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Grid container rowspacing={1} columnspacing={{ xs: 1, sm: 2, md: 3 }}>
                <Grid className="testOne" display="flex" justifyContent="space-around" item xs={12} md={3}>
                   <Card sx={{ maxWidth: 250 }}>
                      {/* <CardActionArea> */}
