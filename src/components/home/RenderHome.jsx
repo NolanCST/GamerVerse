@@ -22,19 +22,6 @@ function RenderHome() {
    return (
       <div className="cardContainer">
          <Stack direction="row" justifyContent="space-around" alignItems="center" spacing={2} useFlexGap flexWrap="wrap">
-            {/* <div className="imageMainHome">
-          <img src="https://images2.alphacoders.com/131/1312941.jpg" alt="imageHome" className="imgMainHome"/>
-        </div> */}
-            {/* <Box sx={{ width: "100%" }}> */}
-            {/* <Card >
-      <CardMedia
-        component="img"
-        alt="ImageHome"
-        height="300"
-        width="400"
-        image="./images/smashbrosultimate.jpeg"
-      />
-      </Card> */}
             <section className="container">
                <div className="slider-wrapper">
                   <div className="slider">
@@ -49,9 +36,7 @@ function RenderHome() {
                   </div>
                </div>
             </section>
-            {/* <Tooltip title="Add" placement="right-start">
-        <Chip label="PLAYS HAS NO LIMITS" color="primary"/>
-        </Tooltip> */}
+
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                <Grid className="testOne" display="flex" justifyContent="space-around" item xs={12} md={3}>
                   <Card sx={{ maxWidth: 250 }}>
