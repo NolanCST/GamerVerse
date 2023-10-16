@@ -10,7 +10,6 @@ function ProfilPage() {
     <div className="Background">
       <NavBar />
       <GetUser />
-
       <Footer />
     </div>
   );

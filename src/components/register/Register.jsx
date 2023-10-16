@@ -9,12 +9,14 @@ function Register() {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
+  const [age, setAge] = useState("");
   const navigate = useNavigate();
   // Constante erreur
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [firstnameError, setFirstnameError] = useState("");
   const [lastnameError, setLastnameError] = useState("");
+  const [ageError, setAgeError] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -44,6 +46,11 @@ function Register() {
       return;
     }
 
+    if ("" === age) {
+      setAgeError("Veuillez entrer un âge");
+      return;
+    }
+
     let options = {
       method: "POST",
       headers: {
@@ -54,6 +61,7 @@ function Register() {
         password: password,
         firstname: firstname,
         lastname: lastname,
+        age: age,
       }),
     };
 
@@ -128,6 +136,17 @@ function Register() {
                   name="password"
                   id="password"
                   placeholder="Mot de passe"
+                />
+                <label className="errorLabel">{passwordError}</label>
+              </div>
+              <div className="registerSection">
+                <input
+                  onChange={(e) => setAge(e.target.value)}
+                  type="number"
+                  className="registerInput"
+                  name="age"
+                  id="age"
+                  placeholder="Age"
                 />
                 <label className="errorLabel">{passwordError}</label>
               </div>
