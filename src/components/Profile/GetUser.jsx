@@ -41,9 +41,8 @@ function GetUser() {
   }, []);
 
   return (
-  <div className="profilInput">
-
-  <h1 className="title">Profil</h1>
+    <div className="profilInput">
+      <h1 className="title">Profil</h1>
 
       <div className="choix">
         <select name="Plateforme" className="platform">
@@ -55,28 +54,19 @@ function GetUser() {
         </select>
       </div>
 
-  <div className="identity">
+      <div className="identity">
+        <div className="getFirstName">Nom: {user.firstname}</div>
 
-    <div className="getFirstName">
-    Nom: {user.firstname}
+        <div className="getLastName">Prénom : {user.lastname}</div>
+
+        <div className="getAge">Age : {user.age}</div>
+      </div>
+
+      <div className="mailInput">
+        <div className="getEmail">Mail :{user.email}</div>
+      </div>
     </div>
-
-    <div className="getLastName">
-    Prénom :{user.lastname}
-    </div>
-
-  </div>
-
-  <div className="mailInput">
-
-  <div className="getEmail">
-    Mail :{user.email}
-    
-  </div>
-  </div>
-  </div>
-  )
-
+  );
 }
 
 export default GetUser;

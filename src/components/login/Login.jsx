@@ -9,13 +9,13 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 
 export default function Login() {
-   const [email, setEmail] = useState("");
-   const [password, setPassword] = useState("");
-   const navigate = useNavigate();
-   const [error, setError] = useState("");
-   const [emailError, setEmailError] = useState("");
-   const [passwordError, setPasswordError] = useState("");
-   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleInputEmail = (e) => {
     setEmail(e.target.value);
@@ -83,40 +83,79 @@ export default function Login() {
 
   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
-   return (
-      <>
-         <NavBar />
-         <div className="mainContainer">
-            <div className="titleContainer">
-               <div>Connexion à votre compte</div>
-            </div>
-            <div className="inputContainer">
-               <PersonOutlineIcon fontSize="large" sx={{ color: "#ffffff" }} className="iconInput" />
-               <input value={email} type="text" onChange={handleInputEmail} className="inputBox inputClass" placeholder="Pas d'email..pas de connexion!" />
-               <label className="errorLabel">{emailError}</label>
-            </div>
-            <div className="inputContainer">
-               <LockIcon fontSize="large" sx={{ color: "#ffffff" }} className="iconInput" />
-               <input id="loginPassword" value={password} type={showPassword ? "text": "password"} onChange={handleInputPassword} className="inputBox inputClass" placeholder="Par ici ton mdp...!" />
-               <label>
-               <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
-               Afficher le mot de passe
-               </label>
-               
-               <label className="errorLabel">{passwordError}</label>
-            </div>
-            <div className="forgetContainer">
-               <div>Mot de passe oublié ?</div>
-            </div>
-            <div className={"inputContainer"}>
-               <input className={"inputButton"} type="button" onClick={getLogin} value={"Connexion"} id="loginButton" />
-            </div>
-            <div className="noAccountContainer">
-               <div>
-                  Vous n'avez pas encore de compte ?<Link to="/Register">S'inscrire</Link>
-               </div>
-            </div>
-         </div>
-      </>
-   );
+  return (
+    <>
+      <NavBar />
+      <div className="mainContainer">
+        <div className="mario">
+          <img src="images\pixel-connectbubble (1).gif" alt="" id="bubble" />
+          <img
+            src="https://i.pinimg.com/originals/46/53/d8/4653d885a6dd4bff3b6bcea47a8f8d5a.png"
+            alt=""
+          />
+        </div>
+        <div className="titleContainer">
+          <div>Connexion à votre compte</div>
+        </div>
+        <div className="inputContainer">
+          <PersonOutlineIcon
+            fontSize="large"
+            sx={{ color: "#ffffff" }}
+            className="iconInput"
+          />
+          <input
+            value={email}
+            type="text"
+            onChange={handleInputEmail}
+            className="inputBox inputClass"
+            placeholder="Pas d'email..pas de connexion!"
+          />
+          <label className="errorLabel">{emailError}</label>
+        </div>
+        <div className="inputContainer">
+          <LockIcon
+            fontSize="large"
+            sx={{ color: "#ffffff" }}
+            className="iconInput"
+          />
+          <input
+            id="loginPassword"
+            value={password}
+            type={showPassword ? "text" : "password"}
+            onChange={handleInputPassword}
+            className="inputBox inputClass"
+            placeholder="Par ici ton mdp...!"
+          />
+          <label className="showPassword">
+            <input
+              type="checkbox"
+              className="checkbox"
+              onClick={() => setShowPassword(!showPassword)}
+            />
+            Afficher le mot de passe
+          </label>
+
+          <label className="errorLabel">{passwordError}</label>
+        </div>
+        <div className="forgetContainer">
+          <div>Mot de passe oublié ?</div>
+        </div>
+        <div className={"inputContainer"}>
+          <input
+            className={"inputButton"}
+            type="button"
+            onClick={getLogin}
+            value={"Connexion"}
+            id="loginButton"
+          />
+        </div>
+        <div className="noAccountContainer">
+          <div>
+            Vous n'avez pas encore de compte ?
+            <Link to="/Register">S'inscrire</Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

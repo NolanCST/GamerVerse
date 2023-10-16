@@ -118,6 +118,17 @@
   color: teal;
 }
 
+.showPassword {
+  margin-top: 20px;
+  color: #7f7f84;
+}
+
+#bubble {
+  width: 200px;
+  position: relative;
+  right: 50px;
+}
+
 .mario {
   animation-name: my-animation;
   animation-duration: 3s;

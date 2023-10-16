@@ -123,7 +123,7 @@ textarea {
   margin-right: 25px;
   font-family: "Montserrat", sans-serif;
   position: relative;
-  bottom: 25px;
+  bottom: 45px;
 }
 
 .submit:hover {
@@ -156,8 +156,4 @@ textarea {
 #registerForm {
   padding: 54px 80px 36px 55px;
   margin-top: 40px;
-}
-
-#age {
-  width: 20%;
 }
