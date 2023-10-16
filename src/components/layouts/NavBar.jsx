@@ -17,10 +17,10 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import LogoutAlert from "./LogoutAlert";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Alert } from "@mui/material";
-import LogoutAlert from "./LogoutAlert/LogoutAlert";
 
 const gamerverse = ["GAMERVERSE"];
 const pages = ["PlayStation", "Xbox", "Switch", "Computer"];
@@ -40,6 +40,7 @@ const darkTheme = createTheme({
 function ResponsiveAppBar() {
    const [anchorElNav, setAnchorElNav] = useState(null);
    const [anchorElUser, setAnchorElUser] = useState(null);
+   const navigate = useNavigate();
    const [showLogoutAlert, setShowLogoutAlert] = useState(false);
 
    const handleOpenNavMenu = (event) => {
@@ -58,7 +59,15 @@ function ResponsiveAppBar() {
    };
 
    const handleClickLogout = () => {
-      setShowLogoutAlert(true);
+      const getout = confirm("Voulez-vous reellement quittez cet endroit incroyable ?");
+      if (getout == true) {
+         localStorage.clear();
+         setShowLogoutAlert(true);
+         setTimeout(() => {
+            setShowLogoutAlert(false);
+            navigate("/login");
+         }, 2000);
+      }
    };
 
    return (
