@@ -72,7 +72,14 @@ function PutUser() {
 
             <div className="mailInput">
                 <input type="text" name="email" className="email" placeholder="E-mail"/>
+            </div>
+
+            <div className="password">
                 <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
+                <label htmlFor="checkbox">
+                <input type="checkbox" className="checkbox" />
+                Afficher le mot de passe
+                </label>
             </div>
 
             <button className="switchMdp">Valider</button>

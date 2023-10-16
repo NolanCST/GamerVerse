@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import View from "./View";
 
 function GetUser() {
   const [user, setUser] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
 
   const getUser = async () => {
     let options = {
@@ -41,6 +41,7 @@ function GetUser() {
   }, []);
 
   return (
+    
   <div className="profilInput">
 
   <h1 className="title">Profil</h1>
@@ -56,20 +57,33 @@ function GetUser() {
   </div>
 
   <div className="identity">
-    <div>
+
+    <div className="getFirstName">
     Nom: {user.firstname}
     </div>
-    <div>
-    Prénom :{user.firstname}
+
+    <div className="getLastName">
+    Prénom :{user.lastname}
     </div>
+
   </div>
 
   <div className="mailInput">
-  <div>
+
+  <div className="getEmail">
     Mail :{user.email}
     </div>
-      <input type="password" name="passewordChange" className="Mdp" placeholder="Mot de passe"/>
+
+    <div className="password">
+      <input type={showPassword ? "text": "password"} className="Mdp" placeholder="Mot de passe"/>
+      <label htmlFor="checkbox">
+        <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
+        Afficher le mot de passe
+      </label>
+    </div>
+
   </div>
+      
   </div>
   )
 

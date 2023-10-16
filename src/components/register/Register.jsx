@@ -15,6 +15,7 @@ function Register() {
    const [passwordError, setPasswordError] = useState("");
    const [firstnameError, setFirstnameError] = useState("");
    const [lastnameError, setLastnameError] = useState("");
+   const [showPassword, setShowPassword] = useState(false);
 
    const handleRegister = async (e) => {
       e.preventDefault();
@@ -97,7 +98,11 @@ function Register() {
                         <label className="errorLabel">{emailError}</label>
                      </div>
                      <div className="registerSection">
-                        <input onChange={(e) => setPassword(e.target.value)} type="password" className="registerInput" name="password" id="password" placeholder="Mot de passe" />
+                        <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text": "password"} className="registerInput" name="password" id="password" placeholder="Mot de passe" />
+                        <label htmlFor="checkbox">
+                        <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
+                        Afficher le mot de passe
+                        </label>
                         <label className="errorLabel">{passwordError}</label>
                      </div>
                      <div className="registerSection">

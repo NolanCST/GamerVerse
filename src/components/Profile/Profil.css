@@ -61,7 +61,7 @@ input, textarea:focus{
 }
 
 .profilInput{
-    background-color: rgba(137, 134, 152, 0.8);
+    background-image: linear-gradient(to right top, #333333, #39393a);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,6 +71,8 @@ input, textarea:focus{
     height: 85vh;
     margin-left: 23%;
     margin-right: 23%;
+    border-radius: 4px;
+    border: 2px solid teal;
 }
 
 .choix{
@@ -82,12 +84,14 @@ input, textarea:focus{
     display: flex;
     flex-direction: row;
     gap: 30px;
+    color: #ffffff;
 }
 
 .mailInput{
     display: flex;
     flex-direction: row;
     gap: 2vw;
+    color: #ffffff;
 }
 
 
@@ -131,8 +135,15 @@ input, textarea:focus{
     cursor: pointer;
 }
 
+.getFirstName{
+    display: flex;
+    flex-direction: row;
+}
 
-
+.password{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
