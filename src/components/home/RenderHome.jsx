@@ -19,6 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function RenderHome() {
+  
   return (
     <div className="cardContainer">
       <Stack
@@ -29,19 +30,7 @@ function RenderHome() {
         useFlexGap
         flexWrap="wrap"
       >
-        {/* <div className="imageMainHome">
-          <img src="https://images2.alphacoders.com/131/1312941.jpg" alt="imageHome" className="imgMainHome"/>
-        </div> */}
-        {/* <Box sx={{ width: "100%" }}> */}
-        {/* <Card >
-      <CardMedia
-        component="img"
-        alt="ImageHome"
-        height="300"
-        width="400"
-        image="./images/smashbrosultimate.jpeg"
-      />
-      </Card> */}
+
       <section class="container">
       <div class="slider-wrapper">
         <div class="slider">
@@ -56,9 +45,8 @@ function RenderHome() {
         </div>
       </div>
       </section>
-      {/* <Tooltip title="Add" placement="right-start">
-        <Chip label="PLAYS HAS NO LIMITS" color="primary"/>
-        </Tooltip> */}
+
+      
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 
 
