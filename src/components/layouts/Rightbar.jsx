@@ -34,37 +34,50 @@ export default function Rightbar() {
             <Typography variant="h6" color="#272727" fontWeight={300} mt={1}>
                DERNIÈRES SORTIES DE JEUX
             </Typography>
-            <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-               <ListItem alignItems="flex-start">
-                  <ListItemText
-                     primary="Assassin's Creed® Mirage"
-                     secondary={
-                        <React.Fragment>
-                           {
-                              "Découvrez l'histoire de Basim, voleur à la tire habile mais atteint de visions cauchemardesques, qui cherche désespérément des réponses, mais aussi la justice, dans les rues animées du Bagdad du IXe siècle. Par l'intermédiaire d'une société aussi ancienne que mystérieuse appelée Ceux qu'on ne voit pas, il va devenir un tueur redoutable et son sort va prendre une tournure qu'il n'aurait jamais imaginée."
+            <section className="carrouselContainer">
+               <div className="slider-wrapper">
+                  <div className="slider">
+                     <div className="itemCarrousel">
+                        <ListItemText
+                           id="slide-1"
+                           primary="Assassin's Creed® Mirage"
+                           secondary={
+                              <React.Fragment>
+                                 {
+                                    "Découvrez l'histoire de Basim, voleur à la tire habile mais atteint de visions cauchemardesques, qui cherche désespérément des réponses, mais aussi la justice, dans les rues animées du Bagdad du IXe siècle. Par l'intermédiaire d'une société aussi ancienne que mystérieuse appelée Ceux qu'on ne voit pas, il va devenir un tueur redoutable et son sort va prendre une tournure qu'il n'aurait jamais imaginée."
+                                 }
+                              </React.Fragment>
                            }
-                        </React.Fragment>
-                     }
-                  />
-               </ListItem>
-               <Divider variant="inset" component="li" />
-               <ListItem alignItems="flex-start">
-                  <ListItemText primary="EA SPORTS FC™ 24" secondary={<React.Fragment>{"Jouez avant le 1er novembre 2023 pour devenir membre fondateur et bénéficier d'avantages exclusifs dans EA SPORTS FC™ 24 et au-delà*."}</React.Fragment>} />
-               </ListItem>
-               <Divider variant="inset" component="li" />
-               <ListItem alignItems="flex-start">
-                  <ListItemText
-                     primary="The Crew™ Motorfest"
-                     secondary={
-                        <React.Fragment>
-                           {
-                              "Bienvenue au Motorfest, l'expérience de pilotage ultime ! Explorez le monde ouvert foisonnant de l'île d'O'ahu, à Hawaï, en participant à des courses intenses, des épreuves thématiques et bien plus encore ! Grâce aux centaines de voitures emblématiques à collectionner, vous aurez de nombreuses occasions de prouver votre talent."
+                        />
+                     </div>
+                     <div className="itemCarrousel">
+                        <ListItemText
+                           id="slide-2"
+                           primary="EA SPORTS FC™ 24"
+                           secondary={<React.Fragment>{"Jouez avant le 1er novembre 2023 pour devenir membre fondateur et bénéficier d'avantages exclusifs dans EA SPORTS FC™ 24 et au-delà*."}</React.Fragment>}
+                        />
+                     </div>
+                     <div className="itemCarrousel">
+                        <ListItemText
+                           id="slide-3"
+                           primary="The Crew™ Motorfest"
+                           secondary={
+                              <React.Fragment>
+                                 {
+                                    "Bienvenue au Motorfest, l'expérience de pilotage ultime ! Explorez le monde ouvert foisonnant de l'île d'O'ahu, à Hawaï, en participant à des courses intenses, des épreuves thématiques et bien plus encore ! Grâce aux centaines de voitures emblématiques à collectionner, vous aurez de nombreuses occasions de prouver votre talent."
+                                 }
+                              </React.Fragment>
                            }
-                        </React.Fragment>
-                     }
-                  />
-               </ListItem>
-            </List>
+                        />
+                     </div>
+                  </div>
+                  <div className="slider-nav">
+                     <a href="#slide-1"></a>
+                     <a href="#slide-2"></a>
+                     <a href="#slide-3"></a>
+                  </div>
+               </div>
+            </section>
          </Box>
       </Box>
    );
