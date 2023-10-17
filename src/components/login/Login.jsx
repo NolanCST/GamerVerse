@@ -4,12 +4,20 @@ import { Link, useNavigate } from "react-router-dom";
 //icon mui
 import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
-import Footer from "../layouts/Footer";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 import SuccessAlert from "../Alerts/SuccesAlert";
 import ErrorAlert from "../Alerts/ErrorAlert";
-import { Box, TextField, styled, Button, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from "@mui/material";
+import {
+  Box,
+  styled,
+  Button,
+  FormControl,
+  InputLabel,
+  InputAdornment,
+  IconButton,
+  FilledInput,
+} from "@mui/material";
 import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
 
@@ -79,15 +87,14 @@ export default function Login() {
 
   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
-
   //Couleur button matérial
   const ColorButton = styled(Button)(({ theme }) => ({
-   color: theme.palette.getContrastText(teal[500]),
-   backgroundColor: teal[500],
-   '&:hover': {
-     backgroundColor: teal[700],
-   },
- }));
+    color: theme.palette.getContrastText(teal[500]),
+    backgroundColor: teal[500],
+    "&:hover": {
+      backgroundColor: teal[700],
+    },
+  }));
 
   return (
     <>
@@ -113,26 +120,20 @@ export default function Login() {
                 sx={{ color: "#ffffff" }}
                 className="iconInput"
               />
-              {/* <TextField
-                type="text"
-                onChange={handleInputEmail}
-                required
-                id="outlined-required"
-                label="Pas d'email..pas de connexion!"
-                defaultValue=""
-                value={email}
-                //   sx={{bgcolor: "#90a4ae"}}
-              /> */}
-              <TextField
-          required
-          id="filled-required"
-          type="text"
-          onChange={handleInputEmail}
-          label="Pas d'email..pas de connexion!"
-          defaultValue=""
-          variant="filled"
-          value={email}
-        />
+
+              <FormControl sx={{ m: 2, width: "52ch" }} variant="filled">
+                <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
+                <FilledInput
+                  id="filled-adornment-email"
+                  type="text"
+                  onChange={handleInputEmail}
+                  placeholder="Pas d'email..pas de connexion!"
+                  defaultValue=""
+                  variant="filled"
+                  value={email}
+                />
+              </FormControl>
+
               <label className="errorLabel">{emailError}</label>
             </div>
             <div className="inputContainer">
@@ -141,61 +142,40 @@ export default function Login() {
                 sx={{ color: "#ffffff" }}
                 className="iconInput"
               />
-
-
-
-              <input
-                // id="loginPassword"
-                // value={password}
-                // type={showPassword ? "text" : "password"}
-                // onChange={handleInputPassword}
-                className="inputBox inputClass"
-                // placeholder="Par ici ton mdp...!"
-              />
-              
-              <label className="showPassword">
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  onClick={() => setShowPassword(!showPassword)}
-                />
-                Afficher le mot de passe
-              </label>
-              <label className="errorLabel">{passwordError}</label>
             </div>
 
-
-            
             <div>
-            <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-          <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-          <OutlinedInput
-            id="standard-adornment-password"
-            value={password}
-            placeholder="Par ici ton mdp...!"
-            onChange={handleInputPassword}
-            type={showPassword ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
- </FormControl>
+              <FormControl sx={{ m: 2, width: "52ch" }} variant="filled">
+                <InputLabel htmlFor="filled-adornment-password">
+                  Password
+                </InputLabel>
+                <FilledInput
+                  id="filled-adornment-password"
+                  value={password}
+                  placeholder="Par ici ton mdp...!"
+                  onChange={handleInputPassword}
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={() => setShowPassword(!showPassword)}
+                        // onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Password"
+                />
+              </FormControl>
             </div>
+
             <div className="forgetContainer">
               <div>Mot de passe oublié ?</div>
             </div>
             <div className={"inputContainer"}>
-
               <ColorButton
                 className={"inputButton"}
                 type="button"
@@ -205,13 +185,12 @@ export default function Login() {
               >
                 CONNEXION
               </ColorButton>
-              
             </div>
             <div className="noAccountContainer">
-              <div>
-                Vous n'avez pas encore de compte ?
-                <Link to="/Register">S'inscrire</Link>
-              </div>
+              Vous n'avez pas encore de compte ?
+              <Link to="/Register">
+                <Button> S'inscrire</Button>
+              </Link>
             </div>
           </Box>
         </div>
