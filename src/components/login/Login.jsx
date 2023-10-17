@@ -9,6 +9,9 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 import SuccessAlert from "../Alerts/SuccesAlert";
 import ErrorAlert from "../Alerts/ErrorAlert";
+import { Box, TextField, styled, Button } from "@mui/material";
+import { Stack } from "@mui/system";
+import { teal } from "@mui/material/colors";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -76,6 +79,16 @@ export default function Login() {
 
   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
+
+  //Couleur button matérial
+  const ColorButton = styled(Button)(({ theme }) => ({
+   color: theme.palette.getContrastText(teal[500]),
+   backgroundColor: teal[500],
+   '&:hover': {
+     backgroundColor: teal[700],
+   },
+ }));
+
   return (
     <>
       <NavBar />
@@ -90,68 +103,81 @@ export default function Login() {
               alt=""
             />
           </div>
-          <div className="titleContainer">
-            <div>Connexion à votre compte</div>
-          </div>
-          <div className="inputContainer">
-            <PersonOutlineIcon
-              fontSize="large"
-              sx={{ color: "#ffffff" }}
-              className="iconInput"
-            />
-            <input
-              value={email}
-              type="text"
-              onChange={handleInputEmail}
-              className="inputBox inputClass"
-              placeholder="Pas d'email..pas de connexion!"
-            />
-            <label className="errorLabel">{emailError}</label>
-          </div>
-          <div className="inputContainer">
-            <LockIcon
-              fontSize="large"
-              sx={{ color: "#ffffff" }}
-              className="iconInput"
-            />
-            <input
-              id="loginPassword"
-              value={password}
-              type={showPassword ? "text" : "password"}
-              onChange={handleInputPassword}
-              className="inputBox inputClass"
-              placeholder="Par ici ton mdp...!"
-            />
-            <label className="showPassword">
-              <input
-                type="checkbox"
-                className="checkbox"
-                onClick={() => setShowPassword(!showPassword)}
+          <Box>
+            <div className="titleContainer">
+              <div>Connexion à votre compte</div>
+            </div>
+            <div className="inputContainer">
+              <PersonOutlineIcon
+                fontSize="large"
+                sx={{ color: "#ffffff" }}
+                className="iconInput"
               />
-              Afficher le mot de passe
-            </label>
+              <TextField
+                type="text"
+                onChange={handleInputEmail}
+                required
+                id="outlined-required"
+                label="Pas d'email..pas de connexion!"
+                defaultValue=""
+                value={email}
+                //   sx={{bgcolor: "#90a4ae"}}
+              />
+              <label className="errorLabel">{emailError}</label>
+            </div>
+            <div className="inputContainer">
+              <LockIcon
+                fontSize="large"
+                sx={{ color: "#ffffff" }}
+                className="iconInput"
+              />
+              <input
+                id="loginPassword"
+                value={password}
+                type={showPassword ? "text" : "password"}
+                onChange={handleInputPassword}
+                className="inputBox inputClass"
+                placeholder="Par ici ton mdp...!"
+              />
+              <label className="showPassword">
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+                Afficher le mot de passe
+              </label>
 
-            <label className="errorLabel">{passwordError}</label>
-          </div>
-          <div className="forgetContainer">
-            <div>Mot de passe oublié ?</div>
-          </div>
-          <div className={"inputContainer"}>
-            <input
+              <label className="errorLabel">{passwordError}</label>
+            </div>
+            <div className="forgetContainer">
+              <div>Mot de passe oublié ?</div>
+            </div>
+            <div className={"inputContainer"}>
+              {/* <input
               className={"inputButton"}
               type="button"
               onClick={getLogin}
               value={"Connexion"}
               id="loginButton"
-            />
-          </div>
-          <div className="noAccountContainer">
-            <div>
-              Vous n'avez pas encore de compte ?
-              <Link to="/Register">S'inscrire</Link>
+            /> */}
+              <ColorButton
+                className={"inputButton"}
+                type="button"
+                onClick={getLogin}
+                value={"Connexion"}
+                id="loginButton"
+              >
+                CONNEXION
+              </ColorButton>
             </div>
-          </div>
-          <Footer />
+            <div className="noAccountContainer">
+              <div>
+                Vous n'avez pas encore de compte ?
+                <Link to="/Register">S'inscrire</Link>
+              </div>
+            </div>
+          </Box>
         </div>
       </div>
     </>
