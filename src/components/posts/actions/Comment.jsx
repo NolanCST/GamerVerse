@@ -1,10 +1,15 @@
+import "./comments.css";
+
 function Comments(props) {
    return (
       <ul>
          <li>
-            {props.firstnameComment} {props.lastnameComment}
-            <br></br>
-            {props.contentComment}
+            <div className="commentContainer">
+               <p className="userComment">
+                  {props.firstnameComment} {props.lastnameComment}
+               </p>
+               <p className="contentComment">{props.contentComment}</p>
+            </div>
          </li>
       </ul>
    );

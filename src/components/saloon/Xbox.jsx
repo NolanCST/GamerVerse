@@ -8,7 +8,6 @@ function Xbox() {
          <NavBar />
          <div className="main-post-title">XBOX</div>
          <Posts />
-         <Footer />
       </>
    );
 }

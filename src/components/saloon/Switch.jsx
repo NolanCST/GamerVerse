@@ -1,7 +1,6 @@
 import { Box, Stack, Grid } from "@mui/material";
 import Rightbar from "../layouts/Rightbar";
 import NavBar from "../layouts/NavBar";
-import Footer from "../layouts/Footer";
 import Posts from "../posts/Posts";
 import Leftbar from "../layouts/Leftbar";
 
@@ -19,7 +18,7 @@ export default function Switch() {
                <Rightbar />
             </Stack>
          </div>
-         <Footer />
+
       </>
    );
 }

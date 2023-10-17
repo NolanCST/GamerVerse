@@ -5,7 +5,7 @@ export default function Leftbar() {
   return (
     <Box
       bgcolor="inherit"
-      flex={0.6}
+      flex={1}
       p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
