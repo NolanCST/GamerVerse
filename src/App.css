@@ -8,12 +8,16 @@ body {
     #faf8ff
   );
   line-height: 1.8;
-  /* width: 100vh; */
   font-size: 14px;
   font-weight: 600;
   background-attachment: fixed;
   width: auto;
-  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: url(/images/fond-page-home.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 @media (max-width: 1439px) {
