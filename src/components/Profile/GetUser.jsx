@@ -31,9 +31,7 @@ function GetUser() {
     }
   };
 
-  
   const ModifProfil = async () => {
-    
     try {
       const options = {
         method: "PUT",
@@ -44,10 +42,10 @@ function GetUser() {
         body: JSON.stringify(user),
       };
 
-      const recup = {
-        body : JSON.parse(user)
-      }
-        
+      // const recup = {
+      //   body : JSON.parse(user)
+      // }
+
       const response = await fetch(
         "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
         options
@@ -62,7 +60,6 @@ function GetUser() {
     } catch (error) {
       console.error("Error updating user data:", error);
     }
-    
   };
 
   useEffect(() => {
@@ -70,16 +67,12 @@ function GetUser() {
     getUser();
   }, []);
 
-
   const handleSave = () => {
     ModifProfil();
     setEditing(false);
+    console.log(user);
+    window.location.reload();
   };
-
-/*   useEffect(() => {
-    console.log("TEST 2");
-    ModifProfil();
-  }, []); */
 
   console.log("user :", user);
 
@@ -108,14 +101,17 @@ function GetUser() {
           </div>
 
           <div className="getAge">
-            Age : {" "}
-            <input 
-            type="text"
-            value={user.age}
-            onChange={(e) => setUser({...user, age: e.target.value})} />
+            Age :{" "}
+            <input
+              type="text"
+              value={user.age}
+              onChange={(e) => setUser({ ...user, age: e.target.value })}
+            />
           </div>
 
-          <button onClick={handleSave} className="saveButton">Sauvegarder</button>
+          <button onClick={handleSave} className="saveButton">
+            Sauvegarder
+          </button>
         </div>
       ) : (
         <div className="identity">
@@ -130,7 +126,11 @@ function GetUser() {
       </div>
 
       <div>
-        <select name="Plateforme" value={user.occupation} className="getPlatforme">
+        <select
+          name="Plateforme"
+          value={user.occupation}
+          className="getPlatforme"
+        >
           <option>Choisissez votre Plateforme</option>
           <option>Playstation</option>
           <option>Xbox</option>
@@ -148,10 +148,8 @@ function GetUser() {
           <button onClick={() => setEditing(true)} className="editButton">
             Modifier
           </button>
-        )
-        }
+        )}
       </div>
-
     </div>
   );
 }
