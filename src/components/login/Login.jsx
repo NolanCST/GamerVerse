@@ -23,7 +23,19 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
+  const handleInputEmail = (e) => {
+    setEmail(e.target.value);
+  };
   const handleInputEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -31,7 +43,13 @@ export default function Login() {
   const handleInputPassword = (e) => {
     setPassword(e.target.value);
   };
+  const handleInputPassword = (e) => {
+    setPassword(e.target.value);
+  };
 
+  // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
+  const getLogin = async (e) => {
+    e.preventDefault();
   // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
   const getLogin = async (e) => {
     e.preventDefault();
@@ -39,7 +57,20 @@ export default function Login() {
     // définir les valeurs d'erreur
     setEmailError("");
     setPasswordError("");
+    // définir les valeurs d'erreur
+    setEmailError("");
+    setPasswordError("");
 
+    let options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    };
     let options = {
       method: "POST",
       headers: {
@@ -76,7 +107,33 @@ export default function Login() {
       setError("Une erreur s'est produite lors de la connexion.");
     } // Utilise les données renvoyées par l'API
   };
+    //Appel Api
+    try {
+      const response = await fetch(
+        `https://social-network-api.osc-fr1.scalingo.io/gamer-verse/login`,
+        options
+      );
+      const data = await response.json();
+      if (data.success) {
+        localStorage.setItem("@TokenUser", data.token);
+        setShowSuccessAlert(true);
+        setTimeout(() => {
+          setShowSuccessAlert(false);
+          navigate("/");
+        }, 2000);
+      } else {
+        setShowErrorAlert(true);
+        setTimeout(() => {
+          setShowErrorAlert(false);
+        }, 5000);
+        setError(data.message || "Une erreur s'est produite.");
+      }
+    } catch (error) {
+      setError("Une erreur s'est produite lors de la connexion.");
+    } // Utilise les données renvoyées par l'API
+  };
 
+  // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
 
 
