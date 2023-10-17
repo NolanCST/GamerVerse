@@ -128,11 +128,6 @@ textarea:focus {
 
 .getFirstName{
     display: flex;
-    flex-direction: row;
-}
-
-.password {
-  display: flex;
   flex-direction: column;
 }
 
@@ -154,11 +149,12 @@ textarea:focus {
 
 .getPlatforme{
     width: 14vw;
-    height: 5vh;
-    background-color: teal;
-    border: none;
-    border-radius: 5px;
-    color: white;
+  height: 5vh;
+  background-color: teal;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
 }
 
 .saveButton{
