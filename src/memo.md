@@ -39,4 +39,4 @@ react-router-dom
 A faire :
 
 -  Rajouter de la marge pour pouvoir bien voir le dernier post
--  Fixer la NavBar
+-  Rajouter le bouton des posts

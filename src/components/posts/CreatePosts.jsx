@@ -8,6 +8,7 @@ function CreatePosts() {
    const [postTitle, setPostTitle] = useState("");
    const [postContent, setPostContent] = useState("");
    const navigate = useNavigate();
+   const [navigatePlatform, setNavigatePlatform] = useState("");
 
    const handleInputChangeTitle = (e) => {
       setPostTitle(e.target.value);
@@ -17,7 +18,16 @@ function CreatePosts() {
       setPostContent(e.target.value);
    };
 
+   const handleNavigatePlatformChange = (e) => {
+      setNavigatePlatform(e.target.value);
+   };
+
    const postPosts = async () => {
+      if (!navigatePlatform) {
+         alert("Veuillez sélectionner une plateforme avant de poster.");
+         return;
+      }
+
       let options = {
          method: "POST",
          headers: {
@@ -34,10 +44,10 @@ function CreatePosts() {
          const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/gamer-verse/post", options);
 
          const data = await response.json();
-
+         console.log("data: ", data);
          if (data.success) {
-            alert("Votre post a la con qui vous a juste permis de vous sentir un peu mieux vient d'etre mis en ligne");
-            navigate("/PlayStation");
+            alert("Votre post a été mis en ligne sur le channel " + navigatePlatform);
+            navigate("/" + navigatePlatform);
          } else {
             console.error("Échec de la requête HTTP");
          }
@@ -51,6 +61,13 @@ function CreatePosts() {
          <NavBar />
          <div className="postPostsContainer">
             <div className="subContainer">
+               <select onChange={handleNavigatePlatformChange}>
+                  <option value="">--Choisir votre plateforme--</option>
+                  <option value="Playstation">Playstation</option>
+                  <option value="Xbox">Xbox</option>
+                  <option value="Switch">Switch</option>
+                  <option value="Computer">PC</option>
+               </select>
                <input onChange={handleInputChangeTitle} type="text" placeholder="Titre du post" className="input" />
                <textarea onChange={handleInputChangeContent} className="text"></textarea>
                <button onClick={postPosts} className="button">
