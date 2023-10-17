@@ -72,6 +72,7 @@ function GetUser() {
     setEditing(false);
     console.log(user);
     window.location.reload();
+    body: JSON.parse(user);
   };
 
   // useEffect(() => {
@@ -84,7 +85,6 @@ function GetUser() {
   return (
     <div className="profilInput">
       <h1 className="title">Profil</h1>
-
       {editing ? (
         <div className="identity">
           <div className="getFirstName">
