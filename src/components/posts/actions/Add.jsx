@@ -92,7 +92,8 @@ export default function Add() {
    //création d'un event onclick pour enclencher le Tooltip
 
    return (
-      <div className="app">
+      <>
+      {/* <div className="app"> */}
          <Tooltip
             onClick={(e) => setOpen(true)}
             title="Crée un post"
@@ -101,6 +102,7 @@ export default function Add() {
                bottom: 30,
                left: { xs: "calc 50%" },
                md: 30,
+               ml: 13
             }}
          >
             <ColorFab aria-label="add">
@@ -144,6 +146,7 @@ export default function Add() {
                </ButtonGroup>
             </Box>
          </UpModal>
-      </div>
+      {/* </div> */}
+      </>
    );
 }

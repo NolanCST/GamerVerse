@@ -1,13 +1,13 @@
 // import { Password, RepartitionRounded } from "@mui/icons-material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-//icon mui
-import LockIcon from "@mui/icons-material/Lock";
 import NavBar from "../layouts/NavBar";
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import "./Login.css";
 import SuccessAlert from "../Alerts/SuccesAlert";
 import ErrorAlert from "../Alerts/ErrorAlert";
+import "./Login.css";
+//import mui
+import LockIcon from "@mui/icons-material/Lock";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import {
   Box,
   styled,
@@ -102,110 +102,117 @@ export default function Login() {
       <NavBar />
       <SuccessAlert showSuccessAlert={showSuccessAlert} />
       <ErrorAlert showErrorAlert={showErrorAlert} />
-      <div className="bigContainer">
-        <div className="mainContainer">
-          <div className="mario">
-            <img src="images\pixel-connectbubble (1).gif" alt="" id="bubble" />
-            <img
-              src="https://i.pinimg.com/originals/46/53/d8/4653d885a6dd4bff3b6bcea47a8f8d5a.png"
-              alt=""
+
+      <div className="mainContainer">
+        <Box>
+          <Typography className="titleContainer" mt={2}>
+            Connexion à votre compte
+          </Typography>
+
+          <Box className="inputContainer" alignItems="center" display="flex">
+            <PersonOutlineIcon
+            
+              fontSize="large"
+              sx={{ color: "rgb(175, 179, 199)" }}
+              className="iconInput"
             />
-          </div>
-          <Box>
-            <div className="titleContainer">
-              <div>Connexion à votre compte</div>
-            </div>
-            <div className="inputContainer">
-              <PersonOutlineIcon
-                fontSize="large"
-                sx={{ color: "#ffffff" }}
-                className="iconInput"
+
+            <FormControl sx={{ m: 2, width: "52ch", mt:3 }} variant="filled">
+              <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
+              <FilledInput
+                id="filled-adornment-email"
+                type="text"
+                onChange={handleInputEmail}
+                placeholder="Pas d'email..pas de connexion!"
+                // defaultValue=""
+                variant="filled"
+                value={email}
               />
+            </FormControl>
 
-              <FormControl sx={{ m: 2, width: "52ch" }} variant="filled">
-                <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
-                <FilledInput
-                  id="filled-adornment-email"
-                  type="text"
-                  onChange={handleInputEmail}
-                  placeholder="Pas d'email..pas de connexion!"
-                  defaultValue=""
-                  variant="filled"
-                  value={email}
-                />
-              </FormControl>
-
-              <label className="errorLabel">{emailError}</label>
-            </div>
-            <div className="inputContainer">
-              <LockIcon
-                fontSize="large"
-                sx={{ color: "#ffffff" }}
-                className="iconInput"
-              />
-            </div>
-
-            <div>
-              <FormControl sx={{ m: 2, width: "52ch" }} variant="filled">
-                <InputLabel htmlFor="filled-adornment-password">
-                  Password
-                </InputLabel>
-                <FilledInput
-                  id="filled-adornment-password"
-                  value={password}
-                  placeholder="Par ici ton mdp...!"
-                  onChange={handleInputPassword}
-                  type={showPassword ? "text" : "password"}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={() => setShowPassword(!showPassword)}
-                        // onMouseDown={handleMouseDownPassword}
-                        edge="end"
-                      >
-                        {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                  label="Password"
-                />
-              </FormControl>
-            </div>
-
-            <Box
-              display="flex"
-              flexDirection="row"
-              gap={2}
-              justifyContent="center"
-              alignItems="center"
-            >
-              <ColorButton
-                className={"inputButton"}
-                type="button"
-                onClick={getLogin}
-                value={"Connexion"}
-                id="loginButton"
-              >
-                CONNEXION
-              </ColorButton>
-
-              <Typography>Mot de passe oublié ?</Typography>
-              <div className="forgetContainer">
-                <div></div>
-              </div>
-            </Box>
-            <Box
-              textAlign="center"
-              sx={{ mt: 3, fontStyle: "italic", color: "rgb(175, 179, 199)" }}
-            >
-              Vous n'avez pas encore de compte ?
-              <Link to="/Register">
-                <Button> S'inscrire</Button>
-              </Link>
-            </Box>
+            <label className="errorLabel">{emailError}</label>
           </Box>
-        </div>
+
+          <Box className="inputContainer" alignItems="center" display="flex">
+            <LockIcon
+              fontSize="large"
+              sx={{ color: "rgb(175, 179, 199)" }}
+              className="iconInput"
+            />
+
+            <FormControl sx={{ m: 2, width: "52ch", mb:3, mt:3 }} variant="filled">
+              <InputLabel htmlFor="filled-adornment-password">
+                Password
+              </InputLabel>
+              <FilledInput
+                id="filled-adornment-password"
+                value={password}
+                placeholder="Par ici ton mdp...!"
+                onChange={handleInputPassword}
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={() => setShowPassword(!showPassword)}
+                      // onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </FormControl>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            gap={2}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <ColorButton
+              className={"inputButton"}
+              type="button"
+              onClick={getLogin}
+              value={"Connexion"}
+              id="loginButton"
+            >
+              CONNEXION
+            </ColorButton>
+
+            <Typography
+              sx={{
+                fontSize: 12,
+                textDecoration: "solid",
+                color: "rgb(175, 179, 199)",
+              }}
+            >
+              Mot de passe oublié ?
+            </Typography>
+            <div className="forgetContainer">
+              <div></div>
+            </div>
+          </Box>
+          <Box
+            textAlign="center"
+            sx={{ mt: 3, fontStyle: "italic", color: "rgb(175, 179, 199)" }}
+          >
+            Vous n'avez pas encore de compte ?
+            <Link to="/Register">
+              <Button> S'inscrire</Button>
+            </Link>
+          </Box>
+        </Box>
+      </div>
+      <div className="mario">
+        <img src="images\pixel-connectbubble (1).gif" alt="" id="bubble" />
+        <img
+          src="https://i.pinimg.com/originals/46/53/d8/4653d885a6dd4bff3b6bcea47a8f8d5a.png"
+          alt=""
+        />
       </div>
     </>
   );
