@@ -74,6 +74,11 @@ function GetUser() {
     window.location.reload();
   };
 
+  // useEffect(() => {
+  //   console.log("TEST 2");
+  //   handleSave();
+  // }, []);
+
   console.log("user :", user);
 
   return (
