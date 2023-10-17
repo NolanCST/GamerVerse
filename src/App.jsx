@@ -7,8 +7,10 @@ import Switch from "./components/saloon/Switch";
 import Computer from "./components/saloon/Computer";
 import Login from "./components/Login/Login";
 import ProfilPage from "./components/Profile/Profil";
-import CreatePosts from "./components/Posts/CreatePosts";
+import CreatePosts from "./components/posts/CreatePosts";
 import Register from "./components/Register/Register";
+import Footer from "./components/layouts/Footer";
+import Add from "./components/posts/actions/Add";
 
 function App() {
   const router = createBrowserRouter([
@@ -53,6 +55,8 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Add />
+      <Footer />
     </>
   );
 }

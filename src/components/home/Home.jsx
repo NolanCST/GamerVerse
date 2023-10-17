@@ -11,7 +11,7 @@ function Home() {
       <div className="main-post-title"></div>
 
       <RenderHome />
-      <Footer />
+
     </>
   );
 }

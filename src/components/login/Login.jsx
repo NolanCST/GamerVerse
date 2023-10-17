@@ -113,7 +113,6 @@ export default function Login() {
                      Vous n'avez pas encore de compte ?<Link to="/Register">S'inscrire</Link>
                   </div>
                </div>
-               <Footer />
             </div>
          </div>
       </>
