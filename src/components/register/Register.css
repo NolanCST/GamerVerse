@@ -49,10 +49,7 @@ textarea {
 
 .mainRegister {
   position: relative;
-  height: 5vh;
-  width: 5vw;
-  right: 80px;
-  bottom: 70px;
+  top: 430px;
 }
 
 .subRegister {
@@ -131,9 +128,10 @@ textarea {
 }
 
 #soldier {
-  position: relative;
+  position: absolute;
   z-index: +1;
-  top: 225px;
+  top: 106px;
+  right: 225px;
 }
 
 #terms {
@@ -156,4 +154,12 @@ textarea {
 #registerForm {
   padding: 54px 80px 36px 55px;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 992px) {
+  .mainRegister {
+    width: calc(100% - 30px);
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }

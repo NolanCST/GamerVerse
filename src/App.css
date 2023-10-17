@@ -13,4 +13,11 @@ body {
   font-weight: 600;
   background-attachment: fixed;
   width: auto;
+  min-height: 100vh;
+}
+
+@media (max-width: 1439px) {
+  body {
+    font-size: calc(0vw + 14px);
+  }
 }

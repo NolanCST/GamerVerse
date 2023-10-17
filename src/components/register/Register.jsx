@@ -85,12 +85,12 @@ function Register() {
     <>
       <NavBar />
       <div className="mainRegister">
-        <img
-          src="https://media.discordapp.net/attachments/1154418633741709372/1162003370727460864/soldat.png?ex=653a5af8&is=6527e5f8&hm=8613018b16e6c80345fb2d5eb26c832bd4d048249468887cbc63932bff9dfc84&=&width=918&height=516"
-          alt=""
-          id="soldier"
-        />
         <div className="subRegister">
+          <img
+            src="https://media.discordapp.net/attachments/1154418633741709372/1162003370727460864/soldat.png?ex=653a5af8&is=6527e5f8&hm=8613018b16e6c80345fb2d5eb26c832bd4d048249468887cbc63932bff9dfc84&=&width=918&height=516"
+            alt=""
+            id="soldier"
+          />
           <div className="cont"></div>
           <div className="registerForm">
             <form method="POST" id="registerForm">
@@ -181,8 +181,8 @@ function Register() {
             </form>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
