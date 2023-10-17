@@ -18,8 +18,8 @@ export default function Switch() {
 
                <Rightbar />
             </Stack>
-            <Footer />
          </div>
+         <Footer />
       </>
    );
 }
