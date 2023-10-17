@@ -10,23 +10,24 @@ export default function Switch() {
   return (
     <>
       <NavBar />
-      <div className="main-post-title">SWITCH
-      <Stack
-        direction="row"
-        spacing={2}
-        justify-content="space-between"
-        useFlexGap
-        flexWrap="wrap"
-      >
-        <Leftbar />
+      <div className="main-post-title">
+        SWITCH
+        <Stack
+          direction="row"
+          spacing={2}
+          justify-content="space-between"
+          useFlexGap
+          flexWrap="wrap"
+        >
+          <Leftbar />
 
-        <Posts />
+          <Posts />
 
-        <Rightbar />
-      </Stack>
-      {/* <div className="main-post-title">SWITCH</div> */}
-      <Footer />
+          <Rightbar />
+        </Stack>
+        {/* <div className="main-post-title">SWITCH</div> */}
       </div>
+      <Footer />
     </>
   );
 }
