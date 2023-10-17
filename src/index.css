@@ -1,13 +1,14 @@
 #root {
-   position: relative;
-   background: no-repeat;
-   font-family: "Montserrat", sans-serif;
-   height: 100vh;
+  position: static;
+  background: no-repeat;
+  font-family: "Montserrat", sans-serif;
+  width: 100vw;
+  height: 110vh;
 }
 
 .main-post-title {
-   color: black;
-   font-size: 64px;
-   font-weight: bolder;
-   margin-top: 4%;
+  color: black;
+  font-size: 64px;
+  font-weight: bolder;
+  margin-top: 4%;
 }

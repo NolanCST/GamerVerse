@@ -91,98 +91,99 @@ function Register() {
             alt=""
             id="soldier"
           />
-          <div className="cont"></div>
-          <div className="registerForm">
-            <form method="POST" id="registerForm">
-              <h2 id="registerH2">INSCRIPTION</h2>
-              <br />
-              <div className="registerSection">
-                <input
-                  onChange={(e) => setLastname(e.target.value)}
-                  type="text"
-                  className="registerInput"
-                  name="lastname"
-                  id="lastname"
-                  placeholder="Nom"
-                />
-                <label className="errorLabel">{lastnameError}</label>
-              </div>
-              <div className="registerSection">
-                <input
-                  onChange={(e) => setFirstname(e.target.value)}
-                  type="text"
-                  className="registerInput"
-                  name="firstname"
-                  id="firstname"
-                  placeholder="Prénom"
-                />
-                <label className="errorLabel">{firstnameError}</label>
-              </div>
-              <div className="registerSection">
-                <input
-                  onChange={(e) => setAge(e.target.value)}
-                  type="number"
-                  className="registerInput"
-                  name="age"
-                  id="age"
-                  placeholder="Age"
-                />
-                <label className="errorLabel">{ageError}</label>
-              </div>
-              <div className="registerSection">
-                <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  type="email"
-                  className="registerInput"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                />
-                <label className="errorLabel">{emailError}</label>
-              </div>
-              <div className="registerSection">
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  type={showPassword ? "text" : "password"}
-                  className="registerInput"
-                  name="password"
-                  id="password"
-                  placeholder="Mot de passe"
-                />
-                <label className="errorLabel">{passwordError}</label>
-                <label className="showPassword">
+          <div className="cont">
+            <div className="registerForm">
+              <form method="POST" id="registerForm">
+                <h2 id="registerH2">INSCRIPTION</h2>
+                <br />
+                <div className="registerSection">
                   <input
-                    type="checkbox"
-                    className="checkbox"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onChange={(e) => setLastname(e.target.value)}
+                    type="text"
+                    className="registerInput"
+                    name="lastname"
+                    id="lastname"
+                    placeholder="Nom"
                   />
-                  Afficher le mot de passe
-                </label>
-              </div>
-              <div className="registerSection">
-                <label className="checkbox">
-                  <input type="checkbox" name="terms" id="terms" />
-                  <span className="checkmark"></span>
-                </label>
-                <label htmlFor="agree-term" className="labelTerms">
-                  J'accepte les{" "}
-                  <a href="#" className="termLink">
-                    Termes et Conditions {""}
-                  </a>
-                  d'utilisation générales
-                </label>
-              </div>
-              <br />
-              <div className="section">
-                <button onClick={handleRegister} className="submit">
-                  S'INSCRIRE
-                </button>
-              </div>
-            </form>
+                  <label className="errorLabel">{lastnameError}</label>
+                </div>
+                <div className="registerSection">
+                  <input
+                    onChange={(e) => setFirstname(e.target.value)}
+                    type="text"
+                    className="registerInput"
+                    name="firstname"
+                    id="firstname"
+                    placeholder="Prénom"
+                  />
+                  <label className="errorLabel">{firstnameError}</label>
+                </div>
+                <div className="registerSection">
+                  <input
+                    onChange={(e) => setAge(e.target.value)}
+                    type="number"
+                    className="registerInput"
+                    name="age"
+                    id="age"
+                    placeholder="Age"
+                  />
+                  <label className="errorLabel">{ageError}</label>
+                </div>
+                <div className="registerSection">
+                  <input
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="email"
+                    className="registerInput"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                  <label className="errorLabel">{emailError}</label>
+                </div>
+                <div className="registerSection">
+                  <input
+                    onChange={(e) => setPassword(e.target.value)}
+                    type={showPassword ? "text" : "password"}
+                    className="registerInput"
+                    name="password"
+                    id="password"
+                    placeholder="Mot de passe"
+                  />
+                  <label className="errorLabel">{passwordError}</label>
+                  <label className="showPassword">
+                    <input
+                      type="checkbox"
+                      className="checkbox"
+                      onClick={() => setShowPassword(!showPassword)}
+                    />
+                    Afficher le mot de passe
+                  </label>
+                </div>
+                <div className="registerSection">
+                  <label className="checkbox">
+                    <input type="checkbox" name="terms" id="terms" />
+                    <span className="checkmark"></span>
+                  </label>
+                  <label htmlFor="agree-term" className="labelTerms">
+                    J'accepte les{" "}
+                    <a href="#" className="termLink">
+                      Termes et Conditions {""}
+                    </a>
+                    d'utilisation générales
+                  </label>
+                </div>
+                <br />
+                <div className="section">
+                  <button onClick={handleRegister} className="submit">
+                    S'INSCRIRE
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

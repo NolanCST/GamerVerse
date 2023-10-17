@@ -1,15 +1,15 @@
-import React from "react";
 import NavBar from "../layouts/NavBar";
 import Footer from "../layouts/Footer";
+import Posts from "../posts/Posts";
 
 function Xbox() {
-  return (
-    <>
-      <NavBar />
-      <div className="main-post-title">XBOX</div>
-      <Footer />
-    </>
-  );
+   return (
+      <>
+         <NavBar />
+         <div className="main-post-title">XBOX</div>
+         <Posts />
+      </>
+   );
 }
 
 export default Xbox;

@@ -1,11 +1,14 @@
-import React from "react";
-import { Avatar, Box, IconButton, Typography, Card, CardHeader, CardMedia, CardContent, CardActions, Checkbox } from "@mui/material";
+import * as React from "react";
+import { Avatar, Box, IconButton, Typography, Card, CardHeader, CardMedia, CardContent, CardActions, Checkbox, TextField } from "@mui/material";
 import { red } from "@mui/material/colors";
 import { Favorite, Share, FavoriteBorder, MoreVert } from "@mui/icons-material";
 import { useState } from "react";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import Comments from "./actions/Comment";
 import NeedConnexionAlert from "../Alerts/NeedConnexionAlert";
+import SendIcon from "@mui/icons-material/Send";
+import "./renderPosts.css";
+import { format } from "date-fns";
 
 function RenderPosts(props) {
    const [content, setContent] = useState("");
@@ -38,7 +41,8 @@ function RenderPosts(props) {
                <CardHeader
                   avatar={
                      <Avatar sx={{ bgcolor: "purple" }} aria-label="recipe">
-                        As
+                        {props.firstname.charAt(0)}
+                        {props.lastname.charAt(0)}
                      </Avatar>
                   }
                   action={
@@ -47,7 +51,7 @@ function RenderPosts(props) {
                      </IconButton>
                   }
                   title={props.title}
-                  subheader={props.date}
+                  subheader={format(new Date(props.date), "MM-dd-yyyy HH:mm")}
                />
                <CardMedia component="img" height="10%" image="https://www.tryagame.fr/wp-content/uploads/2023/05/1676385974-1953-capture-d-ecran.jpg" alt="Zelda tokt" />
                <CardContent>
@@ -110,27 +114,41 @@ function RenderPosts(props) {
                   <div>
                      {!token ? (
                         <>
-                           <input type="text" value={content} onChange={handleCommentChange} placeholder="Commenter" />
-                           <button onClick={handleButtonClick}>Poster</button>
-                           {props.comments.map((items, index) => {
-                              return (
-                                 <div key={index}>
-                                    <Comments contentComment={items.content} firstnameComment={items.firstname} lastnameComment={items.lastname} />
-                                 </div>
-                              );
-                           })}
+                           <div className="sendComment">
+                              <TextField value={content} onChange={handleCommentChange} id="outlined-basic" label="Envoyer un commentaire" variant="outlined" />
+                              <IconButton onClick={handleButtonClick} aria-label="send">
+                                 <SendIcon sx={{ fontSize: 40 }} />
+                              </IconButton>
+                           </div>
+
+                           <div className="scrollComments">
+                              {props.comments.map((items, index) => {
+                                 return (
+                                    <div key={index}>
+                                       <Comments contentComment={items.content} firstnameComment={items.firstname} lastnameComment={items.lastname} />
+                                    </div>
+                                 );
+                              })}
+                           </div>
                         </>
                      ) : (
                         <>
-                           <input type="text" value={content} onChange={handleCommentChange} placeholder="Commenter" />
-                           <button onClick={submitComment}>Poster</button>
-                           {props.comments.map((items, index) => {
-                              return (
-                                 <div key={index}>
-                                    <Comments contentComment={items.content} firstnameComment={items.firstname} lastnameComment={items.lastname} />
-                                 </div>
-                              );
-                           })}
+                           <div className="sendComment">
+                              <TextField value={content} onChange={handleCommentChange} id="outlined-basic" label="Envoyer un commentaire" variant="outlined" />
+                              <IconButton onClick={submitComment} aria-label="send">
+                                 <SendIcon sx={{ fontSize: 40 }} />
+                              </IconButton>
+                           </div>
+
+                           <div className="scrollComments">
+                              {props.comments.map((items, index) => {
+                                 return (
+                                    <div key={index}>
+                                       <Comments contentComment={items.content} firstnameComment={items.firstname} lastnameComment={items.lastname} />
+                                    </div>
+                                 );
+                              })}
+                           </div>
                         </>
                      )}
                   </div>

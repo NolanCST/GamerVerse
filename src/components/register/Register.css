@@ -48,16 +48,13 @@ textarea {
 }
 
 .mainRegister {
-  position: relative;
-  top: 430px;
+  height: 100vh;
+  margin-top: 8%;
 }
 
 .subRegister {
   width: 862px;
   height: 500px;
-  position: relative;
-  bottom: 300px;
-  left: 100px;
 }
 
 .cont {
@@ -65,25 +62,18 @@ textarea {
   height: 500px;
   background-image: url(https://images2.alphacoders.com/199/199312.jpg);
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-position: center;
-  position: relative;
-  left: 300px;
-
   border-radius: 5px;
+  margin-left: 38%;
 }
 
 .registerForm {
-  position: relative;
-  bottom: 540px;
-  left: 600px;
   width: 562px;
   height: 500px;
   background: rgba(194, 193, 191, 0.75);
   border-radius: 5px;
+  margin-left: 300px;
 }
 
 .registerSection {
@@ -130,8 +120,8 @@ textarea {
 #soldier {
   position: absolute;
   z-index: +1;
-  top: 106px;
-  right: 225px;
+  top: 229px;
+  right: 855px;
 }
 
 #terms {
@@ -161,5 +151,14 @@ textarea {
     width: calc(100% - 30px);
     max-width: 100%;
     margin: 0 auto;
+  }
+  .cont {
+    margin-left: -1%;
+  }
+}
+
+@media screen and (max-width: 1395px) {
+  #soldier {
+    display: none;
   }
 }

@@ -1,8 +1,6 @@
-import React from "react";
 import { Box, Stack, Grid } from "@mui/material";
 import NavBar from "../layouts/NavBar";
 import Posts from "../posts/Posts";
-import Footer from "../layouts/Footer";
 import Rightbar from "../layouts/Rightbar";
 
 function PlayStation() {
@@ -16,8 +14,6 @@ function PlayStation() {
             </Grid>
             <Rightbar />
          </Stack>
-
-         <Footer />
       </>
    );
 }

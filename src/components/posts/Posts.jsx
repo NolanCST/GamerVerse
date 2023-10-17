@@ -88,6 +88,8 @@ function Posts() {
          return (
             <div key={index}>
                <RenderPosts
+                  firstname={element.firstname}
+                  lastname={element.lastname}
                   title={element.title}
                   date={element.date}
                   content={element.content}
