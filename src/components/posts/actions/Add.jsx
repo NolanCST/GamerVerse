@@ -6,10 +6,21 @@ import {
   Tooltip,
   Typography,
   Avatar,
-
+  TextField,
+  ButtonGroup,
+  Button,
 } from "@mui/material";
 import React, { useState } from "react";
-import { Add as AddIcon } from "@mui/icons-material";
+import {
+  Add as AddIcon,
+  DateRange,
+  EmojiEmotions,
+  Image,
+  PersonAdd,
+  VideoCameraBack,
+} from "@mui/icons-material";
+import { Stack } from "@mui/system";
+import { teal } from "@mui/material/colors";
 
 const UpModal = styled(Modal)({
   display: "flex",
@@ -21,8 +32,17 @@ const UserBox = styled(Box)({
   display: "flex",
   alignItems: "center",
   flexDirection: "row",
-  gap: 15
+  gap:"9px",
+  marginBottom: "35px"
 });
+
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(teal[500]),
+  backgroundColor: teal[500],
+  '&:hover': {
+    backgroundColor: teal[700],
+  },
+}));
 
 export default function Add() {
   const [open, setOpen] = useState(false);
@@ -34,7 +54,13 @@ export default function Add() {
       <Tooltip
         onClick={(e) => setOpen(true)}
         title="Crée un post"
-        sx={{ position: "fixed", bottom: 30, left: { xs: "calc 50%" }, right:0, md: 30 }}
+        sx={{
+          position: "fixed",
+          bottom: 30,
+          left: { xs: "calc 50%" },
+          right: 0,
+          md: 30,
+        }}
       >
         <Fab color="primary" aria-label="add">
           <AddIcon />
@@ -48,7 +74,7 @@ export default function Add() {
       >
         <Box
           width={400}
-          height={200}
+          height={280}
           bgcolor="white"
           borderRadius={9}
           p={5}
@@ -74,6 +100,25 @@ export default function Add() {
               Miaaaaouuuussss
             </Typography>
           </UserBox>
+          <TextField
+            sx={{ width: "100%" }}
+            id="standard-multiline-static"
+            multiline
+            rows={3}
+            placeholder="Qu'est-ce que tu penses ?"
+            variant="standard"
+            color="grey"
+          />
+          <Stack direction="row" gap={2} mt={2.5} mb={3}>
+            <EmojiEmotions color="primary" />
+            <Image color="secondary" />
+            <VideoCameraBack color="success" />
+            <PersonAdd color="red" />
+          </Stack>
+          <ButtonGroup variant="contained" aria-label="outlined primary button group" fullWidth>
+            <ColorButton>Post</ColorButton>
+            <ColorButton sx={{width:"100px"}}><DateRange/></ColorButton>
+          </ButtonGroup>
         </Box>
       </UpModal>
     </div>
