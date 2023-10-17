@@ -29,13 +29,13 @@ text-transform: uppercase;
   justify-content: center;
 }
 
-.inputContainer {
+/* .inputContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   border: none;
-}
+} */
 
 .inputContainer > .errorLabel {
   color: red;
@@ -102,11 +102,11 @@ text-transform: uppercase;
   color: rgb(175, 179, 199);
 }
 
-.noAccountContainer {
-  margin-top: 12px;
-  font-style: italic;
-  color: rgb(175, 179, 199);
-}
+  /* .noAccountContainer {
+    margin-top: 12px;
+    font-style: italic;
+    color: rgb(175, 179, 199);
+  } */
 
 .loginButton:hover {
   background-color: #342c3a;

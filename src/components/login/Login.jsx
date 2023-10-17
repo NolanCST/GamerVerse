@@ -17,6 +17,7 @@ import {
   InputAdornment,
   IconButton,
   FilledInput,
+  Typography,
 } from "@mui/material";
 import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
@@ -172,10 +173,13 @@ export default function Login() {
               </FormControl>
             </div>
 
-            <div className="forgetContainer">
-              <div>Mot de passe oublié ?</div>
-            </div>
-            <div className={"inputContainer"}>
+            <Box
+              display="flex"
+              flexDirection="row"
+              gap={2}
+              justifyContent="center"
+              alignItems="center"
+            >
               <ColorButton
                 className={"inputButton"}
                 type="button"
@@ -185,13 +189,21 @@ export default function Login() {
               >
                 CONNEXION
               </ColorButton>
-            </div>
-            <div className="noAccountContainer">
+
+              <Typography>Mot de passe oublié ?</Typography>
+              <div className="forgetContainer">
+                <div></div>
+              </div>
+            </Box>
+            <Box
+              textAlign="center"
+              sx={{ mt: 3, fontStyle: "italic", color: "rgb(175, 179, 199)" }}
+            >
               Vous n'avez pas encore de compte ?
               <Link to="/Register">
                 <Button> S'inscrire</Button>
               </Link>
-            </div>
+            </Box>
           </Box>
         </div>
       </div>
