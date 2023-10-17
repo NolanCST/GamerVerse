@@ -7,57 +7,51 @@ import Switch from "./components/saloon/Switch";
 import Computer from "./components/saloon/Computer";
 import Login from "./components/login/Login";
 import ProfilPage from "./components/Profile/Profil";
-import CreatePosts from "./components/posts/CreatePosts";
 import Register from "./components/Register/Register";
 import Footer from "./components/layouts/Footer";
-import Add from "./components/posts/actions/Add";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/PlayStation",
-      element: <PlayStation />,
-    },
-    {
-      path: "/Xbox",
-      element: <Xbox />,
-    },
-    {
-      path: "/Switch",
-      element: <Switch />,
-    },
-    {
-      path: "/Computer",
-      element: <Computer />,
-    },
-    {
-      path: "/ProfilPage",
-      element: <ProfilPage />,
-    },
+   const router = createBrowserRouter([
+      {
+         path: "/",
+         element: <Home />,
+      },
+      {
+         path: "/PlayStation",
+         element: <PlayStation />,
+      },
+      {
+         path: "/Xbox",
+         element: <Xbox />,
+      },
+      {
+         path: "/Switch",
+         element: <Switch />,
+      },
+      {
+         path: "/Computer",
+         element: <Computer />,
+      },
+      {
+         path: "/ProfilPage",
+         element: <ProfilPage />,
+      },
 
-    {
-      path: "/Register",
-      element: <Register />,
-    },
-    {
-      path: "/Login",
-      element: <Login />,
-    },
-    {
-      path: "/CreatePosts",
-      element: <CreatePosts />,
-    },
-  ]);
-  return (
-    <>
-      <RouterProvider router={router} />
-      <Footer />
-    </>
-  );
+      {
+         path: "/Register",
+         element: <Register />,
+      },
+      {
+         path: "/Login",
+         element: <Login />,
+      },
+   ]);
+   return (
+      <>
+         <RouterProvider router={router} />
+         <Footer />
+      </>
+   );
 }
 
 export default App;

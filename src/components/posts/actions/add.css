@@ -1,0 +1,8 @@
+.infosContainer {
+   display: flex;
+   flex-direction: row;
+}
+
+#select {
+   margin-left: 10%;
+}
