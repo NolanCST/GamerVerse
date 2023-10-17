@@ -1,5 +1,9 @@
 // NPM
 
+npm install react-slick slick-carousel
+
+npm install date-fns --save
+
 npm i @emotion/react
 i @emotion/styled
 i @material-ui/icons
