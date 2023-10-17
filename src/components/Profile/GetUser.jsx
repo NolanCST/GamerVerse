@@ -3,32 +3,25 @@ import { useSearchParams } from "react-router-dom";
 
 function GetUser() {
   const [user, setUser] = useState({});
-  const [newfirstName, setNewFirstName] = useState("");
-  const [newLastName, setNewLastName] = useState("");
   const [editing, setEditing] = useState(false);
 
   const getUser = async () => {
-    let options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
-      },
-    };
-
-    console.log("options:", options);
-
     try {
-      let response = await fetch(
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
+        },
+      };
+
+      const response = await fetch(
         "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
         options
       );
 
-      console.log("response:", response);
-
       if (response.ok) {
-        let data = await response.json();
-        console.log("data: ", data);
+        const data = await response.json();
         setUser(data);
       } else {
         console.error("Failed to fetch user data.");
@@ -38,50 +31,53 @@ function GetUser() {
     }
   };
 
+  const ModifProfil = async () => {
+    try {
+      const options = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
+        },
+        body: JSON.stringify(user),
+      };
+
+      // const recup = {
+      //   body : JSON.parse(user)
+      // }
+
+      const response = await fetch(
+        "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
+        options
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data);
+      } else {
+        console.error("Failed to update user data.");
+      }
+    } catch (error) {
+      console.error("Error updating user data:", error);
+    }
+  };
+
   useEffect(() => {
     console.log("TEST1");
     getUser();
   }, []);
 
-  const ModifProfil = async () => {
-    let options = {
-      method: "PUT",
-
-      Headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "bearer token " /* + localStorage.getItem("@TokenUser"), */,
-      },
-
-      Body: JSON.parse({
-        firstname: String,
-        lastname: String,
-        email: String,
-        age: Number,
-        occupation: String,
-      }),
-    };
-
-    const response = await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
-      options
-    );
-
-    const data = await response.json();
-
-    console.log(data);
-
-    setUser(data);
-  };
-
   const handleSave = () => {
+    ModifProfil();
     setEditing(false);
+    console.log(user);
+    window.location.reload();
   };
 
-  useEffect(() => {
-    console.log("TEST 2");
-    ModifProfil();
-  }, []);
+  // useEffect(() => {
+  //   console.log("TEST 2");
+  //   handleSave();
+  // }, []);
 
   console.log("user :", user);
 
@@ -89,7 +85,7 @@ function GetUser() {
     <div className="profilInput">
       <h1 className="title">Profil</h1>
 
-      {editing ? ( // Si l'édition est activée
+      {editing ? (
         <div className="identity">
           <div className="getFirstName">
             Nom:{" "}
@@ -109,12 +105,24 @@ function GetUser() {
             />
           </div>
 
-          <button onClick={handleSave}>Sauvegarder</button>
+          <div className="getAge">
+            Age :{" "}
+            <input
+              type="text"
+              value={user.age}
+              onChange={(e) => setUser({ ...user, age: e.target.value })}
+            />
+          </div>
+
+          <button onClick={handleSave} className="saveButton">
+            Sauvegarder
+          </button>
         </div>
       ) : (
         <div className="identity">
           <div className="getFirstName">Nom: {user.firstname}</div>
           <div className="getLastName">Prénom: {user.lastname}</div>
+          <div className="getAge">Age: {user.age}</div>
         </div>
       )}
 
@@ -123,9 +131,30 @@ function GetUser() {
       </div>
 
       <div>
-        <button onClick={() => setEditing(true)} className="editButton">Modifier</button>
+        <select
+          name="Plateforme"
+          value={user.occupation}
+          className="getPlatforme"
+        >
+          <option>Choisissez votre Plateforme</option>
+          <option>Playstation</option>
+          <option>Xbox</option>
+          <option>Switch</option>
+          <option>Pc</option>
+        </select>
       </div>
 
+      <div>
+        {editing ? (
+          <button onClick={() => setEditing(false)} className="cancelButton">
+            Annuler
+          </button>
+        ) : (
+          <button onClick={() => setEditing(true)} className="editButton">
+            Modifier
+          </button>
+        )}
+      </div>
     </div>
   );
 }
