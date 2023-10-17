@@ -44,6 +44,14 @@ const ColorButton = styled(Button)(({ theme }) => ({
   },
 }));
 
+const ColorFab = styled(Fab)(({ theme }) => ({
+  color: theme.palette.getContrastText(teal[500]),
+  backgroundColor: teal[500],
+  '&:hover': {
+    backgroundColor: teal[700],
+  },
+}));
+
 export default function Add() {
   const [open, setOpen] = useState(false);
 
@@ -58,13 +66,12 @@ export default function Add() {
           position: "fixed",
           bottom: 30,
           left: { xs: "calc 50%" },
-          right: 0,
           md: 30,
         }}
       >
-        <Fab color="primary" aria-label="add">
+        <ColorFab aria-label="add">
           <AddIcon />
-        </Fab>
+        </ColorFab>
       </Tooltip>
       <UpModal
         open={open}
@@ -80,16 +87,7 @@ export default function Add() {
           p={5}
           sx={{ fontFamily: "Raleway", color: "white", letterSpacing: ".1rem" }}
         >
-          <Typography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
-            color="gray"
-            textAlign="center"
-          >
-            Get Jinxed !
-          </Typography>
-          <UserBox>
+                    <UserBox>
             <Avatar sx={{ bgcolor: "purple" }} aria-label="recipe">
               As
             </Avatar>
@@ -97,9 +95,19 @@ export default function Add() {
               variant="span"
               sx={{ fontWeight: 500, color: "blueviolet" }}
             >
-              Miaaaaouuuussss
+              Aslinn Wyvern
             </Typography>
           </UserBox>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
+            color="gray"
+            textAlign="center"
+          >
+          Titre de ton post
+          </Typography>
+
           <TextField
             sx={{ width: "100%" }}
             id="standard-multiline-static"

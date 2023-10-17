@@ -4,6 +4,7 @@ import Posts from "../posts/Posts";
 import Footer from "../layouts/Footer";
 import Rightbar from "../layouts/Rightbar";
 import Leftbar from "../layouts/Leftbar";
+import Add from "../posts/actions/Add";
 
 export default function Switch() {
    return (
@@ -17,7 +18,7 @@ export default function Switch() {
             </Grid>
             <Rightbar />
          </Stack>
-
+<Add />
          <Footer />
       </>
    );

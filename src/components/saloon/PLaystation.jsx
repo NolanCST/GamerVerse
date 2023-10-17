@@ -3,6 +3,7 @@ import NavBar from "../layouts/NavBar";
 import Posts from "../posts/Posts";
 import Rightbar from "../layouts/Rightbar";
 import Leftbar from "../layouts/Leftbar";
+import Add from "../posts/actions/Add";
 
 function PlayStation() {
    return (
@@ -16,6 +17,7 @@ function PlayStation() {
             </Grid>
             <Rightbar />
          </Stack>
+         <Add />
       </>
    );
 }

@@ -9,6 +9,7 @@
 .main-post-title {
   color: black;
   font-size: 64px;
-  font-weight: bolder;
-  margin-top: 4%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600px;
+  margin-top: 3%;
 }

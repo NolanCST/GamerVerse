@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Xbox from "./components/saloon/Xbox";
 import Switch from "./components/saloon/Switch";
 import Computer from "./components/saloon/Computer";
-import Login from "./components/Login/Login";
+import Login from "./components/login/Login";
 import ProfilPage from "./components/Profile/Profil";
 import CreatePosts from "./components/posts/CreatePosts";
 import Register from "./components/Register/Register";
@@ -55,7 +55,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <Add />
       <Footer />
     </>
   );

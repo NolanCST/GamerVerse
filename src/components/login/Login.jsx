@@ -9,7 +9,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import "./Login.css";
 import SuccessAlert from "../Alerts/SuccesAlert";
 import ErrorAlert from "../Alerts/ErrorAlert";
-import { Box, TextField, styled, Button } from "@mui/material";
+import { Box, TextField, styled, Button, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from "@mui/material";
 import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
 
@@ -113,7 +113,7 @@ export default function Login() {
                 sx={{ color: "#ffffff" }}
                 className="iconInput"
               />
-              <TextField
+              {/* <TextField
                 type="text"
                 onChange={handleInputEmail}
                 required
@@ -122,7 +122,17 @@ export default function Login() {
                 defaultValue=""
                 value={email}
                 //   sx={{bgcolor: "#90a4ae"}}
-              />
+              /> */}
+              <TextField
+          required
+          id="filled-required"
+          type="text"
+          onChange={handleInputEmail}
+          label="Pas d'email..pas de connexion!"
+          defaultValue=""
+          variant="filled"
+          value={email}
+        />
               <label className="errorLabel">{emailError}</label>
             </div>
             <div className="inputContainer">
@@ -131,14 +141,18 @@ export default function Login() {
                 sx={{ color: "#ffffff" }}
                 className="iconInput"
               />
+
+
+
               <input
-                id="loginPassword"
-                value={password}
-                type={showPassword ? "text" : "password"}
-                onChange={handleInputPassword}
+                // id="loginPassword"
+                // value={password}
+                // type={showPassword ? "text" : "password"}
+                // onChange={handleInputPassword}
                 className="inputBox inputClass"
-                placeholder="Par ici ton mdp...!"
+                // placeholder="Par ici ton mdp...!"
               />
+              
               <label className="showPassword">
                 <input
                   type="checkbox"
@@ -147,20 +161,41 @@ export default function Login() {
                 />
                 Afficher le mot de passe
               </label>
-
               <label className="errorLabel">{passwordError}</label>
+            </div>
+
+
+            
+            <div>
+            <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
+          <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+          <OutlinedInput
+            id="standard-adornment-password"
+            value={password}
+            placeholder="Par ici ton mdp...!"
+            onChange={handleInputPassword}
+            type={showPassword ? 'text' : 'password'}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+ </FormControl>
             </div>
             <div className="forgetContainer">
               <div>Mot de passe oublié ?</div>
             </div>
             <div className={"inputContainer"}>
-              {/* <input
-              className={"inputButton"}
-              type="button"
-              onClick={getLogin}
-              value={"Connexion"}
-              id="loginButton"
-            /> */}
+
               <ColorButton
                 className={"inputButton"}
                 type="button"
@@ -170,6 +205,7 @@ export default function Login() {
               >
                 CONNEXION
               </ColorButton>
+              
             </div>
             <div className="noAccountContainer">
               <div>
