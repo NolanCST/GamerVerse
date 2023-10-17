@@ -76,8 +76,10 @@ export default function Login() {
    return (
       <>
          <NavBar />
-         <SuccessAlert showSuccessAlert={showSuccessAlert} />
-         <ErrorAlert showErrorAlert={showErrorAlert} />
+         <div>
+            <SuccessAlert showSuccessAlert={showSuccessAlert} />
+            <ErrorAlert showErrorAlert={showErrorAlert} />
+         </div>
          <div className="mainContainer">
             <div className="mario">
                <img src="images\pixel-connectbubble (1).gif" alt="" id="bubble" />

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Stack, Grid } from "@mui/material";
 import NavBar from "../layouts/NavBar";
 import Posts from "../posts/Posts";
