@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Register.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../layouts/NavBar";
 import Footer from "../layouts/Footer";
 
@@ -165,11 +165,9 @@ function Register() {
                   </label>
                   <label htmlFor="agree-term" className="labelTerms">
                     J'accepte les{" "}
-                    <Link to="/Terms">
-                      <span className="termLink">
-                        Termes et Conditions {""}
-                      </span>
-                    </Link>
+                    <a href="#" className="termLink">
+                      Termes et Conditions {""}
+                    </a>
                     générales d'utilisation
                   </label>
                 </div>

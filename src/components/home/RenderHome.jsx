@@ -136,18 +136,13 @@ function RenderHome() {
               <ListItemText
                 sx={{ color: "grey" }}
                 primary="Zaïnab"
-                secondary="Zaï - supportrice (Modératrice)"
+                secondary="Zaï - Persécutée (Modératrice)"
               />
             </ListItem>
           </List>
         </Box>
-        <Box display="flex"
-            justifyContent="center">
-          <Box
-            sx={{ bgcolor: "inherit" }}
-            zIndex={1}
-            width="70%"
-          >
+        <Box display="flex" justifyContent="center">
+          <Box sx={{ bgcolor: "inherit" }} zIndex={1} width="70%">
             <Box
               bgcolor="white"
               position="absolute"
@@ -173,7 +168,7 @@ function RenderHome() {
               flexDirection="row"
               justifyContent="space-between"
             >
-              <Box sx={{ maxWidth: 250, height: 145}}>
+              <Box sx={{ maxWidth: 250, height: 145 }}>
                 <Link
                   to="/PlayStation"
                   style={{ textDecoration: "none", color: "Black" }}

@@ -93,6 +93,7 @@ textarea {
 
 .termLink {
   color: #fff;
+  text-decoration: underline;
 }
 
 .submit {
@@ -149,6 +150,13 @@ textarea {
   margin-top: 40px;
 }
 
+#bubble {
+  width: 200px;
+  position: absolute;
+  left: 29%;
+  top: 22%;
+}
+
 @media screen and (max-width: 1292px) {
   .mainRegister {
     max-width: 90vh;
@@ -163,16 +171,25 @@ textarea {
   #soldier {
     display: none;
   }
+  #bubble {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1526.4px) {
   #soldier {
     top: 209%;
   }
+  #bubble {
+    top: 209%;
+  }
 }
 
 @media screen and (max-width: 1520px) {
   #soldier {
+    display: none;
+  }
+  #bubble {
     display: none;
   }
 }
