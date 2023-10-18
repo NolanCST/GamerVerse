@@ -1,15 +1,12 @@
-// import { Password, RepartitionRounded } from "@mui/icons-material";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../layouts/NavBar";
 import SuccessAlert from "../Alerts/SuccesAlert";
 import ErrorAlert from "../Alerts/ErrorAlert";
 import "./Login.css";
-//import mui
 import LockIcon from "@mui/icons-material/Lock";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import { Box, styled, Button, FormControl, InputLabel, InputAdornment, IconButton, FilledInput, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -32,11 +29,9 @@ export default function Login() {
       setPassword(e.target.value);
    };
 
-   // Appelez l'API du serveur pour vérifier si l'identifiant de messagerie donné existe déjà
    const getLogin = async (e) => {
       e.preventDefault();
 
-      // définir les valeurs d'erreur
       setEmailError("");
       setPasswordError("");
 
@@ -51,7 +46,6 @@ export default function Login() {
          }),
       };
 
-      //Appel Api
       try {
          const response = await fetch(`https://social-network-api.osc-fr1.scalingo.io/gamer-verse/login`, options);
          const data = await response.json();
@@ -71,12 +65,9 @@ export default function Login() {
          }
       } catch (error) {
          setError("Une erreur s'est produite lors de la connexion.");
-      } // Utilise les données renvoyées par l'API
+      }
    };
 
-   // Connectez-l'utilisateur en utilisant l'e-mail et le mdp
-
-   //Couleur button matérial
    const ColorButton = styled(Button)(({ theme }) => ({
       color: theme.palette.getContrastText(teal[500]),
       backgroundColor: teal[500],
@@ -101,69 +92,38 @@ export default function Login() {
 
                   <FormControl sx={{ m: 2, width: "52ch", mt: 3 }} variant="filled">
                      <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
-                     <FilledInput
-                        id="filled-adornment-email"
-                        type="text"
-                        onChange={handleInputEmail}
-                        placeholder="Pas d'email..pas de connexion!"
-                        // defaultValue=""
-                        variant="filled"
-                        value={email}
-                     />
+                     <FilledInput id="filled-adornment-email" type="text" onChange={handleInputEmail} placeholder="Pas d'email..pas de connexion!" variant="filled" value={email} />
                   </FormControl>
 
                   <label className="errorLabel">{emailError}</label>
                </Box>
 
-          <Box className="inputContainer" alignItems="center" display="flex">
-            <LockIcon
-              fontSize="large"
-              sx={{ color: "rgb(175, 179, 199)" }}
-              className="iconInput"
-            />
+               <Box className="inputContainer" alignItems="center" display="flex">
+                  <LockIcon fontSize="large" sx={{ color: "rgb(175, 179, 199)" }} className="iconInput" />
 
-            <FormControl sx={{ m: 2, width: "52ch", mb:3, mt:3 }} variant="filled">
-              <InputLabel htmlFor="filled-adornment-password">
-                Password
-              </InputLabel>
-              <FilledInput
-                id="filled-adornment-password"
-                value={password}
-                placeholder="Par ici ton mdp...!"
-                onChange={handleInputPassword}
-                type={showPassword ? "text" : "password"}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={() => setShowPassword(!showPassword)}
-                      onMouseDown={()=> setShowPassword(!showPassword)}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="Password"
-              />
-            </FormControl>
-          </Box>
-          <Box
-            display="flex"
-            flexDirection="row"
-            gap={2}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <ColorButton
-              className={"inputButton"}
-              type="button"
-              onClick={getLogin}
-              value={"Connexion"}
-              id="loginButton"
-            >
-              CONNEXION
-            </ColorButton>
+                  <FormControl sx={{ m: 2, width: "52ch", mb: 3, mt: 3 }} variant="filled">
+                     <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+                     <FilledInput
+                        id="filled-adornment-password"
+                        value={password}
+                        placeholder="Par ici ton mdp...!"
+                        onChange={handleInputPassword}
+                        type={showPassword ? "text" : "password"}
+                        endAdornment={
+                           <InputAdornment position="end">
+                              <IconButton aria-label="toggle password visibility" onClick={() => setShowPassword(!showPassword)} onMouseDown={() => setShowPassword(!showPassword)} edge="end">
+                                 {showPassword ? <VisibilityOff /> : <Visibility />}
+                              </IconButton>
+                           </InputAdornment>
+                        }
+                        label="Password"
+                     />
+                  </FormControl>
+               </Box>
+               <Box display="flex" flexDirection="row" gap={2} justifyContent="center" alignItems="center">
+                  <ColorButton className={"inputButton"} type="button" onClick={getLogin} value={"Connexion"} id="loginButton">
+                     CONNEXION
+                  </ColorButton>
 
                   <Typography
                      sx={{

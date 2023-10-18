@@ -13,7 +13,7 @@ function PlayStation() {
          <Stack spacing={{ xs: 6, sm: 2 }} direction="row" flexWrap="wrap" justify-content="space-between" rowspacing={1} columnpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Leftbar />
             <Grid item xs={2} sm={4} md={4}>
-               <Posts />
+               <Posts type="Playstation" />
             </Grid>
             <Rightbar />
          </Stack>

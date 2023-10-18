@@ -11,10 +11,10 @@ function Xbox() {
       <>
          <NavBar />
          <div className="main-post-title">Xbox</div>
-         <Stack  direction="row" flexWrap="wrap" justify-content="space-between" >
+         <Stack direction="row" flexWrap="wrap" justify-content="space-between">
             <Leftbar />
             {/* <Grid item xs={2} sm={4} md={4}> */}
-               <Posts />
+            <Posts type="Xbox" />
             {/* </Grid> */}
             <Rightbar />
          </Stack>

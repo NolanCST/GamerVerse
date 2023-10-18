@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import RenderPosts from "./RenderPosts";
-import Comments from "./actions/Comment";
 
-function Posts() {
+function Posts(props) {
    const [posts, setPosts] = useState([]);
    const [hasLiked, setHasLiked] = useState(true);
 
@@ -17,8 +16,6 @@ function Posts() {
       const data = await response.json();
       setPosts(data.posts);
    };
-
-   console.log(posts);
 
    const postsLike = async (postId) => {
       let options = {
@@ -39,7 +36,7 @@ function Posts() {
             if (hasLiked === false) {
                setHasLiked(true);
             } else {
-               // Il faut rajouter le code pour permettre de retirer le like (Pas encore possible tant que Guillaume n'a pas rajoute la fonction dans l'api)
+               // future fonction pour retirer le like
                setHasLiked(false);
             }
             getPosts();
@@ -81,27 +78,29 @@ function Posts() {
       getPosts();
    }, []);
 
-   console.log(posts);
-
    const renderPosts = () => {
-      return posts?.map((element, index) => {
-         return (
-            <div key={index}>
-               <RenderPosts
-                  firstname={element.firstname}
-                  lastname={element.lastname}
-                  title={element.title}
-                  date={element.date}
-                  content={element.content}
-                  likes={element.likes.length}
-                  btnLike={() => postsLike(element._id, index)}
-                  inputComments={(content) => postsComment(element._id, content)}
-                  comments={element.comments}
-                  numberComments={element.comments.length}
-               />
-            </div>
-         );
-      });
+      return posts
+         ?.filter((element) => {
+            return element.title.includes(props.type);
+         })
+         .map((element, index) => {
+            return (
+               <div key={index}>
+                  <RenderPosts
+                     firstname={element.firstname}
+                     lastname={element.lastname}
+                     title={element.title}
+                     date={element.date}
+                     content={element.content}
+                     likes={element.likes.length}
+                     btnLike={() => postsLike(element._id, index)}
+                     inputComments={(content) => postsComment(element._id, content)}
+                     comments={element.comments}
+                     numberComments={element.comments.length}
+                  />
+               </div>
+            );
+         });
    };
 
    return (
