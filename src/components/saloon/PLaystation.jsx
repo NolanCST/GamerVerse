@@ -4,6 +4,7 @@ import Posts from "../posts/Posts";
 import Rightbar from "../layouts/Rightbar";
 import Leftbar from "../layouts/Leftbar";
 import Add from "../posts/actions/Add";
+import "./Playstation.css";
 
 function PlayStation() {
   return (
@@ -20,7 +21,7 @@ function PlayStation() {
         marginBottom={10}
       >
         <Leftbar />
-        <Grid item xs={2} sm={4} md={4}>
+        <Grid item xs={2} sm={4} md={4} className="saloonPost">
           <Posts type="Playstation" />
         </Grid>
         <Rightbar />
