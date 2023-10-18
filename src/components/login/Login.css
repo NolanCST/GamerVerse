@@ -35,20 +35,20 @@
 }
 
 /* .inputBox {
-  height: 48px;
-  width: 400px;
-  font-size: large;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  background: transparent;
-} */
+ height: 48px;
+ width: 400px;
+ font-size: large;
+ border-radius: 8px;
+ border: none;
+ outline: none;
+ background: transparent;
+} /
 
 .loginPassword[type="password"] {
   color: teal !important;
 }
 
-/* ----> Image Mario avec animation */
+/ ----> Image Mario avec animation /
 #bubble {
   width: 200px;
   position: absolute;
@@ -69,21 +69,13 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 992px) {
-  .mainContainer {
-    width: 80%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .inputContainer {
-    width: 80%;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 1095px) {
-  .mario {
-    display: none;
-  }
-}
+/ @keyframes my-animation {
+ from {
+   width: 300px;
+   top: 10px;
+ }
+ to {
+   width: 300px;
+   top: 80px;
+ }
+} */

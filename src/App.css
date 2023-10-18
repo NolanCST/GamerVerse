@@ -13,6 +13,7 @@ body {
   background-attachment: fixed;
   width: auto;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
   background-image: url(/images/fond-page-home.jpeg);
   background-size: cover;
   background-repeat: no-repeat;

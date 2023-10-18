@@ -1,3 +1,4 @@
-/* .main-post-title {
+.main-post-title {
     margin-top: 1%;
-} */
+    overflow-y: hidden;
+}

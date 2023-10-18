@@ -4,7 +4,7 @@ import React from "react";
 function SuccessAlert({ showSuccessAlert }) {
    return (
       showSuccessAlert && (
-         <Alert variant="filled" severity="success">
+         <Alert variant="filled" severity="success" sx={{ width: "75%" }}>
             Vous êtes connecté.
          </Alert>
       )
