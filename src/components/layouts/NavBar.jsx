@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./NavBar.css";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -111,6 +111,32 @@ function ResponsiveAppBar() {
                                     textDecoration: "none",
                                  }}
                               >
+<<<<<<< HEAD
+                                {login}
+                              </Link>
+                            </Button>
+                          ))}
+                        </Box>
+                        <Box>
+                          {registers.map((Register) => (
+                            <Button
+                              key={Register}
+                              onClick={handleCloseNavMenu}
+                              variant="outlined"
+                              sx={{
+                                my: 2,
+                                color: "teal",
+                                border: " 1px solid teal",
+                                display: "block",
+                              }}
+                            >
+                              <Link
+                                style={{
+                                  textDecoration: "none",
+                                  color: "white",
+                                }}
+                                to={`/Register`}
+=======
                                  <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
                                     {Home}
                                  </Link>
@@ -138,6 +164,7 @@ function ResponsiveAppBar() {
                                  sx={{
                                     display: { xs: "block", md: "none" },
                                  }}
+>>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
                               >
                                  {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -192,6 +219,33 @@ function ResponsiveAppBar() {
                                  flexDirection: "row",
                                  justifyContent: "flex-end",
                               }}
+<<<<<<< HEAD
+                            >
+                              <Link
+                                style={{
+                                  textDecoration: "none",
+                                  color: "white",
+                                }}
+                                to={``}
+                              >
+                                {logout}
+                              </Link>
+                            </Button>
+                          ))}
+                        </Box>
+                      </>
+                    )}
+                  </Box>
+                </Toolbar>
+              </Container>
+              <LogoutAlert showLogoutAlert={showLogoutAlert} />
+            </AppBar>
+          </ThemeProvider>
+        </Box>
+      </Stack>
+    </>
+  );
+=======
                            >
                               <Box style={{ alignSelf: "center" }}>
                                  <Tooltip title="Vers ton profil">
@@ -299,5 +353,6 @@ function ResponsiveAppBar() {
          </Stack>
       </>
    );
+>>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
 }
 export default ResponsiveAppBar;

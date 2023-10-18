@@ -8,6 +8,7 @@ import Computer from "./components/saloon/Computer";
 import Login from "./components/Login/Login";
 import ProfilPage from "./components/Profile/Profil";
 import Register from "./components/Register/Register";
+import Terms from "./components/Register/Terms";
 import Footer from "./components/layouts/Footer";
 
 function App() {
@@ -40,6 +41,10 @@ function App() {
     {
       path: "/Register",
       element: <Register />,
+    },
+    {
+      path: "/Terms",
+      element: <Terms />,
     },
     {
       path: "/Login",
