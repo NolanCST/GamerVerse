@@ -1,16 +1,15 @@
 #root {
-  position: static;
-  background: no-repeat;
-  font-family: "Montserrat", sans-serif;
-  width: 100vw;
-  height: 110vh;
+   position: static;
+   background: no-repeat;
+   font-family: "Montserrat", sans-serif;
+   width: 100vw;
+   height: 110vh;
 }
 
 .main-post-title {
-  color: black;
-  font-size: 64px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600px;
-  margin-top: 3%;
-  margin-left: 0.5%;
+   color: black;
+   font-size: 64px;
+   font-family: "Raleway", sans-serif;
+   font-weight: 600px;
+   margin-top: 3%;
 }
