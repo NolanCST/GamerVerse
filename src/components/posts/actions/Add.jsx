@@ -43,6 +43,10 @@ export default function Add() {
    const navigate = useNavigate();
    const [selectedValue, setSelectedValue] = useState("");
 
+   const refreshPage = () => {
+      window.location.reload(false);
+   };
+
    const handleInputChangeTitle = (e) => {
       setPostTitle(e.target.value);
    };
@@ -79,8 +83,8 @@ export default function Add() {
          const data = await response.json();
          console.log("data: ", data);
          if (data.success) {
-            alert("Votre post a été mis en ligne sur le channel " + selectedValue);
             navigate("/" + selectedValue);
+            refreshPage();
          } else {
             console.error("Échec de la requête HTTP");
          }
