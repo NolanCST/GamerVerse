@@ -1,7 +1,7 @@
 import { Box, Fab, styled, Modal, Tooltip, Typography, Avatar, TextField, ButtonGroup, Button, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
 import React, { useState } from "react";
 import { Add as AddIcon, DateRange, EmojiEmotions, Image, PersonAdd, VideoCameraBack } from "@mui/icons-material";
-import { Stack, display } from "@mui/system";
+import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
 import { useNavigate } from "react-router";
 import "./add.css";
@@ -40,8 +40,8 @@ export default function Add() {
    const [open, setOpen] = useState(false);
    const [postTitle, setPostTitle] = useState("");
    const [postContent, setPostContent] = useState("");
-   const [navigatePlatform, setNavigatePlatform] = useState("");
    const navigate = useNavigate();
+   const [selectedValue, setSelectedValue] = useState("");
 
    const handleInputChangeTitle = (e) => {
       setPostTitle(e.target.value);
@@ -51,12 +51,12 @@ export default function Add() {
       setPostContent(e.target.value);
    };
 
-   const handleNavigatePlatformChange = (e) => {
-      setNavigatePlatform(e.target.value);
+   const handleSelectChange = (event) => {
+      setSelectedValue(event.target.value);
    };
 
    const postPosts = async () => {
-      if (!navigatePlatform) {
+      if (!selectedValue) {
          alert("Veuillez sélectionner une plateforme avant de poster.");
          return;
       }
@@ -68,7 +68,7 @@ export default function Add() {
             Authorization: "bearer " + localStorage.getItem("@TokenUser"),
          },
          body: JSON.stringify({
-            title: postTitle,
+            title: selectedValue + " - " + postTitle,
             content: postContent,
          }),
       };
@@ -79,8 +79,8 @@ export default function Add() {
          const data = await response.json();
          console.log("data: ", data);
          if (data.success) {
-            alert("Votre post a été mis en ligne sur le channel " + navigatePlatform);
-            navigate("/" + navigatePlatform);
+            alert("Votre post a été mis en ligne sur le channel " + selectedValue);
+            navigate("/" + selectedValue);
          } else {
             console.error("Échec de la requête HTTP");
          }
@@ -89,11 +89,8 @@ export default function Add() {
       }
    };
 
-   //création d'un event onclick pour enclencher le Tooltip
-
    return (
       <>
-      {/* <div className="app"> */}
          <Tooltip
             onClick={(e) => setOpen(true)}
             title="Crée un post"
@@ -102,7 +99,7 @@ export default function Add() {
                bottom: 30,
                left: { xs: "calc 50%" },
                md: 30,
-               ml: 13
+               ml: 13,
             }}
          >
             <ColorFab aria-label="add">
@@ -122,7 +119,7 @@ export default function Add() {
                   </Typography>
                   <FormControl id="select" variant="standard" sx={{ m: 1, minWidth: 120 }}>
                      <InputLabel id="select-standard">Plateforme</InputLabel>
-                     <Select labelId="select-standard-label" id="simple-select-standard" value={navigatePlatform} onChange={handleNavigatePlatformChange} label="NavigatePlatform">
+                     <Select labelId="select-standard-label" id="simple-select-standard" value={selectedValue} onChange={handleSelectChange} label="NavigatePlatform">
                         <MenuItem value="">
                            <em>--Choisissez votre plateforme--</em>
                         </MenuItem>
@@ -146,7 +143,6 @@ export default function Add() {
                </ButtonGroup>
             </Box>
          </UpModal>
-      {/* </div> */}
       </>
    );
 }
