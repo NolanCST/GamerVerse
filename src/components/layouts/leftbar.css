@@ -1,0 +1,23 @@
+.saloonTitle {
+   color: white;
+   transform: rotate(270deg);
+   font-size: 80px;
+   font-family: "Raleway";
+   position: relative;
+   top: 400px;
+   letter-spacing: 0.3rem;
+   width: 250px;
+}
+
+.leftbarContainer {
+   max-width: 20%;
+}
+
+@media screen and (max-width: 390px) {
+   .css-rnu15v {
+      display: none;
+   }
+   .css-c8d7fb-Muistack-root {
+      margin-left: -48px;
+   }
+}
