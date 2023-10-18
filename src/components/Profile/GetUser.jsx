@@ -39,7 +39,7 @@ function GetUser() {
           "Content-Type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
         },
-        body: JSON.parse(user),
+        body: JSON.stringify(user),
       };
 
       const response = await fetch(
@@ -49,7 +49,7 @@ function GetUser() {
 
       if (response.ok) {
         const data = await response.json();
-        setUser(data);
+        getUser()
       } else {
         console.error("Failed to update user data.");
       }
@@ -65,12 +65,8 @@ function GetUser() {
   const handleSave = () => {
     ModifProfil();
     setEditing(false);
-    console.log(user);
   };
 
-  useEffect(() => {
-     ModifProfil();
-   }, []);
 
 
   return (
