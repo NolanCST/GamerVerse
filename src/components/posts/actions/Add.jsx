@@ -147,19 +147,21 @@ export default function Add() {
           bgcolor="white"
           borderRadius={9}
           p={5}
-          sx={{ fontFamily: "Raleway", color: "white", letterSpacing: ".1rem" }}
+          sx={{ fontFamily: "Raleway", color: "white", letterSpacing: ".1rem"}}
         >
-          <UserBox>
+          <UserBox >
             <Typography
               variant="span"
               sx={{
                 fontWeight: 600,
-                color: "blueviolet",
+                color: "teal",
                 fontSize: 20,
                 textTransform: "uppercase",
+                
+                
               }}
             >
-              Réaliser un nouveau Post
+              Créer une publication
             </Typography>
           </UserBox>
           <div className="infosContainer">
@@ -214,10 +216,12 @@ export default function Add() {
             color="primary"
           />
           <Stack direction="row" gap={2} mt={2.5} mb={3}>
+          <Tooltip title="Dans la prochaine version">
             <EmojiEmotions color="primary" />
             <Image color="secondary" />
             <VideoCameraBack color="success" />
             <PersonAdd color="red" />
+            </Tooltip>
           </Stack>
           <ButtonGroup
             variant="contained"

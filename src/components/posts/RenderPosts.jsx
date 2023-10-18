@@ -31,6 +31,7 @@ function RenderPosts(props) {
    const toggleCommentBox = () => {
       setShowCommentBox(!showCommentBox);
    };
+   // .toLocaleDateString("fr")
 
    return (
       <>
@@ -46,13 +47,14 @@ function RenderPosts(props) {
                   }
                   action={
                      <IconButton aria-label="settings">
-                        <Tooltip title="Suppression (future upgrade)">
+                        <Tooltip title="Suppression/Modification (prochaine version)">
                            <MoreVert />
                         </Tooltip>
                      </IconButton>
                   }
                   title={props.title}
-                  subheader={format(new Date(props.date), "MM-dd-yyyy HH:mm")}
+                  
+                  subheader={new Date(props.date).toLocaleDateString("fr", {day:"numeric", month:"long", year:"numeric"}) + ' | ' + new Date(props.date).toLocaleTimeString("fr", {hour:"numeric", minute:"numeric"})}
                />
                <CardMedia component="img" height="10%" image="/images/Fond_post.png" alt="Image par default" />
                <CardContent>
