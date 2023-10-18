@@ -107,7 +107,7 @@ function RenderPosts(props) {
                      ) : (
                         <>
                            <div className="sendComment">
-                              <TextField value={content} onChange={handleCommentChange} id="outlined-basic" label="Envoyer un commentaire" variant="outlined" sx={{ width: 650 }} />
+                              <TextField value={content} onChange={handleCommentChange} id="outlined-basic" label="Envoyer un commentaire" variant="outlined" sx={{ width: 550 }} />
                               <IconButton onClick={submitComment} aria-label="send">
                                  <SendIcon sx={{ fontSize: 40 }} />
                               </IconButton>
