@@ -47,15 +47,10 @@ textarea {
   background-color: #dedbdb;
 }
 
-.mainRegister {
-  height: 100%;
-  margin-top: 8%;
-  width: 100%;
-}
-
 .subRegister {
   width: 56.1vw;
   height: 70.7vh;
+  margin-top: 8%;
 }
 
 .cont {
@@ -94,6 +89,7 @@ textarea {
 .termLink {
   color: #fff;
   text-decoration: underline;
+  color: #fff;
 }
 
 .submit {
@@ -128,8 +124,6 @@ textarea {
 }
 
 #terms {
-  /* position: absolute;
-  top: 35%; */
   display: none;
 }
 
@@ -190,6 +184,21 @@ textarea {
     display: none;
   }
   #bubble {
+    display: none;
+  }
+  #soldier {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1526.4px) {
+  #soldier {
+    top: 209%;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  #soldier {
     display: none;
   }
 }
