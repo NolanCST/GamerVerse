@@ -4,8 +4,11 @@
 }
 
 .title {
-  color: #ffffff;
-  text-align: center;
+    color: #ffffff;
+    text-align: center;
+    font-family : "Raleway";
+    text-transform : uppercase;
+    letter-spacing : 5px;
 }
 
 .firstName {
@@ -138,6 +141,25 @@ textarea:focus {
   border: none;
   border-radius: 5px;
   color: white;
+}
+
+.changeProfil{
+    border: none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ebebeb;
+    background: 0 0;
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 3px 0;
 }
 
 @media screen and (max-width: 992px) {

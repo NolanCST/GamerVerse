@@ -291,11 +291,11 @@ function ResponsiveAppBar() {
                            </Box>
                         </Toolbar>
                      </Container>
+                     <LogoutAlert showLogoutAlert={showLogoutAlert} />
                   </AppBar>
                </ThemeProvider>
             </Box>
          </Stack>
-         <LogoutAlert showLogoutAlert={showLogoutAlert} />
       </>
    );
 }
