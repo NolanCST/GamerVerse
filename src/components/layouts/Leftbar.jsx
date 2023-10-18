@@ -1,6 +1,6 @@
 // import { Box, Typography } from "@mui/material";
 import React from "react";
-import "./leftbar.css";
+import "./Leftbar.css";
 
 export default function Leftbar(props) {
    return (
