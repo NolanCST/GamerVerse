@@ -1,4 +1,4 @@
-import { Box, Typography, AvatarGroup, Avatar, ImageList, ImageListItem, ListItem, ListItemText, Divider, List, ListItemAvatar } from "@mui/material";
+import { Box, Typography, Avatar, ListItemText } from "@mui/material";
 import React from "react";
 import "./rightbar.css";
 
