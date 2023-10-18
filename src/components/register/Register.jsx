@@ -79,63 +79,61 @@ function Register() {
    return (
       <>
          <NavBar />
-         <div className="mainRegister">
-            <div className="subRegister">
-               <img
-                  src="https://media.discordapp.net/attachments/1154418633741709372/1162003370727460864/soldat.png?ex=653a5af8&is=6527e5f8&hm=8613018b16e6c80345fb2d5eb26c832bd4d048249468887cbc63932bff9dfc84&=&width=918&height=516"
-                  alt=""
-                  id="soldier"
-               />
-               <div className="cont">
-                  <div className="registerForm">
-                     <form method="POST" id="registerForm">
-                        <h2 id="registerH2">INSCRIPTION</h2>
-                        <br />
-                        <div className="registerSection">
-                           <input onChange={(e) => setLastname(e.target.value)} type="text" className="registerInput" name="lastname" id="lastname" placeholder="Nom" />
-                           <label className="errorLabel">{lastnameError}</label>
-                        </div>
-                        <div className="registerSection">
-                           <input onChange={(e) => setFirstname(e.target.value)} type="text" className="registerInput" name="firstname" id="firstname" placeholder="Prénom" />
-                           <label className="errorLabel">{firstnameError}</label>
-                        </div>
-                        <div className="registerSection">
-                           <input onChange={(e) => setAge(e.target.value)} type="number" className="registerInput" name="age" id="age" placeholder="Age" />
-                           <label className="errorLabel">{ageError}</label>
-                        </div>
-                        <div className="registerSection">
-                           <input onChange={(e) => setEmail(e.target.value)} type="email" className="registerInput" name="email" id="email" placeholder="Email" />
-                           <label className="errorLabel">{emailError}</label>
-                        </div>
-                        <div className="registerSection">
-                           <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text" : "password"} className="registerInput" name="password" id="password" placeholder="Mot de passe" />
-                           <label className="errorLabel">{passwordError}</label>
-                           <label className="showPassword">
-                              <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
-                              Afficher le mot de passe
-                           </label>
-                        </div>
-                        <div className="registerSection">
-                           <label className="checkbox">
-                              <input type="checkbox" name="terms" id="terms" />
-                              <span className="checkmark"></span>
-                           </label>
-                           <label htmlFor="agree-term" className="labelTerms">
-                              J'accepte les{" "}
-                              <a href="#" className="termLink">
-                                 Termes et Conditions {""}
-                              </a>
-                              d'utilisation générales
-                           </label>
-                        </div>
-                        <br />
-                        <div className="section">
-                           <button onClick={handleRegister} className="submit">
-                              S'INSCRIRE
-                           </button>
-                        </div>
-                     </form>
-                  </div>
+         <div className="subRegister">
+            <img
+               src="https://media.discordapp.net/attachments/1154418633741709372/1162003370727460864/soldat.png?ex=653a5af8&is=6527e5f8&hm=8613018b16e6c80345fb2d5eb26c832bd4d048249468887cbc63932bff9dfc84&=&width=918&height=516"
+               alt=""
+               id="soldier"
+            />
+            <div className="cont">
+               <div className="registerForm">
+                  <form method="POST" id="registerForm">
+                     <h2 id="registerH2">INSCRIPTION</h2>
+                     <br />
+                     <div className="registerSection">
+                        <input onChange={(e) => setLastname(e.target.value)} type="text" className="registerInput" name="lastname" id="lastname" placeholder="Nom" />
+                        <label className="errorLabel">{lastnameError}</label>
+                     </div>
+                     <div className="registerSection">
+                        <input onChange={(e) => setFirstname(e.target.value)} type="text" className="registerInput" name="firstname" id="firstname" placeholder="Prénom" />
+                        <label className="errorLabel">{firstnameError}</label>
+                     </div>
+                     <div className="registerSection">
+                        <input onChange={(e) => setAge(e.target.value)} type="number" className="registerInput" name="age" id="age" placeholder="Age" />
+                        <label className="errorLabel">{ageError}</label>
+                     </div>
+                     <div className="registerSection">
+                        <input onChange={(e) => setEmail(e.target.value)} type="email" className="registerInput" name="email" id="email" placeholder="Email" />
+                        <label className="errorLabel">{emailError}</label>
+                     </div>
+                     <div className="registerSection">
+                        <input onChange={(e) => setPassword(e.target.value)} type={showPassword ? "text" : "password"} className="registerInput" name="password" id="password" placeholder="Mot de passe" />
+                        <label className="errorLabel">{passwordError}</label>
+                        <label className="showPassword">
+                           <input type="checkbox" className="checkbox" onClick={() => setShowPassword(!showPassword)} />
+                           Afficher le mot de passe
+                        </label>
+                     </div>
+                     <div className="registerSection">
+                        <label className="checkbox">
+                           <input type="checkbox" name="terms" id="terms" />
+                           <span className="checkmark"></span>
+                        </label>
+                        <label htmlFor="agree-term" className="labelTerms">
+                           J'accepte les{" "}
+                           <a href="#" className="termLink">
+                              Termes et Conditions {""}
+                           </a>
+                           d'utilisation générales
+                        </label>
+                     </div>
+                     <br />
+                     <div className="section">
+                        <button onClick={handleRegister} className="submit">
+                           S'INSCRIRE
+                        </button>
+                     </div>
+                  </form>
                </div>
             </div>
          </div>
