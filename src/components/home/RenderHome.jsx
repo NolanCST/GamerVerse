@@ -43,6 +43,9 @@ function RenderHome() {
                      maxWidth: 450,
                      bgcolor: "#272727",
                      marginTop: 13,
+                     "@media screen and (max-width: 600px)": {
+                        display: "none",
+                     },
                   }}
                >
                   <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform: "uppercase" }}>
