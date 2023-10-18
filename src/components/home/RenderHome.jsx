@@ -42,7 +42,7 @@ function RenderHome() {
                      height: "50%",
                      maxWidth: 450,
                      bgcolor: "#272727",
-                     marginTop: 4,
+                     marginTop: 13,
                   }}
                >
                   <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform: "uppercase" }}>

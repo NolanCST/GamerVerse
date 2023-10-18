@@ -3,7 +3,7 @@
    background: no-repeat;
    font-family: "Montserrat", sans-serif;
    width: 100vw;
-   height: 110vh;
+   height: 100vh;
 }
 
 .main-post-title {
@@ -11,5 +11,5 @@
    font-size: 64px;
    font-family: "Raleway", sans-serif;
    font-weight: 600px;
-   margin-top: 3%;
+   /* margin-top: 3%; */
 }
