@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import { Stack } from "@mui/system";
 import { teal } from "@mui/material/colors";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -155,10 +156,10 @@ export default function Login() {
                     <IconButton
                       aria-label="toggle password visibility"
                       onClick={() => setShowPassword(!showPassword)}
-                      // onMouseDown={handleMouseDownPassword}
+                      onMouseDown={()=> setShowPassword(!showPassword)}
                       edge="end"
                     >
-                      {/* {showPassword ? <VisibilityOff /> : <Visibility />} */}
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }

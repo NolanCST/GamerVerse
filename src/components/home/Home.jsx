@@ -8,10 +8,10 @@ function Home() {
   return (
     <>
       <NavBar />
-      <div className="main-post-title"></div>
+      <div className="main-post-title">
 
       <RenderHome />
-
+      </div>
     </>
   );
 }

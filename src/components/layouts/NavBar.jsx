@@ -151,7 +151,7 @@ function ResponsiveAppBar() {
                               </Menu>
                            </Box>
                            <Link to={`/`}>
-                              <SportsEsportsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+                              <SportsEsportsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1, color: "white" }} />
                            </Link>
                            <Typography
                               variant="h5"

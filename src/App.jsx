@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import PlayStation from "./components/saloon/Playstation";
-import Home from "./components/Home/Home";
+import Home from "./components/home/Home";
 import Xbox from "./components/saloon/Xbox";
 import Switch from "./components/saloon/Switch";
 import Computer from "./components/saloon/Computer";
