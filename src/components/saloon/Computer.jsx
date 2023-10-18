@@ -18,11 +18,10 @@ function Computer() {
         justify-content="space-between"
         rowspacing={1}
         columnpacing={{ xs: 1, sm: 2, md: 3 }}
+        marginBottom={10}
       >
         <Leftbar />
-        <Grid item xs={2} sm={4} md={4}>
           <Posts />
-        </Grid>
         <Rightbar />
       </Stack>
       <Add />
