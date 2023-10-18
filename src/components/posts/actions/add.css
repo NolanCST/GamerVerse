@@ -1,8 +1,12 @@
 .infosContainer {
-   display: flex;
-   flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+.addButton {
+  width: 200px !important;
 }
 
 #select {
-   margin-left: 10%;
+  margin-left: 10%;
 }
