@@ -62,9 +62,3 @@
 .slider-nav a:hover {
    opacity: 1;
 }
-
-@media only screen and (max-width: 600px) {
-   .slider {
-      display: none;
-   }
-}

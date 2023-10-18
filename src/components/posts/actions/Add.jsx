@@ -204,7 +204,7 @@ export default function Add() {
 
           <TextField
             onChange={handleInputChangeContent}
-            sx={{ width: "100%", marginTop:2}}
+            sx={{ width: "100%", marginTop: 2 }}
             rows={2}
             id="filled-textarea"
             label="Exprime tes pensées"

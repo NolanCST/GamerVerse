@@ -148,26 +148,7 @@ function RenderHome() {
             zIndex={1}
             width="70%"
           >
-            <Box
-              bgcolor="white"
-              position="absolute"
-              left={0}
-              bottom={-15}
-              sx={{ opacity: 0.5, width: "100%", height: "35%", zIndex: "-1" }}
-            >
-              <Typography
-                sx={{
-                  color: "#272727",
-                  paddingBottom: 2,
-                  paddingTop: 1,
-                  textAlign: "center",
-                  textTransform: "uppercase",
-                }}
-              >
-                Choisissez l'univers pour voir les posts correspondants
-              </Typography>
-            </Box>
-
+            <p className="selectPlatforme">Choisissez l'univers pour voir les posts correspondants :</p>
             <Box
               display="flex"
               flexDirection="row"
