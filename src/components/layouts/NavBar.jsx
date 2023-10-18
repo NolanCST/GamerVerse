@@ -190,12 +190,7 @@ function ResponsiveAppBar() {
                               <Box style={{ alignSelf: "center" }}>
                                  <Tooltip title="Vers ton profil">
                                     {!token ? (
-                                       <div>
-                                          <IconButton onClick={handleButtonClick}>
-                                             <AccountCircleIcon fontSize="large" />
-                                          </IconButton>
-                                          {isButtonClicked && <NeedConnexionAlert />}
-                                       </div>
+                                       <></>
                                     ) : (
                                        <Link to={`/ProfilPage`}>
                                           <IconButton>
