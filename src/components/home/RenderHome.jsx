@@ -13,6 +13,11 @@ import {
   Tooltip,
   styled,
   Paper,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Avatar,
 } from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -30,18 +35,14 @@ const Item = styled(Paper)(({ theme }) => ({
 function RenderHome() {
   return (
     <div className="cardContainer">
-      <Box bgcolor="white" position="absolute" top="65%" left={0} sx={{opacity:0.5, width:"100%", height:"35%", zIndex:"0"}} ></Box>
       <Stack
         display="flex"
         flexDirection="column"
-        justifyContent="space-around"
-        alignItems="center"
-        spacing={2}
+        spacing={5}
         useFlexGap
         flexWrap="wrap"
-       
       >
-        
+        <Box display="flex" flexDirection="row" justifyContent="space-around">
           <Box className="container">
             <div className="slider-wrapper">
               <div className="slider">
@@ -68,107 +69,167 @@ function RenderHome() {
               </div>
             </div>
           </Box>
-          {/* <Box opacity={0.5} position="absolute" top={50} bgcolor="black" width={50}></Box> */}
-          <Box
-            sx={{ bgcolor: "white" }}
-            spacing={2}
-            display="flex"
-            flexDirection="row"
-            justifyContent="space-between"
-            zIndex={1}
+          <List
+            sx={{
+              width: "40%",
+              height: "50%",
+              maxWidth: 450,
+              bgcolor: "#272727",
+              marginTop: 4,
+            }}
           >
-            {/* <Grid
+            <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform:"uppercase" }}>
+              EN LIGNE - 3
+            </Typography>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar alt="Kyoichiro" src="/images/avatar/Kyoichiro.jpg">
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText sx={{color:"teal"}} primary="Nolan" secondary="Nono - le tyran (Modérateur)" />
+            </ListItem>
+            <Divider variant="inset" component="li" />
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar alt="Goliath" src="/images/avatar/Goliath.jpg"></Avatar>
+              </ListItemAvatar>
+              <ListItemText sx={{color:"teal"}}
+                primary="Véronique"
+                secondary="Aslinn - la jinx du groupe (Modératrice)"
+              />
+            </ListItem>
+            <Divider variant="inset" component="li" />
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar alt="Shion" src="/images/avatar/Shion.jpg"></Avatar>
+              </ListItemAvatar>
+              <ListItemText sx={{color:"teal"}}
+                primary="Dennys"
+                secondary="Dennys - le responsiveur (Modérateur)"
+              />
+            </ListItem>
+           
+            <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform:"uppercase" }}>
+              HORS LIGNE - 1
+            </Typography>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar alt="Futaba" src="/images/avatar/Futaba.jpg"></Avatar>
+              </ListItemAvatar>
+              <ListItemText sx={{color:"grey"}}
+                primary="Zaïnab"
+                secondary="Zaï - supportrice (Modératrice)"
+              />
+            </ListItem>
+          </List>
+        </Box>
+
+        {/* <Box opacity={0.5} position="absolute" top={50} bgcolor="black" width={50}></Box> */}
+        <Box
+          sx={{ bgcolor: "inherit" }}
+          spacing={2}
+          display="flex"
+         //  flexDirection="row"
+         //  justifyContent="space-around"
+          zIndex={1}
+          gap={3}
+          width="70%"
+        >
+          {" "}
+          <Box
+            bgcolor="white"
+            position="absolute"
+            left={0}
+            bottom={-15}
+            // top={-1}
+            sx={{ opacity: 0.5, width: "100%", height: "35%", zIndex: "-1" }}
+          >
+            <Typography sx={{ color: "#272727", paddingBottom: 2, paddingTop: 1 }}>
+              Choisissez l'univers pour voir les posts correspondants :
+            </Typography>
+          </Box>
+          {/* <Grid
             container
             rowspacing={2}
             columnspacing={{ xs: 1, sm: 2, md: 3 }}
             > */}
-              <Box display="flex"
-              //   className="testOne"
-              //   display="flex"
-              //   justifyContent="space-around"
-              //   item
-              //   xs={12}
-              //   md={3}
-              >
-                {/* <Card sx={{ maxWidth: 250 }}> */}
-                <Link
-                  to="/PlayStation"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/playstation.jpg"
-                    alt="PlayStation"
-                  />
-                </Link>
-                {/* </Card> */}
-              </Box>
-
-              <Box
-                display="flex"
-              //   justifyContent="space-around"
-              //   item
-              //   xs={12}
-              //   md={3}
-              >
-                {/* <Card sx={{ maxWidth: 250 }}> */}
-                <Link
-                  to="/Xbox"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/Xbox.jpg"
-                    alt="Xbox"
-                  />
-                </Link>
-                {/* </Card> */}
-              </Box>
-
-              <Box
-                display="flex"
-              //   justifyContent="space-around"
-              //   item
-              //   xs={12}
-              //   md={3}
-              >
-                {/* <Card sx={{ maxWidth: 250 }}> */}
-                <Link
-                  to="/Switch"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/Switch.jpg"
-                    alt="Switch"
-                  />
-                </Link>
-                {/* </Card> */}
-              </Box>
-
-              <Box
-                display="flex"
-              //   justifyContent="space-around"
-              //   item
-              //   xs={12}
-              //   md={3}
-              >
-                {/* <Card sx={{ maxWidth: 250, boxShadow: 3 }}> */}
-                <Link
-                  to="/Computer"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/PC.jpg"
-                    alt="Computer"
-                  />
-                </Link>
-                {/* </Card> */}
-              </Box>
-            {/*    */}
+          <Box
+            // display="flex"
+            //   className="testOne"
+            //   display="flex"
+            //   justifyContent="space-around"
+              item
+              xs={12}
+              md={3}
+          >
+            {/* <Card sx={{ maxWidth: 250 }}> */}
+            <Link
+              to="/PlayStation"
+              style={{ textDecoration: "none", color: "Black" }}
+            >
+              <CardMedia
+                component="img"
+                image="/images/playstation.jpg"
+                alt="PlayStation"
+              />
+            </Link>
+            {/* </Card> */}
           </Box>
-        
+          <Box
+            // display="flex"
+            //   justifyContent="space-around"
+              item
+              xs={12}
+              md={3}
+          >
+            {/* <Card sx={{ maxWidth: 250 }}> */}
+            <Link to="/Xbox" style={{ textDecoration: "none", color: "Black" }}>
+              <CardMedia component="img" image="/images/Xbox.jpg" alt="Xbox" />
+            </Link>
+            {/* </Card> */}
+          </Box>
+          <Box
+            // display="flex"
+            //   justifyContent="space-around"
+              item
+              xs={12}
+              md={3}
+          >
+            {/* <Card sx={{ maxWidth: 250 }}> */}
+            <Link
+              to="/Switch"
+              style={{ textDecoration: "none", color: "Black" }}
+            >
+              <CardMedia
+                component="img"
+                image="/images/Switch.jpg"
+                alt="Switch"
+              />
+            </Link>
+            {/* </Card> */}
+          </Box>
+          <Box
+            // display="flex"
+            //   justifyContent="space-around"
+              item
+              xs={12}
+              md={3}
+          >
+            {/* <Card sx={{ maxWidth: 250, boxShadow: 3 }}> */}
+            <Link
+              to="/Computer"
+              style={{ textDecoration: "none", color: "Black" }}
+            >
+              <CardMedia
+                component="img"
+                image="/images/PC.jpg"
+                alt="Computer"
+              />
+            </Link>
+            {/* </Card> */}
+          </Box>
+          {/*    */}
+        </Box>
       </Stack>
     </div>
   );
