@@ -39,12 +39,8 @@ function GetUser() {
           "Content-Type": "application/json",
           Authorization: "Bearer " + localStorage.getItem("@TokenUser"),
         },
-        body: JSON.stringify(user),
+        body: JSON.parse(user),
       };
-
-      // const recup = {
-      //   body : JSON.parse(user)
-      // }
 
       const response = await fetch(
         "https://social-network-api.osc-fr1.scalingo.io/gamer-verse/user",
@@ -63,7 +59,6 @@ function GetUser() {
   };
 
   useEffect(() => {
-    console.log("TEST1");
     getUser();
   }, []);
 
@@ -71,16 +66,12 @@ function GetUser() {
     ModifProfil();
     setEditing(false);
     console.log(user);
-    window.location.reload();
-    body: JSON.parse(user);
   };
 
-  // useEffect(() => {
-  //   console.log("TEST 2");
-  //   handleSave();
-  // }, []);
+  useEffect(() => {
+     ModifProfil();
+   }, []);
 
-  console.log("user :", user);
 
   return (
     <div className="profilInput">
