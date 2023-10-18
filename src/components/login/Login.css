@@ -54,7 +54,6 @@
   position: absolute;
   left: -15%;
   top: -10%;
-  
 }
 
 .mario {
@@ -70,13 +69,21 @@
   z-index: 1;
 }
 
-/* @keyframes my-animation {
-  from {
-    width: 300px;
-    top: 10px;
+@media screen and (max-width: 992px) {
+  .mainContainer {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
   }
-  to {
-    width: 300px;
-    top: 80px;
+  .inputContainer {
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
   }
-} */
+}
+
+@media screen and (max-width: 1095px) {
+  .mario {
+    display: none;
+  }
+}

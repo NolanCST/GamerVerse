@@ -104,20 +104,19 @@ export default function Login() {
       <ErrorAlert showErrorAlert={showErrorAlert} />
 
       <div className="mainContainer">
-        <Box>
+        <Box className="mainBox">
           <Typography className="titleContainer" mt={2}>
             Connexion à votre compte
           </Typography>
 
           <Box className="inputContainer" alignItems="center" display="flex">
             <PersonOutlineIcon
-            
               fontSize="large"
               sx={{ color: "rgb(175, 179, 199)" }}
               className="iconInput"
             />
 
-            <FormControl sx={{ m: 2, width: "52ch", mt:3 }} variant="filled">
+            <FormControl sx={{ m: 2, width: "52ch", mt: 3 }} variant="filled">
               <InputLabel htmlFor="filled-adornment-email">Email</InputLabel>
               <FilledInput
                 id="filled-adornment-email"
@@ -140,7 +139,10 @@ export default function Login() {
               className="iconInput"
             />
 
-            <FormControl sx={{ m: 2, width: "52ch", mb:3, mt:3 }} variant="filled">
+            <FormControl
+              sx={{ m: 2, width: "52ch", mb: 3, mt: 3 }}
+              variant="filled"
+            >
               <InputLabel htmlFor="filled-adornment-password">
                 Password
               </InputLabel>

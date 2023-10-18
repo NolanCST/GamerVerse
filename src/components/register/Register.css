@@ -40,7 +40,7 @@ textarea {
 
 .checkmark {
   position: absolute;
-  top: 24%;
+  top: 20%;
   height: 12px;
   width: 12px;
   border: 2px solid #c9c9c9;
@@ -48,32 +48,34 @@ textarea {
 }
 
 .mainRegister {
-  height: 100vh;
+  height: 100%;
   margin-top: 8%;
+  width: 100%;
 }
 
 .subRegister {
-  width: 862px;
-  height: 500px;
+  width: 56.1vw;
+  height: 70.7vh;
 }
 
 .cont {
-  width: 862px;
-  height: 500px;
+  width: 56.1vw;
+  height: 70.7vh;
   background-image: url(https://images2.alphacoders.com/199/199312.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
   margin-left: 38%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .registerForm {
-  width: 562px;
-  height: 500px;
+  width: 36.1vw;
+  height: 70.7vh;
   background: rgba(194, 193, 191, 0.75);
   border-radius: 5px;
-  margin-left: 300px;
 }
 
 .registerSection {
@@ -125,8 +127,9 @@ textarea {
 }
 
 #terms {
-  position: absolute;
-  top: 35%;
+  /* position: absolute;
+  top: 35%; */
+  display: none;
 }
 
 #registerH2 {
@@ -142,14 +145,13 @@ textarea {
 }
 
 #registerForm {
-  padding: 54px 80px 36px 55px;
+  padding: 8px 80px 36px 55px;
   margin-top: 40px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1292px) {
   .mainRegister {
-    width: calc(100% - 30px);
-    max-width: 100%;
+    max-width: 90vh;
     margin: 0 auto;
   }
   .cont {
@@ -157,8 +159,83 @@ textarea {
   }
 }
 
-@media screen and (max-width: 1395px) {
+@media screen and (max-height: 690px) {
   #soldier {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1526.4px) {
+  #soldier {
+    top: 209%;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  #soldier {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mainRegister {
+    margin-top: 90px;
+  }
+
+  .registerForm {
+    width: 56.1vw;
+    height: 73.7vh;
+  }
+
+  .cont {
+    height: 73.7vh;
+  }
+
+  .checkmark {
+    top: 8%;
+  }
+}
+
+@media screen and (max-width: 1283px) {
+  .mainRegister {
+    margin-top: 110px;
+  }
+  .registerForm {
+    height: 75.7vh;
+  }
+
+  .cont {
+    height: 75.7vh;
+  }
+}
+
+@media screen and (max-width: 1483px) {
+  .registerForm {
+    height: 75.7vh;
+  }
+
+  .cont {
+    height: 75.7vh;
+  }
+}
+
+@media screen and (max-width: 1465px) {
+  .checkmark {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .cont {
+    height: 85vh;
+    margin-left: 100px;
+  }
+  .checkmark {
+    top: 7%;
+  }
+  .registerForm {
+    width: 56.1vw;
+    height: 85vh;
+    margin-left: 100px;
   }
 }
