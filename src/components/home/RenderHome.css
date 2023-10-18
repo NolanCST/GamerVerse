@@ -75,4 +75,27 @@
   .slider {
     display: none;
   }
+
+  .css-9jay18{
+    flex-direction: column !important;
+    gap: 7px !important;
+  }
+
+  .selectPlatforme{
+    font-size: 16px !important;
+  }
+
+  .css-1foz79h-MuiList-root{
+    display: none !important;
+  }
+}
+
+.selectPlatforme{
+  text-align: center;
+  font-size: 35px;
+  color: #ffffff;
+  background-image: linear-gradient(to right top, #333333, #39393a);
+  width: 100vw;
+  margin-left: -22%;
+  margin-bottom: 2%;
 }
