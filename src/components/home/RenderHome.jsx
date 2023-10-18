@@ -78,22 +78,33 @@ function RenderHome() {
               marginTop: 4,
             }}
           >
-            <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform:"uppercase" }}>
+            <Typography
+              textAlign="start"
+              paddingLeft={2}
+              sx={{ color: "white", textTransform: "uppercase" }}
+            >
               EN LIGNE - 3
             </Typography>
             <ListItem>
               <ListItemAvatar>
-                <Avatar alt="Kyoichiro" src="/images/avatar/Kyoichiro.jpg">
-                </Avatar>
+                <Avatar
+                  alt="Kyoichiro"
+                  src="/images/avatar/Kyoichiro.jpg"
+                ></Avatar>
               </ListItemAvatar>
-              <ListItemText sx={{color:"teal"}} primary="Nolan" secondary="Nono - le tyran (Modérateur)" />
+              <ListItemText
+                sx={{ color: "teal" }}
+                primary="Nolan"
+                secondary="Nono - le tyran (Modérateur)"
+              />
             </ListItem>
             <Divider variant="inset" component="li" />
             <ListItem>
               <ListItemAvatar>
                 <Avatar alt="Goliath" src="/images/avatar/Goliath.jpg"></Avatar>
               </ListItemAvatar>
-              <ListItemText sx={{color:"teal"}}
+              <ListItemText
+                sx={{ color: "teal" }}
                 primary="Véronique"
                 secondary="Aslinn - la jinx du groupe (Modératrice)"
               />
@@ -103,20 +114,26 @@ function RenderHome() {
               <ListItemAvatar>
                 <Avatar alt="Shion" src="/images/avatar/Shion.jpg"></Avatar>
               </ListItemAvatar>
-              <ListItemText sx={{color:"teal"}}
+              <ListItemText
+                sx={{ color: "teal" }}
                 primary="Dennys"
                 secondary="Dennys - le responsiveur (Modérateur)"
               />
             </ListItem>
-           
-            <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform:"uppercase" }}>
+
+            <Typography
+              textAlign="start"
+              paddingLeft={2}
+              sx={{ color: "white", textTransform: "uppercase" }}
+            >
               HORS LIGNE - 1
             </Typography>
             <ListItem>
               <ListItemAvatar>
                 <Avatar alt="Futaba" src="/images/avatar/Futaba.jpg"></Avatar>
               </ListItemAvatar>
-              <ListItemText sx={{color:"grey"}}
+              <ListItemText
+                sx={{ color: "grey" }}
                 primary="Zaïnab"
                 secondary="Zaï - supportrice (Modératrice)"
               />
@@ -124,13 +141,12 @@ function RenderHome() {
           </List>
         </Box>
 
-        {/* <Box opacity={0.5} position="absolute" top={50} bgcolor="black" width={50}></Box> */}
         <Box
           sx={{ bgcolor: "inherit" }}
           spacing={2}
           display="flex"
-         //  flexDirection="row"
-         //  justifyContent="space-around"
+          //  flexDirection="row"
+          //  justifyContent="space-around"
           zIndex={1}
           gap={3}
           width="70%"
@@ -141,10 +157,11 @@ function RenderHome() {
             position="absolute"
             left={0}
             bottom={-15}
-            // top={-1}
             sx={{ opacity: 0.5, width: "100%", height: "35%", zIndex: "-1" }}
           >
-            <Typography sx={{ color: "#272727", paddingBottom: 2, paddingTop: 1 }}>
+            <Typography
+              sx={{ color: "#272727", paddingBottom: 2, paddingTop: 1 }}
+            >
               Choisissez l'univers pour voir les posts correspondants :
             </Typography>
           </Box>
@@ -158,9 +175,9 @@ function RenderHome() {
             //   className="testOne"
             //   display="flex"
             //   justifyContent="space-around"
-              item
-              xs={12}
-              md={3}
+            item
+            xs={12}
+            md={3}
           >
             {/* <Card sx={{ maxWidth: 250 }}> */}
             <Link
@@ -178,9 +195,9 @@ function RenderHome() {
           <Box
             // display="flex"
             //   justifyContent="space-around"
-              item
-              xs={12}
-              md={3}
+            item
+            xs={12}
+            md={3}
           >
             {/* <Card sx={{ maxWidth: 250 }}> */}
             <Link to="/Xbox" style={{ textDecoration: "none", color: "Black" }}>
@@ -191,9 +208,9 @@ function RenderHome() {
           <Box
             // display="flex"
             //   justifyContent="space-around"
-              item
-              xs={12}
-              md={3}
+            item
+            xs={12}
+            md={3}
           >
             {/* <Card sx={{ maxWidth: 250 }}> */}
             <Link
@@ -211,9 +228,9 @@ function RenderHome() {
           <Box
             // display="flex"
             //   justifyContent="space-around"
-              item
-              xs={12}
-              md={3}
+            item
+            xs={12}
+            md={3}
           >
             {/* <Card sx={{ maxWidth: 250, boxShadow: 3 }}> */}
             <Link
