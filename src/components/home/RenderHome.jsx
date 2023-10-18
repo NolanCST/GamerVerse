@@ -5,8 +5,6 @@ import "./RenderHome.css";
 
 import { Box, Typography, CardMedia, Stack, Card, Divider, Chip, Tooltip, styled, Paper, List, ListItem, ListItemAvatar, ListItemText, Avatar } from "@mui/material";
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
 // -----> const
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -72,47 +70,6 @@ function RenderHome() {
                      <ListItemText sx={{ color: "teal" }} primary="Dennys" secondary="Dennys - le responsiveur (Modérateur)" />
                   </ListItem>
 
-<<<<<<< HEAD
-            <Typography
-              textAlign="start"
-              paddingLeft={2}
-              sx={{ color: "white", textTransform: "uppercase" }}
-            >
-              HORS LIGNE - 1
-            </Typography>
-            <ListItem>
-              <ListItemAvatar>
-                <Avatar alt="Futaba" src="/images/avatar/Futaba.jpg"></Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                sx={{ color: "grey" }}
-                primary="Zaïnab"
-                secondary="Zaï - Persécutée (Modératrice)"
-              />
-            </ListItem>
-          </List>
-        </Box>
-        <Box display="flex" justifyContent="center">
-          <Box sx={{ bgcolor: "inherit" }} zIndex={1} width="70%">
-            <Box
-              bgcolor="white"
-              position="absolute"
-              left={0}
-              bottom={-15}
-              sx={{ opacity: 0.5, width: "100%", height: "35%", zIndex: "-1" }}
-            >
-              <Typography
-                sx={{
-                  color: "#272727",
-                  paddingBottom: 2,
-                  paddingTop: 1,
-                  textAlign: "center",
-                  textTransform: "uppercase",
-                }}
-              >
-                Choisissez l'univers pour voir les posts correspondants
-              </Typography>
-=======
                   <Typography textAlign="start" paddingLeft={2} sx={{ color: "white", textTransform: "uppercase" }}>
                      HORS LIGNE - 1
                   </Typography>
@@ -123,7 +80,6 @@ function RenderHome() {
                      <ListItemText sx={{ color: "grey" }} primary="Zaïnab" secondary="Zaï - supportrice (Modératrice)" />
                   </ListItem>
                </List>
->>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
             </Box>
             <p className="selectPlatforme">Choisissez l'univers pour voir les posts correspondants :</p>
             <Box display="flex" justifyContent="center">
@@ -135,31 +91,11 @@ function RenderHome() {
                         </Link>
                      </Box>
 
-<<<<<<< HEAD
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
-            >
-              <Box sx={{ maxWidth: 250, height: 145 }}>
-                <Link
-                  to="/PlayStation"
-                  style={{ textDecoration: "none", color: "Black" }}
-                >
-                  <CardMedia
-                    component="img"
-                    image="/images/playstation.jpg"
-                    alt="PlayStation"
-                  />
-                </Link>
-              </Box>
-=======
                      <Box sx={{ maxWidth: 250 }}>
                         <Link to="/Xbox" style={{ textDecoration: "none", color: "Black" }}>
                            <CardMedia component="img" image="/images/Xbox.jpg" alt="Xbox" />
                         </Link>
                      </Box>
->>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
 
                      <Box sx={{ maxWidth: 250 }}>
                         <Link to="/Switch" style={{ textDecoration: "none", color: "Black" }}>

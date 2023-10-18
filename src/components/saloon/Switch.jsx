@@ -4,7 +4,7 @@ import Posts from "../posts/Posts";
 import Rightbar from "../layouts/Rightbar";
 import Leftbar from "../layouts/Leftbar";
 import Add from "../posts/actions/Add";
-import "./Playstation.css";
+import "./saloon.css";
 
 function Switch() {
    return (

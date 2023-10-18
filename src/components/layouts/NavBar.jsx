@@ -22,10 +22,6 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import LogoutAlert from "../Alerts/LogoutAlert";
-import NeedConnexionAlert from "../Alerts/NeedConnexionAlert";
-import { Alert } from "@mui/material";
-
-// const token = localStorage.getItem("@TokenUser");
 
 // variable pour les liens des pages de la navbar
 const gamerverse = ["GAMERVERSE"];
@@ -56,20 +52,9 @@ function ResponsiveAppBar() {
    const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
    };
-   const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-   };
 
    const handleCloseNavMenu = () => {
       setAnchorElNav(null);
-   };
-
-   const handleButtonClick = () => {
-      setIsButtonClicked(true);
-   };
-
-   const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
    };
 
    const handleClickLogout = () => {
@@ -111,32 +96,6 @@ function ResponsiveAppBar() {
                                     textDecoration: "none",
                                  }}
                               >
-<<<<<<< HEAD
-                                {login}
-                              </Link>
-                            </Button>
-                          ))}
-                        </Box>
-                        <Box>
-                          {registers.map((Register) => (
-                            <Button
-                              key={Register}
-                              onClick={handleCloseNavMenu}
-                              variant="outlined"
-                              sx={{
-                                my: 2,
-                                color: "teal",
-                                border: " 1px solid teal",
-                                display: "block",
-                              }}
-                            >
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                                to={`/Register`}
-=======
                                  <Link style={{ textDecoration: "none", color: "white" }} to={`/`}>
                                     {Home}
                                  </Link>
@@ -164,7 +123,6 @@ function ResponsiveAppBar() {
                                  sx={{
                                     display: { xs: "block", md: "none" },
                                  }}
->>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
                               >
                                  {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -219,33 +177,6 @@ function ResponsiveAppBar() {
                                  flexDirection: "row",
                                  justifyContent: "flex-end",
                               }}
-<<<<<<< HEAD
-                            >
-                              <Link
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                                to={``}
-                              >
-                                {logout}
-                              </Link>
-                            </Button>
-                          ))}
-                        </Box>
-                      </>
-                    )}
-                  </Box>
-                </Toolbar>
-              </Container>
-              <LogoutAlert showLogoutAlert={showLogoutAlert} />
-            </AppBar>
-          </ThemeProvider>
-        </Box>
-      </Stack>
-    </>
-  );
-=======
                            >
                               <Box style={{ alignSelf: "center" }}>
                                  <Tooltip title="Vers ton profil">
@@ -353,6 +284,5 @@ function ResponsiveAppBar() {
          </Stack>
       </>
    );
->>>>>>> c60cc2b76acc4ebe3df21beb4e0467126c8ca03a
 }
 export default ResponsiveAppBar;

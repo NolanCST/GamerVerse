@@ -7,7 +7,6 @@ import Comments from "./actions/Comment";
 import NeedConnexionAlert from "../Alerts/NeedConnexionAlert";
 import SendIcon from "@mui/icons-material/Send";
 import "./renderPosts.css";
-import { format } from "date-fns";
 
 function RenderPosts(props) {
    const [content, setContent] = useState("");
@@ -31,7 +30,6 @@ function RenderPosts(props) {
    const toggleCommentBox = () => {
       setShowCommentBox(!showCommentBox);
    };
-   // .toLocaleDateString("fr")
 
    return (
       <>
@@ -53,8 +51,7 @@ function RenderPosts(props) {
                      </IconButton>
                   }
                   title={props.title}
-                  
-                  subheader={new Date(props.date).toLocaleDateString("fr", {day:"numeric", month:"long", year:"numeric"}) + ' | ' + new Date(props.date).toLocaleTimeString("fr", {hour:"numeric", minute:"numeric"})}
+                  subheader={new Date(props.date).toLocaleDateString("fr", { day: "numeric", month: "long", year: "numeric" }) + " | " + new Date(props.date).toLocaleTimeString("fr", { hour: "numeric", minute: "numeric" })}
                />
                <CardMedia component="img" height="10%" image="/images/Fond_post.png" alt="Image par default" />
                <CardContent>
