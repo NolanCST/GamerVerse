@@ -279,6 +279,7 @@ function ResponsiveAppBar() {
                                 border: " 1px solid teal",
                                 display: "block",
                               }}
+<<<<<<< HEAD
                             >
                               <Link
                                 style={{
@@ -332,5 +333,114 @@ function ResponsiveAppBar() {
       </Stack>
     </>
   );
+=======
+                           >
+                              <Box style={{ alignSelf: "center" }}>
+                                 <Tooltip title="Vers ton profil">
+                                    {!token ? (
+                                       <></>
+                                    ) : (
+                                       <Link to={`/ProfilPage`}>
+                                          <IconButton>
+                                             <AccountCircleIcon fontSize="large" />
+                                          </IconButton>
+                                       </Link>
+                                    )}
+                                 </Tooltip>
+                              </Box>
+
+                              {!token ? (
+                                 <>
+                                    <Box style={{ marginRight: 10 }}>
+                                       {logins.map((login) => (
+                                          <Button
+                                             key={login}
+                                             onClick={handleCloseNavMenu}
+                                             variant="contained"
+                                             sx={{
+                                                my: 2,
+                                                color: "white",
+                                                backgroundColor: "teal",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={`/Login`}
+                                             >
+                                                {login}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                    <Box>
+                                       {registers.map((Register) => (
+                                          <Button
+                                             key={Register}
+                                             onClick={handleCloseNavMenu}
+                                             variant="outlined"
+                                             sx={{
+                                                my: 2,
+                                                color: "teal",
+                                                border: " 1px solid teal",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={`/Register`}
+                                             >
+                                                {Register}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                 </>
+                              ) : (
+                                 <>
+                                    <Box>
+                                       {logouts.map((logout) => (
+                                          <Button
+                                             key={logout}
+                                             onClick={handleClickLogout}
+                                             variant="contained"
+                                             sx={{
+                                                my: 2,
+                                                color: "white",
+                                                backgroundColor: "red",
+                                                display: "block",
+                                             }}
+                                          >
+                                             <Link
+                                                style={{
+                                                   textDecoration: "none",
+                                                   color: "white",
+                                                }}
+                                                to={``}
+                                             >
+                                                {logout}
+                                             </Link>
+                                          </Button>
+                                       ))}
+                                    </Box>
+                                 </>
+                              )}
+                           </Box>
+                        </Toolbar>
+                     </Container>
+                     <LogoutAlert showLogoutAlert={showLogoutAlert} />
+                  </AppBar>
+               </ThemeProvider>
+            </Box>
+         </Stack>
+      </>
+   );
+>>>>>>> 7631f6d56bda4e8b7530586b3613ad12beec9618
 }
 export default ResponsiveAppBar;

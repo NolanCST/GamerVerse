@@ -5,6 +5,9 @@
 
 .addButton {
   width: 200px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #select {

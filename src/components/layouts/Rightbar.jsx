@@ -1,11 +1,11 @@
-import { Box, Typography, AvatarGroup, Avatar, ImageList, ImageListItem, ListItem, ListItemText, Divider, List, ListItemAvatar } from "@mui/material";
+import { Box, Typography, Avatar, ListItemText } from "@mui/material";
 import React from "react";
 import "./rightbar.css";
 
 export default function Rightbar() {
    return (
       <Box bgcolor="inherit" width={300} flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-         <Box position="fixed">
+         <Box position="fixed" sx={{ marginRight: 5 }}>
             <Typography variant="h6" fontWeight={100}>
                Ami(e)s Connecté(e)s
             </Typography>
@@ -31,7 +31,7 @@ export default function Rightbar() {
                   <span>Zainab</span>
                </div>
             </div>
-            <Typography variant="h6" color="#272727" fontWeight={300} mt={1}>
+            <Typography variant="h6" color="#272727" fontWeight={300} mt={3}>
                DERNIÈRES SORTIES DE JEUX
             </Typography>
             <section className="carrouselContainer">

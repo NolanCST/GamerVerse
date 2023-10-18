@@ -65,6 +65,10 @@ export default function Add() {
   const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState("");
 
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
+
   const handleInputChangeTitle = (e) => {
     setPostTitle(e.target.value);
   };
@@ -104,8 +108,8 @@ export default function Add() {
       const data = await response.json();
       console.log("data: ", data);
       if (data.success) {
-        alert("Votre post a été mis en ligne sur le channel " + selectedValue);
         navigate("/" + selectedValue);
+        refreshPage();
       } else {
         console.error("Échec de la requête HTTP");
       }
@@ -139,7 +143,7 @@ export default function Add() {
       >
         <Box
           width={400}
-          height={280}
+          height={350}
           bgcolor="white"
           borderRadius={9}
           p={5}
@@ -148,7 +152,12 @@ export default function Add() {
           <UserBox>
             <Typography
               variant="span"
-              sx={{ fontWeight: 700, color: "blueviolet", fontSize: 20 }}
+              sx={{
+                fontWeight: 600,
+                color: "blueviolet",
+                fontSize: 20,
+                textTransform: "uppercase",
+              }}
             >
               Réaliser un nouveau Post
             </Typography>
@@ -171,12 +180,13 @@ export default function Add() {
             <FormControl
               id="select"
               variant="standard"
-              sx={{ m: 1, minWidth: 120 }}
+              sx={{ m: 1, minWidth: 150 }}
             >
               <InputLabel id="select-standard">Plateforme</InputLabel>
               <Select
                 labelId="select-standard-label"
                 id="simple-select-standard"
+                margin="normal"
                 value={selectedValue}
                 onChange={handleSelectChange}
                 label="NavigatePlatform"
@@ -194,13 +204,14 @@ export default function Add() {
 
           <TextField
             onChange={handleInputChangeContent}
-            sx={{ width: "100%" }}
-            id="standard-multiline-static"
+            sx={{ width: "100%", marginTop: 2 }}
+            rows={2}
+            id="filled-textarea"
+            label="Exprime tes pensées"
+            placeholder=""
             multiline
-            rows={3}
-            placeholder="Qu'est-ce que tu penses ?"
-            variant="standard"
-            color="grey"
+            variant="filled"
+            color="primary"
           />
           <Stack direction="row" gap={2} mt={2.5} mb={3}>
             <EmojiEmotions color="primary" />
@@ -213,9 +224,7 @@ export default function Add() {
             aria-label="outlined primary button group"
             fullWidth
           >
-            <ColorButton onClick={postPosts} className="addButton">
-              Post
-            </ColorButton>
+            <ColorButton onClick={postPosts}>Post</ColorButton>
           </ButtonGroup>
         </Box>
       </UpModal>
