@@ -1,6 +1,6 @@
 .mainContainer {
-  width: 39%;
-  height: 50%;
+  min-width: 30%;
+  min-height: 50%;
   position: absolute;
   left: 30%;
   top: 150px;
@@ -34,6 +34,10 @@
   font-style: italic;
 }
 
+.inputContainer {
+  min-width: 30vw;
+}
+
 /* .inputBox {
  height: 48px;
  width: 400px;
@@ -47,8 +51,9 @@
 .loginPassword[type="password"] {
   color: teal !important;
 }
+*/
 
-/ ----> Image Mario avec animation /
+/* ----> Image Mario avec animation */
 #bubble {
   width: 200px;
   position: absolute;
@@ -64,18 +69,25 @@
   animation-timing-function: linear;
   position: absolute;
   top: 28%;
-  right: -25%;
+  right: -22%;
   width: 50%;
   z-index: 1;
 }
 
-/ @keyframes my-animation {
- from {
-   width: 300px;
-   top: 10px;
- }
- to {
-   width: 300px;
-   top: 80px;
- }
-} */
+@media screen and (max-width: 1393px) {
+  .mario {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .mainContainer {
+    left: 8%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .mainContainer {
+    left: 0%;
+  }
+}
