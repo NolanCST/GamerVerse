@@ -83,6 +83,7 @@ function GetUser() {
             <input
               type="text"
               value={user.firstname}
+              className="changeProfil"
               onChange={(e) => setUser({ ...user, firstname: e.target.value })}
             />
           </div>
@@ -92,6 +93,7 @@ function GetUser() {
             <input
               type="text"
               value={user.lastname}
+              className="changeProfil"
               onChange={(e) => setUser({ ...user, lastname: e.target.value })}
             />
           </div>
@@ -101,6 +103,7 @@ function GetUser() {
             <input
               type="text"
               value={user.age}
+              className="changeProfil"
               onChange={(e) => setUser({ ...user, age: e.target.value })}
             />
           </div>
@@ -110,11 +113,14 @@ function GetUser() {
           </button>
         </div>
       ) : (
+        <>
         <div className="identity">
           <div className="getFirstName">Nom: {user.firstname}</div>
           <div className="getLastName">Prénom: {user.lastname}</div>
           <div className="getAge">Age: {user.age}</div>
         </div>
+        </>
+        
       )}
 
       <div className="mailInput">
@@ -127,7 +133,7 @@ function GetUser() {
           value={user.occupation}
           className="getPlatforme"
         >
-          <option>Choisissez votre Plateforme</option>
+          <option>Plateforme :</option>
           <option>Playstation</option>
           <option>Xbox</option>
           <option>Switch</option>
