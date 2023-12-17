@@ -38,27 +38,12 @@
   min-width: 30vw;
 }
 
-/* .inputBox {
- height: 48px;
- width: 400px;
- font-size: large;
- border-radius: 8px;
- border: none;
- outline: none;
- background: transparent;
-} /
-
-.loginPassword[type="password"] {
-  color: teal !important;
-}
-*/
-
 /* ----> Image Mario avec animation */
 #bubble {
   width: 200px;
   position: absolute;
-  left: -15%;
-  top: -10%;
+  left: -11% !important;
+  top: -19% !important;
 }
 
 .mario {

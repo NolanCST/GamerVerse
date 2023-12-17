@@ -1,9 +1,3 @@
-/* body {
-  background-image: url(/images/fond-page-home.jpeg);
-  background-size: 120%;
-  background-repeat: no-repeat;
-} */
-
 .imageMainHome {
    height: 2%;
 }
@@ -15,8 +9,6 @@
 
 .container {
    padding: 5rem 10rem 0 0;
-   /* display: flex;
-  flex-direction: column; */
 }
 
 .slider-wrapper {

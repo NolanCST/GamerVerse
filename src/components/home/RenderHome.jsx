@@ -21,8 +21,6 @@ import {
   Avatar,
 } from "@mui/material";
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
 // -----> const
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -163,6 +161,19 @@ function RenderHome() {
                     component="img"
                     image="/images/playstation.jpg"
                     alt="PlayStation"
+                  />
+                </Link>
+              </Box>
+
+              <Box sx={{ maxWidth: 250 }}>
+                <Link
+                  to="/Xbox"
+                  style={{ textDecoration: "none", color: "Black" }}
+                >
+                  <CardMedia
+                    component="img"
+                    image="/images/Xbox.jpg"
+                    alt="Xbox"
                   />
                 </Link>
               </Box>
